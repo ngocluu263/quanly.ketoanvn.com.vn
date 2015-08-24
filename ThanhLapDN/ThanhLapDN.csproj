@@ -1,0 +1,1544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{81A60053-CDDB-451D-9220-EF9BF3E85F15}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ThanhLapDN</RootNamespace>
+    <AssemblyName>ThanhLapDN</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\gvietgroup.com.vn.web-(raovat)\raovat.net.web2\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentArt.Web.UI, Version=2010.1.2637.35, Culture=neutral, PublicKeyToken=9bc9f846553156bb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ComponentArt.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Data.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Printing.v12.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Utils.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxEditors.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Web.ASPxEditors.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGridView.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Web.ASPxGridView.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGridView.v12.1.Export, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Web.ASPxGridView.v12.1.Export.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxThemes.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Web.ASPxThemes.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxTreeList.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Web.ASPxTreeList.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxTreeList.v12.1.Export, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Web.ASPxTreeList.v12.1.Export.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.Web.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.XtraPrinting.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.XtraReports.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v12.1.Web, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.XtraReports.v12.1.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevExpress.XtraTreeList.v12.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Open XML SDK\V2.0\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="IZ.WebFileManager, Version=2.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IZ.WebFileManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MSCaptcha, Version=4.0.4250.31585, Culture=neutral, PublicKeyToken=b9ff12f28cdcf412, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MSCaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Doc, Version=5.5.5.3040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Doc.5.5.5\lib\net40\Spire.Doc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.5.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Doc.5.5.5\lib\net40\Spire.License.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=3.4.79.3040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Doc.5.5.5\lib\net40\Spire.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="vpro.functions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\vpro.functions.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\ComponentArt.Web.UI.dll" />
+    <Content Include="bin\DevExpress.Data.v12.1.dll" />
+    <Content Include="bin\DevExpress.Data.v12.1.xml" />
+    <Content Include="bin\DevExpress.Printing.v12.1.Core.dll" />
+    <Content Include="bin\DevExpress.Utils.v12.1.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxEditors.v12.1.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxEditors.v12.1.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxGridView.v12.1.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxGridView.v12.1.Export.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxGridView.v12.1.xml" />
+    <Content Include="bin\DevExpress.Web.ASPxThemes.v12.1.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxTreeList.v12.1.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxTreeList.v12.1.Export.dll" />
+    <Content Include="bin\DevExpress.Web.ASPxTreeList.v12.1.xml" />
+    <Content Include="bin\DevExpress.Web.v12.1.dll" />
+    <Content Include="bin\DevExpress.Web.v12.1.xml" />
+    <Content Include="bin\DevExpress.XtraPrinting.v12.1.dll" />
+    <Content Include="bin\DevExpress.XtraReports.v12.1.dll" />
+    <Content Include="bin\DevExpress.XtraReports.v12.1.Web.dll" />
+    <Content Include="bin\DevExpress.XtraTreeList.v12.1.dll" />
+    <Content Include="bin\DevExpress.XtraTreeList.v12.1.xml" />
+    <Content Include="bin\DocumentFormat.OpenXml.dll" />
+    <Content Include="bin\DocumentFormat.OpenXml.xml" />
+    <Content Include="bin\IZ.WebFileManager.dll" />
+    <Content Include="bin\MSCaptcha.dll" />
+    <Content Include="bin\Spire.Doc.dll" />
+    <Content Include="bin\Spire.Doc.xml" />
+    <Content Include="bin\Spire.License.dll" />
+    <Content Include="bin\Spire.License.xml" />
+    <Content Include="bin\Spire.Pdf.dll" />
+    <Content Include="bin\ThanhLapDN.dll" />
+    <Content Include="bin\ThanhLapDN.pdb" />
+    <Content Include="bin\vpro.functions.dll" />
+    <Content Include="Calendar\calendarStyle.css" />
+    <Content Include="Calendar\images\btn_calendar.gif" />
+    <Content Include="Calendar\images\cal_nextMonth.gif" />
+    <Content Include="Calendar\images\cal_prevMonth.gif" />
+    <Content Include="Calendar\pickerAndCalendar.ascx" />
+    <Content Include="chosen\chosen-sprite%402x.png" />
+    <Content Include="chosen\chosen-sprite.png" />
+    <Content Include="chosen\chosen.css" />
+    <Content Include="chosen\chosen.jquery.js" />
+    <Content Include="chosen\chosen.jquery.min.js" />
+    <Content Include="chosen\chosen.min.css" />
+    <Content Include="chosen\chosen.proto.js" />
+    <Content Include="chosen\chosen.proto.min.js" />
+    <Content Include="chosen\docsupport\chosen.png" />
+    <Content Include="chosen\docsupport\oss-credit.png" />
+    <Content Include="chosen\docsupport\prism.css" />
+    <Content Include="chosen\docsupport\prism.js" />
+    <Content Include="chosen\docsupport\style.css" />
+    <Content Include="chosen\index.html" />
+    <Content Include="chosen\index.proto.html" />
+    <Content Include="chosen\options.html" />
+    <Content Include="Complete\Ajax\AjaxCompleteHoSo.js" />
+    <Content Include="Complete\CompleteHoSo.asmx" />
+    <Content Include="Default.aspx" />
+    <Content Include="FileBrowser\css\style.css" />
+    <Content Include="FileBrowser\css\style.min.css" />
+    <Content Include="FileBrowser\img\16\camera.png" />
+    <Content Include="FileBrowser\img\16\file-bookmark.png" />
+    <Content Include="FileBrowser\img\16\file-code.png" />
+    <Content Include="FileBrowser\img\16\file-empty.png" />
+    <Content Include="FileBrowser\img\16\file-excel-alt.png" />
+    <Content Include="FileBrowser\img\16\file-excel.png" />
+    <Content Include="FileBrowser\img\16\file-exe.png" />
+    <Content Include="FileBrowser\img\16\file-font.png" />
+    <Content Include="FileBrowser\img\16\file-illustrator.png" />
+    <Content Include="FileBrowser\img\16\file-indesign.png" />
+    <Content Include="FileBrowser\img\16\file-link.png" />
+    <Content Include="FileBrowser\img\16\file-note.png" />
+    <Content Include="FileBrowser\img\16\file-pdf-alt.png" />
+    <Content Include="FileBrowser\img\16\file-pdf.png" />
+    <Content Include="FileBrowser\img\16\file-photoshop.png" />
+    <Content Include="FileBrowser\img\16\file-picture.png" />
+    <Content Include="FileBrowser\img\16\file-powerpoint-alt.png" />
+    <Content Include="FileBrowser\img\16\file-powerpoint.png" />
+    <Content Include="FileBrowser\img\16\file-premiere.png" />
+    <Content Include="FileBrowser\img\16\file-sound.png" />
+    <Content Include="FileBrowser\img\16\file-text.png" />
+    <Content Include="FileBrowser\img\16\file-video.png" />
+    <Content Include="FileBrowser\img\16\file-word-alt.png" />
+    <Content Include="FileBrowser\img\16\file-word.png" />
+    <Content Include="FileBrowser\img\16\file-zip-alt.png" />
+    <Content Include="FileBrowser\img\16\file-zip.png" />
+    <Content Include="FileBrowser\img\16\folder-document-alt.png" />
+    <Content Include="FileBrowser\img\16\folder-document.png" />
+    <Content Include="FileBrowser\img\16\folder-flash.png" />
+    <Content Include="FileBrowser\img\16\folder-house-alt.png" />
+    <Content Include="FileBrowser\img\16\folder-house.png" />
+    <Content Include="FileBrowser\img\16\folder-music.png" />
+    <Content Include="FileBrowser\img\16\folder-picture-alt.png" />
+    <Content Include="FileBrowser\img\16\folder-picture.png" />
+    <Content Include="FileBrowser\img\16\folder-video-alt.png" />
+    <Content Include="FileBrowser\img\16\folder-video.png" />
+    <Content Include="FileBrowser\img\16\folder.png" />
+    <Content Include="FileBrowser\img\32\camera.png" />
+    <Content Include="FileBrowser\img\32\file-bookmark.png" />
+    <Content Include="FileBrowser\img\32\file-code.png" />
+    <Content Include="FileBrowser\img\32\file-empty.png" />
+    <Content Include="FileBrowser\img\32\file-excel-alt.png" />
+    <Content Include="FileBrowser\img\32\file-excel.png" />
+    <Content Include="FileBrowser\img\32\file-exe.png" />
+    <Content Include="FileBrowser\img\32\file-font.png" />
+    <Content Include="FileBrowser\img\32\file-illustrator.png" />
+    <Content Include="FileBrowser\img\32\file-indesign.png" />
+    <Content Include="FileBrowser\img\32\file-link.png" />
+    <Content Include="FileBrowser\img\32\file-note.png" />
+    <Content Include="FileBrowser\img\32\file-pdf-alt.png" />
+    <Content Include="FileBrowser\img\32\file-pdf.png" />
+    <Content Include="FileBrowser\img\32\file-photoshop.png" />
+    <Content Include="FileBrowser\img\32\file-picture.png" />
+    <Content Include="FileBrowser\img\32\file-powerpoint-alt.png" />
+    <Content Include="FileBrowser\img\32\file-powerpoint.png" />
+    <Content Include="FileBrowser\img\32\file-premiere.png" />
+    <Content Include="FileBrowser\img\32\file-sound.png" />
+    <Content Include="FileBrowser\img\32\file-text.png" />
+    <Content Include="FileBrowser\img\32\file-video.png" />
+    <Content Include="FileBrowser\img\32\file-word-alt.png" />
+    <Content Include="FileBrowser\img\32\file-word.png" />
+    <Content Include="FileBrowser\img\32\file-zip-alt.png" />
+    <Content Include="FileBrowser\img\32\file-zip.png" />
+    <Content Include="FileBrowser\img\32\folder-document-alt.png" />
+    <Content Include="FileBrowser\img\32\folder-document.png" />
+    <Content Include="FileBrowser\img\32\folder-flash.png" />
+    <Content Include="FileBrowser\img\32\folder-house-alt.png" />
+    <Content Include="FileBrowser\img\32\folder-house.png" />
+    <Content Include="FileBrowser\img\32\folder-music.png" />
+    <Content Include="FileBrowser\img\32\folder-picture-alt.png" />
+    <Content Include="FileBrowser\img\32\folder-picture.png" />
+    <Content Include="FileBrowser\img\32\folder-video-alt.png" />
+    <Content Include="FileBrowser\img\32\folder-video.png" />
+    <Content Include="FileBrowser\img\32\folder.png" />
+    <Content Include="FileBrowser\img\cmd\box-out.png" />
+    <Content Include="FileBrowser\img\cmd\cloud-up.png" />
+    <Content Include="FileBrowser\img\cmd\Copy.png" />
+    <Content Include="FileBrowser\img\cmd\Delete.png" />
+    <Content Include="FileBrowser\img\cmd\FileLarge.png" />
+    <Content Include="FileBrowser\img\cmd\FileSmall.png" />
+    <Content Include="FileBrowser\img\cmd\FolderLarge.png" />
+    <Content Include="FileBrowser\img\cmd\FolderSmall.png" />
+    <Content Include="FileBrowser\img\cmd\FolderUp.png" />
+    <Content Include="FileBrowser\img\cmd\Move.png" />
+    <Content Include="FileBrowser\img\cmd\NewFolder.png" />
+    <Content Include="FileBrowser\img\cmd\Process.gif" />
+    <Content Include="FileBrowser\img\cmd\Refresh.png" />
+    <Content Include="FileBrowser\img\cmd\Rename.png" />
+    <Content Include="FileBrowser\img\cmd\RootFolderLarge.png" />
+    <Content Include="FileBrowser\img\cmd\RootFolderSmall.png" />
+    <Content Include="FileBrowser\img\cmd\Show.png" />
+    <Content Include="FileBrowser\img\cmd\View.png" />
+    <Content Include="FileBrowser\img\cmd\_View.png" />
+    <Content Include="FileBrowser\js\FileManager.js" />
+    <Content Include="FileBrowser\js\FileManager.min.js" />
+    <Content Include="FileBrowser\thu-vien.aspx" />
+    <Content Include="FileManager\css\cmenu-gloss-cyan-menu-item-hover.gif" />
+    <Content Include="FileManager\css\cmenu-gloss-menu-item-hover.gif" />
+    <Content Include="FileManager\css\cmenu-gloss-semitransparent-menu-item-hover.png" />
+    <Content Include="FileManager\css\cmenu-human-menu-item-hover.gif" />
+    <Content Include="FileManager\css\cmenu-osx-menu-item-hover.gif" />
+    <Content Include="FileManager\css\cmenu-vista-bg.gif" />
+    <Content Include="FileManager\css\cmenu-vista-menu-item-hover.gif" />
+    <Content Include="FileManager\css\cmenu-xp-bg.gif" />
+    <Content Include="FileManager\css\jquery.contextmenu.css" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="FileManager\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="FileManager\css\ui-lightness\jquery-ui-1.8.4.custom.css" />
+    <Content Include="FileManager\Default.aspx" />
+    <Content Include="FileManager\Funcations.aspx" />
+    <Content Include="FileManager\icons\21-0.gif" />
+    <Content Include="FileManager\icons\CCopy.png" />
+    <Content Include="FileManager\icons\CDelete.png" />
+    <Content Include="FileManager\icons\ceditcut.png" />
+    <Content Include="FileManager\icons\cfolderpng.png" />
+    <Content Include="FileManager\icons\Copy-32.png" />
+    <Content Include="FileManager\icons\cPaste.png" />
+    <Content Include="FileManager\icons\Cut-32.png" />
+    <Content Include="FileManager\icons\Delete-32.png" />
+    <Content Include="FileManager\icons\editcut-32.png" />
+    <Content Include="FileManager\icons\File-copy-32.png" />
+    <Content Include="FileManager\icons\Files-add-32.png" />
+    <Content Include="FileManager\icons\folder-32.png" />
+    <Content Include="FileManager\icons\folder-64.png" />
+    <Content Include="FileManager\icons\Gnome-Dialog-Error-32.png" />
+    <Content Include="FileManager\icons\Gnome-Edit-Paste-32.png" />
+    <Content Include="FileManager\icons\home-32_1.png" />
+    <Content Include="FileManager\icons\img-add-32.png" />
+    <Content Include="FileManager\icons\Library-32.png" />
+    <Content Include="FileManager\icons\Paint-32.png" />
+    <Content Include="FileManager\icons\Paint-64.png" />
+    <Content Include="FileManager\icons\rar_32.png" />
+    <Content Include="FileManager\icons\Unknown-icon-64.png" />
+    <Content Include="FileManager\icons\Unknown-icon.png" />
+    <Content Include="FileManager\icons\Zip-file-32.png" />
+    <Content Include="FileManager\js\jquery-1.4.2.min.js" />
+    <Content Include="FileManager\js\jquery-ui-1.8.4.custom.min.js" />
+    <Content Include="FileManager\js\jquery.contextmenu.js" />
+    <Content Include="FileManager\js\jquery.jstree.js" />
+    <Content Include="FileManager\js\themes\apple\bg.jpg" />
+    <Content Include="FileManager\js\themes\apple\d.png" />
+    <Content Include="FileManager\js\themes\apple\dot_for_ie.gif" />
+    <Content Include="FileManager\js\themes\apple\style.css" />
+    <Content Include="FileManager\js\themes\apple\throbber.gif" />
+    <Content Include="FileManager\js\themes\classic\d.png" />
+    <Content Include="FileManager\js\themes\classic\dot_for_ie.gif" />
+    <Content Include="FileManager\js\themes\classic\style.css" />
+    <Content Include="FileManager\js\themes\classic\throbber.gif" />
+    <Content Include="FileManager\js\themes\default-rtl\d.gif" />
+    <Content Include="FileManager\js\themes\default-rtl\d.png" />
+    <Content Include="FileManager\js\themes\default-rtl\dots.gif" />
+    <Content Include="FileManager\js\themes\default-rtl\style.css" />
+    <Content Include="FileManager\js\themes\default-rtl\throbber.gif" />
+    <Content Include="FileManager\js\themes\default\d.gif" />
+    <Content Include="FileManager\js\themes\default\d.png" />
+    <Content Include="FileManager\js\themes\default\style.css" />
+    <Content Include="FileManager\js\themes\default\throbber.gif" />
+    <Content Include="FileManager\js\tiny_mce_popup.js" />
+    <Content Include="FileManager\license.txt" />
+    <Content Include="FileManager\player.aspx" />
+    <Content Include="FileManager\web.config" />
+    <Content Include="FileManager\Uploader.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\AcTive.png" />
+    <Content Include="Images\AcTive_Hide.png" />
+    <Content Include="Images\add.png" />
+    <Content Include="Images\add1.png" />
+    <Content Include="Images\addNew.png" />
+    <Content Include="Images\Admin.png" />
+    <Content Include="Images\arrow-sprite.png" />
+    <Content Include="Images\automation.png" />
+    <Content Include="Images\back.png" />
+    <Content Include="Images\back_to_top.png" />
+    <Content Include="Images\bg_boxTab.png" />
+    <Content Include="Images\calendar_icon.jpg" />
+    <Content Include="Images\cancel.png" />
+    <Content Include="Images\change.png" />
+    <Content Include="Images\change_data.png" />
+    <Content Include="Images\check.png" />
+    <Content Include="Images\Check_list.png" />
+    <Content Include="Images\close.gif" />
+    <Content Include="Images\Comeback_index.png" />
+    <Content Include="Images\Create_Advertisement.png" />
+    <Content Include="Images\Create_folder.png" />
+    <Content Include="Images\Create_product.png" />
+    <Content Include="Images\Create_Shop.png" />
+    <Content Include="Images\Delete.png" />
+    <Content Include="Images\delete1.png" />
+    <Content Include="Images\delete_icon.gif" />
+    <Content Include="Images\done.png" />
+    <Content Include="Images\down.png" />
+    <Content Include="Images\download_icon.png" />
+    <Content Include="Images\drpdwn.png" />
+    <Content Include="Images\file_edit.png" />
+    <Content Include="Images\Folder_structure.png" />
+    <Content Include="Images\hand.png" />
+    <Content Include="Images\home.png" />
+    <Content Include="Images\icon-32-cancel.png" />
+    <Content Include="Images\icon-32-save-copy.png" />
+    <Content Include="Images\icon-32-save-new.png" />
+    <Content Include="Images\icon-32-save.png" />
+    <Content Include="Images\icon-32-saveclose.png" />
+    <Content Include="Images\icon-32-trash.png" />
+    <Content Include="Images\icon-testing.png" />
+    <Content Include="Images\icon_accouting.png" />
+    <Content Include="Images\ICON_ADD.jpg" />
+    <Content Include="Images\ICON_ADD_ATTRIBUTES.jpg" />
+    <Content Include="Images\ICON_ADD_GROUP.jpg" />
+    <Content Include="Images\ICON_DELETE.jpg" />
+    <Content Include="Images\ICON_DELETE_ALL.jpg" />
+    <Content Include="Images\ICON_EXCEL.jpg" />
+    <Content Include="Images\icon_png.png" />
+    <Content Include="Images\ICON_RETURN.jpg" />
+    <Content Include="Images\ICON_SAVE.jpg" />
+    <Content Include="Images\import_excel.png" />
+    <Content Include="Images\info.gif" />
+    <Content Include="Images\key.png" />
+    <Content Include="Images\library.png" />
+    <Content Include="Images\List_Advertisement.png" />
+    <Content Include="Images\List_Folder.png" />
+    <Content Include="Images\List_Product.png" />
+    <Content Include="Images\List_Shop.png" />
+    <Content Include="Images\List_Style_help.jpg" />
+    <Content Include="Images\loading_bar.gif" />
+    <Content Include="Images\Login_header.png" />
+    <Content Include="Images\logo-dangcapviet.jpg" />
+    <Content Include="Images\logo-dangcapviet.png" />
+    <Content Include="Images\logo-khanhlinh_app.png" />
+    <Content Include="Images\Logout.png" />
+    <Content Include="Images\Mail.png" />
+    <Content Include="Images\mail_reply_sender.png" />
+    <Content Include="Images\min.gif" />
+    <Content Include="Images\Minus.png" />
+    <Content Include="Images\Money_Product.png" />
+    <Content Include="Images\new-page.png" />
+    <Content Include="Images\notification_done.png" />
+    <Content Include="Images\notification_done_mini.png" />
+    <Content Include="Images\Order in_checkList.png" />
+    <Content Include="Images\Order_checkList.png" />
+    <Content Include="Images\playback_next_icon.png" />
+    <Content Include="Images\playback_play1.png" />
+    <Content Include="Images\playback_play2.png" />
+    <Content Include="Images\playback_prev_icon.png" />
+    <Content Include="Images\project.png" />
+    <Content Include="Images\resize.gif" />
+    <Content Include="Images\right.png" />
+    <Content Include="Images\salary_icon.png" />
+    <Content Include="Images\search-icon.png" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\send.png" />
+    <Content Include="Images\skip_forward.png" />
+    <Content Include="Images\sprite.png" />
+    <Content Include="Images\sprite1.png" />
+    <Content Include="Images\ui-icons_222222_256x240.png" />
+    <Content Include="Images\uncheck.png" />
+    <Content Include="Images\update-icon.png" />
+    <Content Include="Images\User-roles.png" />
+    <Content Include="Images\user.png" />
+    <Content Include="Images\User_Bill.gif" />
+    <Content Include="Images\User_Config.png" />
+    <Content Include="Images\User_Content.png" />
+    <Content Include="Images\user_group.png" />
+    <Content Include="logout.aspx" />
+    <Content Include="Pages\changeinfo.aspx" />
+    <Content Include="Pages\chi-tiet-ho-so.aspx" />
+    <Content Include="Pages\chi-tiet-loai-hinh-doanh-nghiep.aspx" />
+    <Content Include="Pages\chi-tiet-menu-cha.aspx" />
+    <Content Include="Pages\chi-tiet-nhom-quan-tri.aspx" />
+    <Content Include="Pages\chi-tiet-nhan-vien.aspx" />
+    <Content Include="Pages\bang-luong.aspx" />
+    <Content Include="Pages\chi-tiet-bang-luong.aspx" />
+    <Content Include="Pages\bang-cham-cong.aspx" />
+    <Content Include="Pages\phan-quyen.aspx" />
+    <Content Include="Pages\thu-vien-files-cong-no.aspx" />
+    <Content Include="Pages\popup-trang-thai-phu-luc-gia-han.aspx" />
+    <Content Include="Pages\danh-sach-phu-luc-gia-han.aspx" />
+    <Content Include="Pages\phu-luc-gia-han-hop-dong-ke-toan.aspx" />
+    <Content Include="Pages\popup-trang-thai-hop-dong-thanh-ly.aspx" />
+    <Content Include="Pages\danh-sach-bien-ban-thanh-ly-hop-dong.aspx" />
+    <Content Include="Pages\thanh-ly-hop-dong-ke-toan.aspx" />
+    <Content Include="Pages\popup-tao-bang-cham-cong.aspx" />
+    <Content Include="Pages\popup-trang-thai-hop-dong.aspx" />
+    <Content Include="Pages\popup-kiem-tra-mst-cong-no.aspx" />
+    <Content Include="Pages\popup-tao-bang-luong.aspx" />
+    <Content Include="Pages\noi-hoat-dong-nhan-vien-giao-nhan.aspx" />
+    <Content Include="Pages\danh-sach-hop-dong-ke-toan.aspx" />
+    <Content Include="Pages\hop-dong-ke-toan.aspx" />
+    <Content Include="Pages\san-pham.aspx" />
+    <Content Include="Pages\nha-cung-cap.aspx" />
+    <Content Include="Pages\popup-cong-no-cks.aspx" />
+    <Content Include="Pages\dang-nhap.aspx" />
+    <Content Include="Pages\danh-muc-nganh-nghe.aspx" />
+    <Content Include="Pages\danh-sach-cong-no-cks.aspx" />
+    <Content Include="Pages\danh-sach-cong-no.aspx" />
+    <Content Include="Pages\danh-sach-ho-so.aspx" />
+    <Content Include="Pages\danh-sach-loai-hinh-doanh-nghiep.aspx" />
+    <Content Include="Pages\danh-sach-menu-cha.aspx" />
+    <Content Include="Pages\danh-sach-nhom-quan-tri.aspx" />
+    <Content Include="Pages\danh-sach-nhan-vien.aspx" />
+    <Content Include="Pages\doi-mat-khau.aspx" />
+    <Content Include="Pages\huong-dan.aspx" />
+    <Content Include="Pages\popup-cong-no.aspx" />
+    <Content Include="Pages\popup-danh-sach-thanh-vien.aspx" />
+    <Content Include="Pages\popup-edit-file.aspx" />
+    <Content Include="Pages\popup-quy-trinh-1-ketoan.aspx" />
+    <Content Include="Pages\popup-quy-trinh-2-ketoan.aspx" />
+    <Content Include="Pages\popup-quy-trinh-giao-hs.aspx" />
+    <Content Include="Pages\popup-quy-trinh-ket-thuc-main.aspx" />
+    <Content Include="Pages\popup-quy-trinh-ket-thuc.aspx" />
+    <Content Include="Pages\popup-quy-trinh-khac-dau.aspx" />
+    <Content Include="Pages\popup-quy-trinh-ky-hs-ketoan.aspx" />
+    <Content Include="Pages\popup-quy-trinh-ky-hs.aspx" />
+    <Content Include="Pages\popup-quy-trinh-nop-hs.aspx" />
+    <Content Include="Pages\popup-quy-trinh-skip.aspx" />
+    <Content Include="Pages\popup-quy-trinh-tra-hs-ketoan.aspx" />
+    <Content Include="Pages\popup-quy-trinh-tra-hs.aspx" />
+    <Content Include="Pages\popup-quy-trinh.aspx" />
+    <Content Include="Pages\popup-thanh-vien.aspx" />
+    <Content Include="Pages\quen-mat-khau.aspx" />
+    <Content Include="Pages\test.aspx" />
+    <Content Include="Pages\thong-tin-ho-so.aspx" />
+    <Content Include="Pages\trang-chu.aspx" />
+    <Content Include="Scripts\accounting.js" />
+    <Content Include="Scripts\all_scripts.js" />
+    <Content Include="Complete\Styles\jquery-ui-1.10.4.custom.min.css" />
+    <Content Include="Complete\Script\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="Scripts\BeatPicker.min.js" />
+    <Content Include="Scripts\dhtmlwindow.js" />
+    <Content Include="Scripts\FBrowser\bootstrap.js" />
+    <Content Include="Scripts\FBrowser\bootstrap.min.js" />
+    <Content Include="Scripts\FBrowser\jquery-1.11.1.intellisense.js" />
+    <Content Include="Scripts\FBrowser\jquery-1.11.1.js" />
+    <Content Include="Scripts\FBrowser\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\FBrowser\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\FBrowser\jquery-1.7.1.js" />
+    <Content Include="Scripts\FBrowser\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\FBrowser\plugins\bootbox.js" />
+    <Content Include="Scripts\FBrowser\plugins\bootstrap\affix.js" />
+    <Content Include="Scripts\FBrowser\plugins\bootstrap\alert.js" />
+    <Content Include="Scripts\FBrowser\plugins\bootstrap\button.js" />
+    <Content Include="Scripts\FBrowser\plugins\bootstrap\carousel.js" />
+    <Content Include="Scripts\FBrowser\plugins\bootstrap\collapse.js" />
+    <Content Include="Scripts\FBrowser\plugins\bootstrap\dropdown.js" />
+    <Content Include="Scripts\FBrowser\plugins\bootstrap\modal.js" />
+    <Content Include="Scripts\FBrowser\plugins\bootstrap\popover.js" />
+    <Content Include="Scripts\FBrowser\plugins\bootstrap\scrollspy.js" />
+    <Content Include="Scripts\FBrowser\plugins\bootstrap\tab.js" />
+    <Content Include="Scripts\FBrowser\plugins\bootstrap\tooltip.js" />
+    <Content Include="Scripts\FBrowser\plugins\bootstrap\transition.js" />
+    <Content Include="Scripts\FBrowser\plugins\fineuploader\edit.gif" />
+    <Content Include="Scripts\FBrowser\plugins\fineuploader\fineuploader.css" />
+    <Content Include="Scripts\FBrowser\plugins\fineuploader\jquery.fineuploader.js" />
+    <Content Include="Scripts\FBrowser\plugins\fineuploader\jquery.fineuploader.min.js" />
+    <Content Include="Scripts\FBrowser\plugins\fineuploader\loading.gif" />
+    <Content Include="Scripts\FBrowser\plugins\fineuploader\processing.gif" />
+    <Content Include="Scripts\FBrowser\plugins\jquery.mb-waitspinner.js" />
+    <Content Include="Scripts\FBrowser\plugins\jquery.prettySocial.js" />
+    <Content Include="Scripts\FBrowser\plugins\plugins.js" />
+    <Content Include="Scripts\FBrowser\plugins\plugins.min.js" />
+    <Content Include="Scripts\FBrowser\plugins\spin\jquery.spin.js" />
+    <Content Include="Scripts\FBrowser\plugins\spin\spin.js" />
+    <Content Include="Scripts\FBrowser\_references.js" />
+    <Content Include="Scripts\jquery-1.8.3.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.nivo.slider.pack.js" />
+    <Content Include="Scripts\kendo.all.min.js" />
+    <Content Include="Scripts\modal.js" />
+    <Content Include="Scripts\multiselect\css\style.css" />
+    <Content Include="Scripts\multiselect\index.html" />
+    <Content Include="Scripts\multiselect\js\multiselect.js" />
+    <Content Include="Scripts\multiselect\js\multiselect.min.js" />
+    <Content Include="Scripts\multiselect\lib\google-code-prettify\prettify.css" />
+    <Content Include="Scripts\scrolltopcontrol.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="Scripts\UtilitiesCpanel.js" />
+    <Content Include="Styles\BeatPicker.min.css" />
+    <Content Include="Styles\buttons.css" />
+    <Content Include="Styles\common.css" />
+    <Content Include="Styles\Cpanel_Login.css" />
+    <Content Include="Styles\Cpanel_Site.css" />
+    <Content Include="Styles\dhtmlwindow.css" />
+    <Content Include="Styles\jquery-ui.css" />
+    <Content Include="Styles\kendo.BlueOpal.min.css" />
+    <Content Include="Styles\kendo.common.min.css" />
+    <Content Include="Styles\kendo.default.min.css" />
+    <Content Include="Styles\modal.css" />
+    <Content Include="Styles\modalbox\all_index.css" />
+    <Content Include="Styles\modalbox\login_popup.css" />
+    <Content Include="Styles\popup.css" />
+    <Content Include="Styles\select2.css" />
+    <Content Include="Styles\site.css" />
+    <Content Include="Styles\site1.css" />
+    <Content Include="Styles\siteCongNo.css" />
+    <Content Include="Styles\sitepopup.css" />
+    <Content Include="Styles\template.css" />
+    <Content Include="tiny_mce\langs\en.js" />
+    <Content Include="tiny_mce\license.txt" />
+    <Content Include="tiny_mce\plugins\advhr\css\advhr.css" />
+    <Content Include="tiny_mce\plugins\advhr\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\advhr\js\rule.js" />
+    <Content Include="tiny_mce\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="tiny_mce\plugins\advhr\rule.htm" />
+    <Content Include="tiny_mce\plugins\advimage\css\advimage.css" />
+    <Content Include="tiny_mce\plugins\advimage\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\advimage\image.htm" />
+    <Content Include="tiny_mce\plugins\advimage\img\sample.gif" />
+    <Content Include="tiny_mce\plugins\advimage\js\image.js" />
+    <Content Include="tiny_mce\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="tiny_mce\plugins\advlink\css\advlink.css" />
+    <Content Include="tiny_mce\plugins\advlink\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\advlink\js\advlink.js" />
+    <Content Include="tiny_mce\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="tiny_mce\plugins\advlink\link.htm" />
+    <Content Include="tiny_mce\plugins\advlist\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\autolink\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\autoresize\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\autosave\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\autosave\langs\en.js" />
+    <Content Include="tiny_mce\plugins\bbcode\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\directionality\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\emotions\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\emotions\emotions.htm" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="tiny_mce\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="tiny_mce\plugins\emotions\js\emotions.js" />
+    <Content Include="tiny_mce\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="tiny_mce\plugins\example\dialog.htm" />
+    <Content Include="tiny_mce\plugins\example\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\example\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\example\img\example.gif" />
+    <Content Include="tiny_mce\plugins\example\js\dialog.js" />
+    <Content Include="tiny_mce\plugins\example\langs\en.js" />
+    <Content Include="tiny_mce\plugins\example\langs\en_dlg.js" />
+    <Content Include="tiny_mce\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\fullpage\css\fullpage.css" />
+    <Content Include="tiny_mce\plugins\fullpage\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\fullpage\fullpage.htm" />
+    <Content Include="tiny_mce\plugins\fullpage\js\fullpage.js" />
+    <Content Include="tiny_mce\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="tiny_mce\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="tiny_mce\plugins\iespell\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="tiny_mce\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="tiny_mce\plugins\inlinepopups\template.htm" />
+    <Content Include="tiny_mce\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\layer\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\layer\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\lists\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\lists\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\media\css\media.css" />
+    <Content Include="tiny_mce\plugins\media\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\media\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\media\js\embed.js" />
+    <Content Include="tiny_mce\plugins\media\js\media.js" />
+    <Content Include="tiny_mce\plugins\media\langs\en_dlg.js" />
+    <Content Include="tiny_mce\plugins\media\media.htm" />
+    <Content Include="tiny_mce\plugins\media\moxieplayer.swf" />
+    <Content Include="tiny_mce\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\noneditable\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\paste\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\paste\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\paste\js\pastetext.js" />
+    <Content Include="tiny_mce\plugins\paste\js\pasteword.js" />
+    <Content Include="tiny_mce\plugins\paste\langs\en_dlg.js" />
+    <Content Include="tiny_mce\plugins\paste\pastetext.htm" />
+    <Content Include="tiny_mce\plugins\paste\pasteword.htm" />
+    <Content Include="tiny_mce\plugins\preview\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\preview\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\preview\example.html" />
+    <Content Include="tiny_mce\plugins\preview\jscripts\embed.js" />
+    <Content Include="tiny_mce\plugins\preview\preview.html" />
+    <Content Include="tiny_mce\plugins\print\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\print\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\save\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\save\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="tiny_mce\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="tiny_mce\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="tiny_mce\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="tiny_mce\plugins\spellchecker\css\content.css" />
+    <Content Include="tiny_mce\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\spellchecker\img\wline.gif" />
+    <Content Include="tiny_mce\plugins\style\css\props.css" />
+    <Content Include="tiny_mce\plugins\style\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\style\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\style\js\props.js" />
+    <Content Include="tiny_mce\plugins\style\langs\en_dlg.js" />
+    <Content Include="tiny_mce\plugins\style\props.htm" />
+    <Content Include="tiny_mce\plugins\style\readme.txt" />
+    <Content Include="tiny_mce\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\table\cell.htm" />
+    <Content Include="tiny_mce\plugins\table\css\cell.css" />
+    <Content Include="tiny_mce\plugins\table\css\row.css" />
+    <Content Include="tiny_mce\plugins\table\css\table.css" />
+    <Content Include="tiny_mce\plugins\table\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\table\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\table\js\cell.js" />
+    <Content Include="tiny_mce\plugins\table\js\merge_cells.js" />
+    <Content Include="tiny_mce\plugins\table\js\row.js" />
+    <Content Include="tiny_mce\plugins\table\js\table.js" />
+    <Content Include="tiny_mce\plugins\table\langs\en_dlg.js" />
+    <Content Include="tiny_mce\plugins\table\merge_cells.htm" />
+    <Content Include="tiny_mce\plugins\table\row.htm" />
+    <Content Include="tiny_mce\plugins\table\table.htm" />
+    <Content Include="tiny_mce\plugins\template\blank.htm" />
+    <Content Include="tiny_mce\plugins\template\css\template.css" />
+    <Content Include="tiny_mce\plugins\template\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\template\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\template\js\template.js" />
+    <Content Include="tiny_mce\plugins\template\langs\en_dlg.js" />
+    <Content Include="tiny_mce\plugins\template\template.htm" />
+    <Content Include="tiny_mce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="tiny_mce\plugins\visualblocks\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\visualblocks\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\visualchars\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\wordcount\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\del.htm" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="tiny_mce\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="tiny_mce\themes\advanced\about.htm" />
+    <Content Include="tiny_mce\themes\advanced\anchor.htm" />
+    <Content Include="tiny_mce\themes\advanced\charmap.htm" />
+    <Content Include="tiny_mce\themes\advanced\color_picker.htm" />
+    <Content Include="tiny_mce\themes\advanced\editor_template.js" />
+    <Content Include="tiny_mce\themes\advanced\editor_template_src.js" />
+    <Content Include="tiny_mce\themes\advanced\image.htm" />
+    <Content Include="tiny_mce\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="tiny_mce\themes\advanced\img\flash.gif" />
+    <Content Include="tiny_mce\themes\advanced\img\icons.gif" />
+    <Content Include="tiny_mce\themes\advanced\img\iframe.gif" />
+    <Content Include="tiny_mce\themes\advanced\img\pagebreak.gif" />
+    <Content Include="tiny_mce\themes\advanced\img\quicktime.gif" />
+    <Content Include="tiny_mce\themes\advanced\img\realmedia.gif" />
+    <Content Include="tiny_mce\themes\advanced\img\shockwave.gif" />
+    <Content Include="tiny_mce\themes\advanced\img\trans.gif" />
+    <Content Include="tiny_mce\themes\advanced\img\video.gif" />
+    <Content Include="tiny_mce\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="tiny_mce\themes\advanced\js\about.js" />
+    <Content Include="tiny_mce\themes\advanced\js\anchor.js" />
+    <Content Include="tiny_mce\themes\advanced\js\charmap.js" />
+    <Content Include="tiny_mce\themes\advanced\js\color_picker.js" />
+    <Content Include="tiny_mce\themes\advanced\js\image.js" />
+    <Content Include="tiny_mce\themes\advanced\js\link.js" />
+    <Content Include="tiny_mce\themes\advanced\js\source_editor.js" />
+    <Content Include="tiny_mce\themes\advanced\langs\en.js" />
+    <Content Include="tiny_mce\themes\advanced\langs\en_dlg.js" />
+    <Content Include="tiny_mce\themes\advanced\link.htm" />
+    <Content Include="tiny_mce\themes\advanced\shortcuts.htm" />
+    <Content Include="tiny_mce\themes\advanced\skins\default\content.css" />
+    <Content Include="tiny_mce\themes\advanced\skins\default\CustomizeStyle.css" />
+    <Content Include="tiny_mce\themes\advanced\skins\default\dialog.css" />
+    <Content Include="tiny_mce\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="tiny_mce\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="tiny_mce\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="tiny_mce\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="tiny_mce\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="tiny_mce\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="tiny_mce\themes\advanced\skins\default\ui.css" />
+    <Content Include="tiny_mce\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="tiny_mce\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="tiny_mce\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="tiny_mce\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="tiny_mce\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="tiny_mce\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="tiny_mce\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="tiny_mce\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="tiny_mce\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="tiny_mce\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="tiny_mce\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="tiny_mce\themes\advanced\source_editor.htm" />
+    <Content Include="tiny_mce\themes\simple\editor_template.js" />
+    <Content Include="tiny_mce\themes\simple\editor_template_src.js" />
+    <Content Include="tiny_mce\themes\simple\img\icons.gif" />
+    <Content Include="tiny_mce\themes\simple\langs\en.js" />
+    <Content Include="tiny_mce\themes\simple\skins\default\content.css" />
+    <Content Include="tiny_mce\themes\simple\skins\default\ui.css" />
+    <Content Include="tiny_mce\themes\simple\skins\o2k7\content.css" />
+    <Content Include="tiny_mce\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="tiny_mce\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="tiny_mce\tiny_mce.js" />
+    <Content Include="tiny_mce\tiny_mce_2.js" />
+    <Content Include="tiny_mce\tiny_mce_popup.js" />
+    <Content Include="tiny_mce\tiny_mce_src.js" />
+    <Content Include="tiny_mce\utils\editable_selects.js" />
+    <Content Include="tiny_mce\utils\form_utils.js" />
+    <Content Include="tiny_mce\utils\mctabs.js" />
+    <Content Include="tiny_mce\utils\validate.js" />
+    <Content Include="UIs\homeMain.ascx" />
+    <Content Include="UIs\login.ascx" />
+    <Content Include="UIs\menu.ascx" />
+    <Content Include="UIs\MessageBox.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Appketoan.cs">
+      <DependentUpon>Appketoan.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Appketoan.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Appketoan.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\pickerAndCalendar.ascx.cs">
+      <DependentUpon>pickerAndCalendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendar\pickerAndCalendar.ascx.designer.cs">
+      <DependentUpon>pickerAndCalendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Complete\Data\EntityComplate.cs" />
+    <Compile Include="Complete\CompleteHoSo.asmx.cs">
+      <DependentUpon>CompleteHoSo.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\clsDataUtil.cs" />
+    <Compile Include="Components\clsFormat.cs" />
+    <Compile Include="Components\clsUtility.cs" />
+    <Compile Include="Components\Cost.cs" />
+    <Compile Include="Data\CongNoCKSData.cs" />
+    <Compile Include="Data\CongNoData.cs" />
+    <Compile Include="Data\BangLuongData.cs" />
+    <Compile Include="Data\ChamCongData.cs" />
+    <Compile Include="Data\UserPermissionData.cs" />
+    <Compile Include="Data\MerPhuLucGiaHanData.cs" />
+    <Compile Include="Data\MerThanhLyHopDongDVData.cs" />
+    <Compile Include="Data\DoanhThuSPData.cs" />
+    <Compile Include="Data\NhanVienGiaoNhanData.cs" />
+    <Compile Include="Data\MerHopDongDVData.cs" />
+    <Compile Include="Data\SanPhamData.cs" />
+    <Compile Include="Data\NhaCungCapData.cs" />
+    <Compile Include="Data\DeleteData.cs" />
+    <Compile Include="Data\Function.cs" />
+    <Compile Include="Data\getCookies.cs" />
+    <Compile Include="Data\Pageindex_chage.cs" />
+    <Compile Include="Data\ProfileData.cs" />
+    <Compile Include="Data\ProfileMember.cs" />
+    <Compile Include="Data\SendMail.cs" />
+    <Compile Include="Data\TradesData.cs" />
+    <Compile Include="Data\TypeData.cs" />
+    <Compile Include="Data\UnitData.cs" />
+    <Compile Include="Data\UserRepo.cs" />
+    <Compile Include="Data\XLDLRepo.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileBrowser\Code\AjaxJsonResponse.cs" />
+    <Compile Include="FileBrowser\Code\AllowedFilesType.cs" />
+    <Compile Include="FileBrowser\Code\MagicSession.cs" />
+    <Compile Include="FileBrowser\thu-vien.aspx.cs">
+      <DependentUpon>thu-vien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileBrowser\thu-vien.aspx.designer.cs">
+      <DependentUpon>thu-vien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileManager\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileManager\Funcations.aspx.cs">
+      <DependentUpon>Funcations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileManager\player.aspx.cs">
+      <DependentUpon>player.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileManager\Uploader.aspx.cs">
+      <DependentUpon>Uploader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileManager\Uploader.aspx.designer.cs">
+      <DependentUpon>Uploader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="KeepAlive.ashx.cs">
+      <DependentUpon>KeepAlive.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Master1.Master.cs">
+      <DependentUpon>Master1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Master1.Master.designer.cs">
+      <DependentUpon>Master1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\changeinfo.aspx.cs">
+      <DependentUpon>changeinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\changeinfo.aspx.designer.cs">
+      <DependentUpon>changeinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\chi-tiet-ho-so.aspx.cs">
+      <DependentUpon>chi-tiet-ho-so.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\chi-tiet-ho-so.aspx.designer.cs">
+      <DependentUpon>chi-tiet-ho-so.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\chi-tiet-loai-hinh-doanh-nghiep.aspx.cs">
+      <DependentUpon>chi-tiet-loai-hinh-doanh-nghiep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\chi-tiet-loai-hinh-doanh-nghiep.aspx.designer.cs">
+      <DependentUpon>chi-tiet-loai-hinh-doanh-nghiep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\chi-tiet-menu-cha.aspx.cs">
+      <DependentUpon>chi-tiet-menu-cha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\chi-tiet-menu-cha.aspx.designer.cs">
+      <DependentUpon>chi-tiet-menu-cha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\chi-tiet-nhom-quan-tri.aspx.cs">
+      <DependentUpon>chi-tiet-nhom-quan-tri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\chi-tiet-nhom-quan-tri.aspx.designer.cs">
+      <DependentUpon>chi-tiet-nhom-quan-tri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\chi-tiet-nhan-vien.aspx.cs">
+      <DependentUpon>chi-tiet-nhan-vien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\chi-tiet-nhan-vien.aspx.designer.cs">
+      <DependentUpon>chi-tiet-nhan-vien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\bang-luong.aspx.cs">
+      <DependentUpon>bang-luong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\bang-luong.aspx.designer.cs">
+      <DependentUpon>bang-luong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\chi-tiet-bang-luong.aspx.cs">
+      <DependentUpon>chi-tiet-bang-luong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\chi-tiet-bang-luong.aspx.designer.cs">
+      <DependentUpon>chi-tiet-bang-luong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\bang-cham-cong.aspx.cs">
+      <DependentUpon>bang-cham-cong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\bang-cham-cong.aspx.designer.cs">
+      <DependentUpon>bang-cham-cong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\phan-quyen.aspx.cs">
+      <DependentUpon>phan-quyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\phan-quyen.aspx.designer.cs">
+      <DependentUpon>phan-quyen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\thu-vien-files-cong-no.aspx.cs">
+      <DependentUpon>thu-vien-files-cong-no.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\thu-vien-files-cong-no.aspx.designer.cs">
+      <DependentUpon>thu-vien-files-cong-no.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-trang-thai-phu-luc-gia-han.aspx.cs">
+      <DependentUpon>popup-trang-thai-phu-luc-gia-han.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-trang-thai-phu-luc-gia-han.aspx.designer.cs">
+      <DependentUpon>popup-trang-thai-phu-luc-gia-han.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\danh-sach-phu-luc-gia-han.aspx.cs">
+      <DependentUpon>danh-sach-phu-luc-gia-han.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\danh-sach-phu-luc-gia-han.aspx.designer.cs">
+      <DependentUpon>danh-sach-phu-luc-gia-han.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\phu-luc-gia-han-hop-dong-ke-toan.aspx.cs">
+      <DependentUpon>phu-luc-gia-han-hop-dong-ke-toan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\phu-luc-gia-han-hop-dong-ke-toan.aspx.designer.cs">
+      <DependentUpon>phu-luc-gia-han-hop-dong-ke-toan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-trang-thai-hop-dong-thanh-ly.aspx.cs">
+      <DependentUpon>popup-trang-thai-hop-dong-thanh-ly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-trang-thai-hop-dong-thanh-ly.aspx.designer.cs">
+      <DependentUpon>popup-trang-thai-hop-dong-thanh-ly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\danh-sach-bien-ban-thanh-ly-hop-dong.aspx.cs">
+      <DependentUpon>danh-sach-bien-ban-thanh-ly-hop-dong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\danh-sach-bien-ban-thanh-ly-hop-dong.aspx.designer.cs">
+      <DependentUpon>danh-sach-bien-ban-thanh-ly-hop-dong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\thanh-ly-hop-dong-ke-toan.aspx.cs">
+      <DependentUpon>thanh-ly-hop-dong-ke-toan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\thanh-ly-hop-dong-ke-toan.aspx.designer.cs">
+      <DependentUpon>thanh-ly-hop-dong-ke-toan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-tao-bang-cham-cong.aspx.cs">
+      <DependentUpon>popup-tao-bang-cham-cong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-tao-bang-cham-cong.aspx.designer.cs">
+      <DependentUpon>popup-tao-bang-cham-cong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-trang-thai-hop-dong.aspx.cs">
+      <DependentUpon>popup-trang-thai-hop-dong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-trang-thai-hop-dong.aspx.designer.cs">
+      <DependentUpon>popup-trang-thai-hop-dong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-kiem-tra-mst-cong-no.aspx.cs">
+      <DependentUpon>popup-kiem-tra-mst-cong-no.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-kiem-tra-mst-cong-no.aspx.designer.cs">
+      <DependentUpon>popup-kiem-tra-mst-cong-no.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-tao-bang-luong.aspx.cs">
+      <DependentUpon>popup-tao-bang-luong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-tao-bang-luong.aspx.designer.cs">
+      <DependentUpon>popup-tao-bang-luong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\noi-hoat-dong-nhan-vien-giao-nhan.aspx.cs">
+      <DependentUpon>noi-hoat-dong-nhan-vien-giao-nhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\noi-hoat-dong-nhan-vien-giao-nhan.aspx.designer.cs">
+      <DependentUpon>noi-hoat-dong-nhan-vien-giao-nhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\danh-sach-hop-dong-ke-toan.aspx.cs">
+      <DependentUpon>danh-sach-hop-dong-ke-toan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\danh-sach-hop-dong-ke-toan.aspx.designer.cs">
+      <DependentUpon>danh-sach-hop-dong-ke-toan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\hop-dong-ke-toan.aspx.cs">
+      <DependentUpon>hop-dong-ke-toan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\hop-dong-ke-toan.aspx.designer.cs">
+      <DependentUpon>hop-dong-ke-toan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\san-pham.aspx.cs">
+      <DependentUpon>san-pham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\san-pham.aspx.designer.cs">
+      <DependentUpon>san-pham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\nha-cung-cap.aspx.cs">
+      <DependentUpon>nha-cung-cap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\nha-cung-cap.aspx.designer.cs">
+      <DependentUpon>nha-cung-cap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-cong-no-cks.aspx.cs">
+      <DependentUpon>popup-cong-no-cks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-cong-no-cks.aspx.designer.cs">
+      <DependentUpon>popup-cong-no-cks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\dang-nhap.aspx.cs">
+      <DependentUpon>dang-nhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\dang-nhap.aspx.designer.cs">
+      <DependentUpon>dang-nhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\danh-muc-nganh-nghe.aspx.cs">
+      <DependentUpon>danh-muc-nganh-nghe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\danh-muc-nganh-nghe.aspx.designer.cs">
+      <DependentUpon>danh-muc-nganh-nghe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\danh-sach-cong-no-cks.aspx.cs">
+      <DependentUpon>danh-sach-cong-no-cks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\danh-sach-cong-no-cks.aspx.designer.cs">
+      <DependentUpon>danh-sach-cong-no-cks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\danh-sach-cong-no.aspx.cs">
+      <DependentUpon>danh-sach-cong-no.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\danh-sach-cong-no.aspx.designer.cs">
+      <DependentUpon>danh-sach-cong-no.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\danh-sach-ho-so.aspx.cs">
+      <DependentUpon>danh-sach-ho-so.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\danh-sach-ho-so.aspx.designer.cs">
+      <DependentUpon>danh-sach-ho-so.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\danh-sach-loai-hinh-doanh-nghiep.aspx.cs">
+      <DependentUpon>danh-sach-loai-hinh-doanh-nghiep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\danh-sach-loai-hinh-doanh-nghiep.aspx.designer.cs">
+      <DependentUpon>danh-sach-loai-hinh-doanh-nghiep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\danh-sach-menu-cha.aspx.cs">
+      <DependentUpon>danh-sach-menu-cha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\danh-sach-menu-cha.aspx.designer.cs">
+      <DependentUpon>danh-sach-menu-cha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\danh-sach-nhom-quan-tri.aspx.cs">
+      <DependentUpon>danh-sach-nhom-quan-tri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\danh-sach-nhom-quan-tri.aspx.designer.cs">
+      <DependentUpon>danh-sach-nhom-quan-tri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\danh-sach-nhan-vien.aspx.cs">
+      <DependentUpon>danh-sach-nhan-vien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\danh-sach-nhan-vien.aspx.designer.cs">
+      <DependentUpon>danh-sach-nhan-vien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\doi-mat-khau.aspx.cs">
+      <DependentUpon>doi-mat-khau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\doi-mat-khau.aspx.designer.cs">
+      <DependentUpon>doi-mat-khau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\huong-dan.aspx.cs">
+      <DependentUpon>huong-dan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\huong-dan.aspx.designer.cs">
+      <DependentUpon>huong-dan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-cong-no.aspx.cs">
+      <DependentUpon>popup-cong-no.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-cong-no.aspx.designer.cs">
+      <DependentUpon>popup-cong-no.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-danh-sach-thanh-vien.aspx.cs">
+      <DependentUpon>popup-danh-sach-thanh-vien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-danh-sach-thanh-vien.aspx.designer.cs">
+      <DependentUpon>popup-danh-sach-thanh-vien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-edit-file.aspx.cs">
+      <DependentUpon>popup-edit-file.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-edit-file.aspx.designer.cs">
+      <DependentUpon>popup-edit-file.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-1-ketoan.aspx.cs">
+      <DependentUpon>popup-quy-trinh-1-ketoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-1-ketoan.aspx.designer.cs">
+      <DependentUpon>popup-quy-trinh-1-ketoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-2-ketoan.aspx.cs">
+      <DependentUpon>popup-quy-trinh-2-ketoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-2-ketoan.aspx.designer.cs">
+      <DependentUpon>popup-quy-trinh-2-ketoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-giao-hs.aspx.cs">
+      <DependentUpon>popup-quy-trinh-giao-hs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-giao-hs.aspx.designer.cs">
+      <DependentUpon>popup-quy-trinh-giao-hs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-ket-thuc-main.aspx.cs">
+      <DependentUpon>popup-quy-trinh-ket-thuc-main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-ket-thuc-main.aspx.designer.cs">
+      <DependentUpon>popup-quy-trinh-ket-thuc-main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-ket-thuc.aspx.cs">
+      <DependentUpon>popup-quy-trinh-ket-thuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-ket-thuc.aspx.designer.cs">
+      <DependentUpon>popup-quy-trinh-ket-thuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-khac-dau.aspx.cs">
+      <DependentUpon>popup-quy-trinh-khac-dau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-khac-dau.aspx.designer.cs">
+      <DependentUpon>popup-quy-trinh-khac-dau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-ky-hs-ketoan.aspx.cs">
+      <DependentUpon>popup-quy-trinh-ky-hs-ketoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-ky-hs-ketoan.aspx.designer.cs">
+      <DependentUpon>popup-quy-trinh-ky-hs-ketoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-ky-hs.aspx.cs">
+      <DependentUpon>popup-quy-trinh-ky-hs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-ky-hs.aspx.designer.cs">
+      <DependentUpon>popup-quy-trinh-ky-hs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-nop-hs.aspx.cs">
+      <DependentUpon>popup-quy-trinh-nop-hs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-nop-hs.aspx.designer.cs">
+      <DependentUpon>popup-quy-trinh-nop-hs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-skip.aspx.cs">
+      <DependentUpon>popup-quy-trinh-skip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-skip.aspx.designer.cs">
+      <DependentUpon>popup-quy-trinh-skip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-tra-hs-ketoan.aspx.cs">
+      <DependentUpon>popup-quy-trinh-tra-hs-ketoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-tra-hs-ketoan.aspx.designer.cs">
+      <DependentUpon>popup-quy-trinh-tra-hs-ketoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-tra-hs.aspx.cs">
+      <DependentUpon>popup-quy-trinh-tra-hs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh-tra-hs.aspx.designer.cs">
+      <DependentUpon>popup-quy-trinh-tra-hs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh.aspx.cs">
+      <DependentUpon>popup-quy-trinh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-quy-trinh.aspx.designer.cs">
+      <DependentUpon>popup-quy-trinh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\popup-thanh-vien.aspx.cs">
+      <DependentUpon>popup-thanh-vien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\popup-thanh-vien.aspx.designer.cs">
+      <DependentUpon>popup-thanh-vien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\quen-mat-khau.aspx.cs">
+      <DependentUpon>quen-mat-khau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\quen-mat-khau.aspx.designer.cs">
+      <DependentUpon>quen-mat-khau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\thong-tin-ho-so.aspx.cs">
+      <DependentUpon>thong-tin-ho-so.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\thong-tin-ho-so.aspx.designer.cs">
+      <DependentUpon>thong-tin-ho-so.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\trang-chu.aspx.cs">
+      <DependentUpon>trang-chu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\trang-chu.aspx.designer.cs">
+      <DependentUpon>trang-chu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIs\homeMain.ascx.cs">
+      <DependentUpon>homeMain.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIs\homeMain.ascx.designer.cs">
+      <DependentUpon>homeMain.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIs\login.ascx.cs">
+      <DependentUpon>login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIs\login.ascx.designer.cs">
+      <DependentUpon>login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIs\menu.ascx.cs">
+      <DependentUpon>menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIs\menu.ascx.designer.cs">
+      <DependentUpon>menu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIs\MessageBox.ascx.cs">
+      <DependentUpon>MessageBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIs\MessageBox.ascx.designer.cs">
+      <DependentUpon>MessageBox.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Appketoan.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Appketoan.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\ComponentArt.UIFramework.lic" />
+    <None Include="bin\MSCaptcha.dll.refresh" />
+    <None Include="Calendar\images\Thumbs.db" />
+    <None Include="Calendar\images\vssver2.scc" />
+    <Content Include="FileBrowser\IZWebFileManagerThumbnailHandler.ashx" />
+    <None Include="FileBrowser\js\FileManager.js.bundle" />
+    <None Include="FileBrowser\js\FileManager.min.js.map" />
+    <Content Include="FileBrowser\MyUpload.ashx" />
+    <None Include="FileManager\css\Thumbs.db" />
+    <None Include="FileManager\css\ui-lightness\images\Thumbs.db" />
+    <None Include="FileManager\icons\Thumbs.db" />
+    <None Include="FileManager\js\themes\apple\Thumbs.db" />
+    <None Include="FileManager\js\themes\classic\Thumbs.db" />
+    <None Include="FileManager\js\themes\default-rtl\Thumbs.db" />
+    <None Include="FileManager\js\themes\default\Thumbs.db" />
+    <None Include="File\Template\templateHDDV.doc" />
+    <None Include="File\Template\TemplateHDDV.docx" />
+    <None Include="File\Template\TemplatePhuLucGiaHanHDDV.docx" />
+    <None Include="File\Template\TemplateThanhLyHDDV.docx" />
+    <None Include="Images\Thumbs.db" />
+    <None Include="Images\vssver2.scc" />
+    <Content Include="KeepAlive.ashx" />
+    <None Include="Logfile\error.log" />
+    <Content Include="Master\Master.Master" />
+    <Content Include="Master\Master1.Master" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\FBrowser\jquery-1.11.1.min.map" />
+    <None Include="Scripts\FBrowser\plugins\plugins.js.bundle" />
+    <None Include="Scripts\FBrowser\plugins\plugins.min.js.map" />
+    <None Include="Scripts\multiselect\bower.json" />
+    <None Include="Scripts\multiselect\LICENSE" />
+    <None Include="Scripts\multiselect\package.json" />
+    <None Include="Scripts\multiselect\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Appketoan.dbml.layout">
+      <DependentUpon>Appketoan.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="File\ExcelFile\" />
+    <Folder Include="File\Profile\" />
+    <Folder Include="File\ThuVien\" />
+    <Folder Include="File\User\Img\" />
+    <Folder Include="File\WordFile\HopDongDVKT\" />
+    <Folder Include="File\WordFile\HopDongThanhLyDVKT\" />
+    <Folder Include="File\WordFile\PhuLucGiaHanDVKT\" />
+    <Folder Include="Images\Button_Admin\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2066</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

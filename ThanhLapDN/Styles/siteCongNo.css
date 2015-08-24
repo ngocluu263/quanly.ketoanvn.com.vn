@@ -1,0 +1,100 @@
+﻿
+.tCongNo{width:100%;}
+.tCongNo td{width:24%; padding: 5px 2px}
+.tCongNo td.tt_note{width:17%}
+.tCongNo td.note{width:76%}
+.tCongNo #chkCoGiuCKS {width:20px;}
+.tCongNo #chkBPCD01 {width:20px;}
+.tCongNo #chkBPCD02 {width:20px;}
+.tCongNo #chkBPCD03 {width:20px;}
+.tCongNo #chkBPCD04 {width:20px;}
+.tCongNo #chkBPCD05 {width:20px;}
+.tCongNo #chkBPCD06 {width:20px;}
+.tCongNo #chkBPCD07 {width:20px;}
+.tCongNo #chkBPCD08 {width:20px;}
+.tCongNo #chkBPCD09 {width:20px;}
+.tCongNo #chkBPCD10 {width:20px;}
+.tCongNo #chkBPCD11 {width:20px;}
+.tCongNo #chkBPCD12 {width:20px;}
+.tCongNo #chkBPCD13 {width:20px;}
+.tCongNo .link{background: #3366FF;color: #fff;padding: 3px 10px;text-decoration: none;border-radius: 10px;}
+.tCongNo .tcenter{text-align:center !important;background-color:#99CCFF !important;font-size: 1.2em;  font-weight: 700;}
+.tCongNo tr td:nth-child(1){ text-align:right;background:#F8F8F8;white-space:nowrap;}
+.tCongNo tr td:nth-child(2){ text-align:left;}
+.tCongNo tr td:nth-child(3){ text-align:right;background:#F8F8F8;white-space:nowrap;}
+.tCongNo tr td:nth-child(4){ text-align:left;}
+.tCongNo .tBottom{ text-align:center !important;background:#fff !important;padding:5px 0px 10px 0px;}
+.tCongNo input {width:190px;}
+.tCongNo input.picker {width:155px;}
+.tCongNo textarea {width:188px;}
+.tCongNo select {width:194px;}
+.col_Congno { float: left; width: 49% }
+.col_Congno.r_col { float: right }
+.tt_monh { width: 100% }
+.tCongNo tr .tsubRow {
+	text-align: left !important;
+	background-color: #d0e7fd !important;
+	font-weight: 700;
+}
+@media only screen and (max-width: 640px) {
+	.col_Congno {
+		width: 100%
+	}
+	.tCongNo, .tCongNo tbody, .tCongNo tr {
+		float: left;
+		display: block;
+		width: 100%;
+		clear: both;
+	}
+	.tCongNo tr td {
+		float: left;
+		display: inline-block;
+		padding: 5px 0 5px 5%; 
+		text-align: left
+	}
+	.tCongNo tr td:nth-child(2n+1) {
+		width: 35%;	
+		text-align: right;
+		clear: both
+	}
+	.tCongNo tr td:nth-child(2n) {
+		float: right;
+		width: 55%;
+	}
+	.tCongNo input, .tCongNo select, .tCongNo textarea {
+		width: 98% !important;		
+	}
+	.tCongNo input[type = checkbox] {
+		width: auto !important;		
+	}	
+	.tCongNo input.fee {
+		width: 45% !important;		
+	}
+	.tCongNo td.date_time table {
+		width: 100% !important
+	}
+	.tCongNo td.date_time td {
+		width: 50% !important
+	}
+	.tCongNo td.date_time table td {
+		padding: 0 !important
+	}
+	.tCongNo input#pickdate_ThanhLap_Picker_picker {
+		float: left;
+		width: 90% !important
+	}
+	.tCongNo textarea {
+		height: auto
+	}
+	.tCongNo select#ddlCity, .tCongNo select#ddlDist {
+		width: 49% !important
+	}
+	.t_month tr td.tcenter, td.tBottom, .t_alldebt td {
+		width: 95% !important
+	}
+	.tCongNo tr .tsubRow {
+		width: 100% !important;
+		padding: 5px 0 !important;
+		text-align: center !important
+	}
+}

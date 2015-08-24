@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_thanhlapcty" Class="AppketoanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=db_thanhlapcty;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="db_thanhlapctyConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[GROUP]" Member="GROUPs">
+    <Type Name="GROUP">
+      <Column Name="GROUP_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GROUP_NAME" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="GROUP_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="GROUP_GROUP_MENU" Member="GROUP_MENUs" ThisKey="GROUP_ID" OtherKey="GROUP_ID" Type="GROUP_MENU" />
+      <Association Name="GROUP_USER" Member="USERs" ThisKey="GROUP_ID" OtherKey="GROUP_ID" Type="USER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GROUP_MENU" Member="GROUP_MENUs">
+    <Type Name="GROUP_MENU">
+      <Column Name="GROUP_MENU_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MENU_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GROUP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[ORDER]" Member="ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="GROUP_GROUP_MENU" Member="GROUP" ThisKey="GROUP_ID" OtherKey="GROUP_ID" Type="GROUP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MENU_PARENT" Member="MENU_PARENTs">
+    <Type Name="MENU_PARENT">
+      <Column Name="MENU_PAR_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MENU_NAME" Type="System.String" DbType="NVarChar(550)" CanBeNull="true" />
+      <Column Name="MENU_PAR_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MENU_RANK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MENU_PARENT" Member="MENU_PARENT1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MENU_PARENT_LINK" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PROFILE_CATEGORY" Member="PROFILE_CATEGORies">
+    <Type Name="PROFILE_CATEGORY">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PROF_CA_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PROF_CA_RANK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_CA_PARENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_CA_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_CA_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_CA_ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WORKFLOW" Member="WORKFLOWs">
+    <Type Name="WORKFLOW">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WORK_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WORK_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WORK_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WORK_LEVEL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PROFILE_TRADES" Member="PROFILE_TRADEs">
+    <Type Name="PROFILE_TRADE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TRAD_NAME" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TRAD_DESC" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="TRAD_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRAD_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRAD_ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WORKFLOW_STATUS" Member="WORKFLOW_STATUS">
+    <Type Name="WORKFLOW_STATUS">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ST_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_STATUS1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_NOTE" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="PROF_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PROFILE_MEMBER" Member="PROFILE_MEMBERs">
+    <Type Name="PROFILE_MEMBER">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MEM_FULLNAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MEM_BIRTHDAY" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MEM_SEX" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MEM_NATIONALITY" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MEM_CMND" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MEM_DATE_CMND" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MEM_ADDRESS_CMND" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MEM_HOUSEHOLD" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MEM_ADDRESS" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MEM_CAPITAL" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="MEM_PERCENT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MEM_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MEM_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MEM_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MEM_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MEM_POSTION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MEM_FIELD1" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="MEM_FIELD2" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="MEM_FIELD3" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="PROF_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TYPE_COMPANY" Member="TYPE_COMPANies">
+    <Type Name="TYPE_COMPANY">
+      <Column Name="TYPE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TYPE_NAME" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TYPE_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPE_RANK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPE_PARENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORDERBY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPE_REG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TYPE_LIST_CHOOSE" Member="TYPE_LIST_CHOOSEs">
+    <Type Name="TYPE_LIST_CHOOSE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PROF_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CMND" Member="CMNDs">
+    <Type Name="CMND">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CMND_CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CMND_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WORKFLOW_USER" Member="WORKFLOW_USERs">
+    <Type Name="WORKFLOW_USER">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WORK_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WORK_STATUS1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WORK_FIELD1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="WORK_FIELD2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PROFILE_ATTACH" Member="PROFILE_ATTACHes">
+    <Type Name="PROFILE_ATTACH">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ATT_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATT_LINK" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ATT_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ATT_USER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AREA_PROPERTIES" Member="AREA_PROPERTies">
+    <Type Name="AREA_PROPERTy">
+      <Column Name="PROP_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PROP_NAME" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PROP_DESC" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PROP_PARENT_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PROP_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROP_RANK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROP_SHIPPING_FEE" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PROP_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PROP_PARENT_PATH" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="PROP_PRIORITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PROFILE_NEW" Member="PROFILE_NEWs">
+    <Type Name="PROFILE_NEW">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PROF_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PROF_TRANSACTION" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PROF_ATC" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PROF_ADDRESS" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PROF_TAXCODE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PROF_TOTAL_CAPITAL" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PROF_CAPITAL" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PROF_PHONE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PROF_EMAIL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PROF_NOTE" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="PROF_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PROF_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_LEVEL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_COST1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PROF_COST2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PROF_DATE_COST" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PROF_FILE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PROF_REG1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_REG2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_FIELD1" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="PROF_FIELD2" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="PROF_FIELD3" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="TRADES_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CAT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ATT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROF_PARENT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HAVE_SERVICES" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HAVE_DK_TKNH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HAVE_DK_GTGT_TT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HAVE_DK_GTGT_KT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HAVE_HD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BIEU_PHI" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="USER_NVKD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_KT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_GN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGAY_NHAN_HS" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NGAY_TRA_HS" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CKS_NHACUNGCAP" Member="CKS_NHACUNGCAPs">
+    <Type Name="CKS_NHACUNGCAP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NCC_MA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NCC_TEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NCC_HOA_HONG" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NCC_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NCC_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NCC_ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CKS_SANPHAM" Member="CKS_SANPHAMs">
+    <Type Name="CKS_SANPHAM">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SP_MA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SP_TEN" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="SP_SOTHANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SP_PHIDV" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="SP_GIATB" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="SP_VAT" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="SP_TONGPHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NCC_MA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SP_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SP_ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONG_NO_CKS" Member="CONG_NO_CKs">
+    <Type Name="CONG_NO_CK">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TEN_CTY" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MST" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NV_KD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGAY_NHAN_TB" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TINH_TRANG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LOAI_HOPDONG" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CKS_NHA_CUNG_CAP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CKS_SAN_PHAM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CKS_NGAY_HH_TB" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="CKS_PHI_DV" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CKS_GIA_TK" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CKS_VAT" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CKS_TONG_CONG" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CKS_HOA_HONG_TL" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CKS_HOA_HONG_DL" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CKS_HOA_HONG_VAT" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CKS_HOA_HONG" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CKS_TONG_TT_NCC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PM_NHA_CUNG_CAP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PM_SAN_PHAM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PM_NGAY_HH_TB" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PM_PHI_DV" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PM_GIA_TK" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PM_VAT" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PM_TONG_CONG" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PM_HOA_HONG_TL" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PM_HOA_HONG_DL" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PM_HOA_HONG_VAT" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PM_HOA_HONG" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PM_TONG_TT_NCC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TT_TK_CKS" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TT_PHAN_MEM" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TT_HH_CKS" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TT_HH_PM" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CON_NO" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_THU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GHI_CHU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="THANG" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="NAM" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NV_GIAONHAN" Member="NV_GIAONHANs">
+    <Type Name="NV_GIAONHAN">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PROP_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PROP_PARENT_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PROP_ID_OTHER" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LUONG_DANHSACH" Member="LUONG_DANHSACHes">
+    <Type Name="LUONG_DANHSACH">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BL_MANV" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BL_TENNV" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BL_THANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BL_NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BL_DT_SPDV" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_LUONG_CB" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_LUONG_NC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_LUONG_SP" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_LUONG_DA_TV" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_PC_THUONG" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_PC_KHAC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_BHXH" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_BHYT" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_BHTN" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_KHAUTRU_KHAC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_THUNHAP_TRUOCTHUE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_TAMUNG" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_THUE_THUNHAP" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_LUONG_THUCNHAN" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BL_KYTEN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BL_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="BL_PHONGBAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LUONG_DOANHTHU_SP" Member="LUONG_DOANHTHU_SPs">
+    <Type Name="LUONG_DOANHTHU_SP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MST" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TEN_CTY" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DOANH_THU" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TYLE_LUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LUONG_SP" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="LUONG_DUAN_TV" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="THANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MA_NV" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PHONGBAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONG_NO" Member="CONG_NOs">
+    <Type Name="CONG_NO">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TINH_TRANG" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DATE_TINHTRANG" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DATE_TINHTRANG1" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DATE_THANHLAP" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TEN_KH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="QL_THUE_DIST" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QL_THUE_CITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MST" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIA_CHI" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="GIAM_DOC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DIEN_THOAI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="THANG_BD_THU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NV_KT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_DV_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_5" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_5" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_6" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_6" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_7" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_7" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_8" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_8" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_9" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_9" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_10" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_10" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_11" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_11" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_11" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_12" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_12" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_BCTC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_BCTC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_BCTC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TONG_NO" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NV_KD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NV_GN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GHI_CHU" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="FILED1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="FILED2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PROF_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BIEUPHI1_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BIEUPHI1_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BIEUPHI2_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BIEUPHI2_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BIEUPHI3_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BIEUPHI3_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BIEUPHI4_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BIEUPHI4_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BIEUPHI5_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BIEUPHI5_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BIEUPHI6_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BIEUPHI6_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BIEUPHI_THEM" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="SOLUONG_T1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T11" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T12" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T13" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DA_TT1_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT1_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT1_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT1_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT2_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT2_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT2_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT2_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT3_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT3_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT3_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT3_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU3" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT4_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT4_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT4_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT4_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU4" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT5_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT5_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT5_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT5_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU5" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT6_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT6_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT6_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT6_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU6" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT7_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT7_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT7_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT7_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU7" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT8_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT8_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT8_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT8_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU8" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT9_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT9_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT9_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT9_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU9" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT10_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT10_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT10_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT10_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU10" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT11_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT11_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT11_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT11_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU11" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT12_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT12_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT12_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT12_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU12" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT13_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT13_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT13_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT13_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU13" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NO_NAM_TRUOC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_KY_HD" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LOAI_CKS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NGAY_HET_HAN_CKS" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="GIU_CKS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGAY_GIU_CKS" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[USER]" Member="USERs">
+    <Type Name="USER">
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USER_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="USER_UN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="USER_PW" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="USER_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SALT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="USER_GIOITINH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_NGAYSINH" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="USER_CMND" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="USER_CMND_NGAYCAP" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="USER_CMND_NOICAP" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="USER_DANTOC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="USER_NGUYENQUAN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="USER_NOIDK_HK" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="USER_ADDRESS" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="USER_EMAIL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="USER_EMAIL_CANHAN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="USER_PHONE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="USER_PHONE_CANHAN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NT_HOTEN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NT_SDT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NT_MOIQUANHE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="USER_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="USER_IMG" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="GROUP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_THEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_SUA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_XOA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_CAPNHAT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_TRINHDO" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="USER_CHUCVU" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="USER_COBH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_LUONG_CB" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="USER_LUONG_BH" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="USER_BHXH" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="USER_BHXH_PT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="USER_BHYT" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="USER_BHYT_PT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="USER_BHTN" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="USER_BHTN_PT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="USER_CHINHANH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_MACC" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Association Name="GROUP_USER" Member="GROUP" ThisKey="GROUP_ID" OtherKey="GROUP_ID" Type="GROUP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHAM_CONG" Member="CHAM_CONGs">
+    <Type Name="CHAM_CONG">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CC_MACC" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CC_USERID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CC_PHONGBAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CC_THANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CC_NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CC_NGAY" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="CC_THU" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CC_VAO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CC_RA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CC_SONGAYTRE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CC_SONGAYNGHI" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CC_SOPHUTTRE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MER_HOPDONG_DV" Member="MER_HOPDONG_DVs">
+    <Type Name="MER_HOPDONG_DV">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MER_POS01" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MER_POS02" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_POS03" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POS04" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POS05" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="MER_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_ADDRESS" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MER_PHONE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MER_TAXCODE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_EMAIL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_NX" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="MER_REPRESENT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_POSITION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_COST_TITLE01" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="MER_COST_TITLE02" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="MER_COST_TITLE03" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="MER_COST_DETAIL" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MER_BEGIN_M" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_DEADLINE_INT" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MER_DEADLINE_STRING" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MER_CHI_CHU" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MER_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MER_NGAY_HT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PHI_HANGTHANG" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_TU1_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_TU1_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_HD1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_TU2_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_TU2_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_HD2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_TU3_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_TU3_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_HD3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_TU4_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_TU4_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_HD4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_TU5_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_TU5_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_HD5" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_TU6_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_TU6_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_HD6" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_THEMPHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_THEMHD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MER_THANHLY_HOPDONG" Member="MER_THANHLY_HOPDONGs">
+    <Type Name="MER_THANHLY_HOPDONG">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MER_POS01" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MER_POS02" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_POS03" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POS04" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POS05" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="MER_NAME1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_NAME2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_DAYNOW" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_MONTHNOW" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_YEARNOW" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="MER_ADDRESS" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MER_PHONE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MER_TAXCODE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_EMAIL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_NX" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="MER_REPRESENT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_POSITION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_DAYEND" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_MONTHEND" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_YEAREND" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="MER_CHI_CHU" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MER_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MER_NGAY_HT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MER_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MER_PHULUC_GIAHAN" Member="MER_PHULUC_GIAHANs">
+    <Type Name="MER_PHULUC_GIAHAN">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MER_POS01" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POS02" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POS03" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="MER_POS04" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_POS05" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_POS06" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_POS07" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POS08" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POS09" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="MER_POS10" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_ADDRESS" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MER_PHONE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MER_TAXCODE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_EMAIL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_NX" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="MER_REPRESENT" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_POSITION" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MER_POSBODY01" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_POSBODY02" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_POSBODY03" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_POSBODY04" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_POSBODY05" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POSBODY06" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POSBODY07" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="MER_COST_TITLE" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="MER_COST_DETAIL" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MER_POSBODY08" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POSBODY09" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POSBODY10" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="MER_POSFO01" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_POSFO02" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_POSFO03" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_POSFO04" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MER_POSFO05" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POSFO06" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="MER_POSFO07" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="MER_DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MER_CHI_CHU" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MER_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MER_NGAY_HT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USER_PERMISSION" Member="USER_PERMISSIONs">
+    <Type Name="USER_PERMISSION">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PER_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PER_GROUP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PER_USER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PER_VIEW" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PER_ADD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PER_EDIT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PER_DELE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.converdate" Method="converdate" IsComposable="true">
+    <Parameter Name="datetimeval" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="datetimenow" Type="System.DateTime" DbType="SmallDateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TEST1" Method="TEST1">
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

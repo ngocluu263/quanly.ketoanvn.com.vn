@@ -1,0 +1,14 @@
+D:\ThanhPT\Quan_ly_du_an_PM\Appketoan\obj\Debug\QuanLyDuAn.dll.licenses
+D:\ThanhPT\Quan_ly_du_an_PM\Appketoan\bin\QuanLyDuAn.dll
+D:\ThanhPT\Quan_ly_du_an_PM\Appketoan\bin\QuanLyDuAn.pdb
+D:\ThanhPT\Quan_ly_du_an_PM\Appketoan\obj\Debug\QuanLyDuAn.dll
+D:\ThanhPT\Quan_ly_du_an_PM\Appketoan\obj\Debug\QuanLyDuAn.pdb
+D:\ThanhPT\Quan_ly_du_an_PM\Appketoan\obj\Debug\QuanLyDuAn.ShowReport.resources
+D:\ThanhPT\Quan_ly_du_an_PM\Appketoan\obj\Debug\QuanLyDuAn.csproj.GenerateResource.Cache
+D:\ThanhPT\Quan_ly_du_an_PM\Appketoan\obj\Debug\QuanLyDuAn.csprojResolveAssemblyReference.cache
+D:\THANHPT\ThanhPT_PMQL\ql_thanh_lap_dn_app\Appketoan\obj\Debug\QuanLyDuAn.csprojResolveAssemblyReference.cache
+D:\THANHPT\ThanhPT_PMQL\ql_thanh_lap_dn_app\Appketoan\bin\ThanhLapDN.dll
+D:\THANHPT\ThanhPT_PMQL\ql_thanh_lap_dn_app\Appketoan\bin\ThanhLapDN.pdb
+D:\THANHPT\ThanhPT_PMQL\ql_thanh_lap_dn_app\Appketoan\obj\Debug\ThanhLapDN.dll.licenses
+D:\THANHPT\ThanhPT_PMQL\ql_thanh_lap_dn_app\Appketoan\obj\Debug\ThanhLapDN.dll
+D:\THANHPT\ThanhPT_PMQL\ql_thanh_lap_dn_app\Appketoan\obj\Debug\ThanhLapDN.pdb

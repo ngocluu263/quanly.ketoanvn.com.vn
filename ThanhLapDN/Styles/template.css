@@ -1,0 +1,67 @@
+﻿/*Support*/
+#sp_head {
+	position: fixed;
+	top: 200px;
+	right: 0;
+	z-index: 100;
+	color: #111111
+}
+#map-legend-control {
+	width: 30px;
+	float: right;
+	position: relative;
+	right: 5px
+}
+#map-legend {
+	display: none;
+	width: 250px;
+	min-height: 300px;
+	background: #f4f4f4;
+	height: 100%;
+	margin: 0;
+	padding: 10px;
+	float: right;
+	position: relative;
+}
+#map-legend li {
+	float: left;
+	width: 100%;
+	margin: 5px 0;
+	text-align: center
+}
+#map-legend a {
+	width: 70px;
+	margin-top: 5px;
+}
+#sp_head .hotline {
+	font-weight: 500;
+	font-size: 1.3em;
+}
+#sp_head .hotline .number_phone {
+	display: block;
+	color: #ff0000
+}
+
+/*Pagination*/
+.pagination {
+	float: left;
+	width:100%;
+	margin:auto;
+	margin:15px 0;
+	text-align: center
+}
+.pagination a {
+	padding: 3px 5px;
+	color: #444444;
+	border-right: 1px solid #333333;
+}
+.pagination b, .pagination a:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+	padding: 3px 5px;
+	border-right: 1px solid #117d49;
+	background: #117d49;
+}
+.pagination a:last-child {
+	border: none
+}
