@@ -126,7 +126,7 @@ namespace ThanhLapDN
     #endregion
 		
 		public AppketoanDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["db_thanhlapctyConnectionString1"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["db_thanhlapctyConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
