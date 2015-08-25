@@ -96,7 +96,7 @@ namespace ThanhLapDN.Data
                             _field == "9" ? ((n.PHI == null || n.PHI == 0) && (n.BIEUPHI1_SL == null || n.BIEUPHI1_SL == "")) :
                             _field == "10" ? ((n.NV_KT == null || n.NV_KT == 0)) :
                             _field == "11" ? ((n.NV_KD == null || n.NV_KD == 0)) :
-                            _field == "12" ? ((n.NV_GN == null || n.NV_GN == 0)) :
+                            _field == "12" ? ((n.NV_GN == null || n.NV_GN == 0)) :                            
                             "" == _txt)
             ).OrderByDescending(n => n.STT).ToList();
         }

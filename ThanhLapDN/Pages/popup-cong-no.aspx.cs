@@ -7,18 +7,20 @@ using System.Web.UI.WebControls;
 using vpro.functions;
 using ThanhLapDN.Data;
 using System.Data;
+using Appketoan.Components;
 
 namespace ThanhLapDN.Pages
 {
     public partial class popup_cong_no : System.Web.UI.Page
     {
         private AppketoanDataContext db = new AppketoanDataContext();
-        CongNoData proj_data = new CongNoData();
-        UnitData unit_data = new UnitData();
-        NhaCungCapData _NhaCungCapData = new NhaCungCapData();
-        int id = 0;
-        int namCN = 0;
-        string mst = "";
+        private CongNoData proj_data = new CongNoData();
+        private UnitData unit_data = new UnitData();
+        private NhaCungCapData _NhaCungCapData = new NhaCungCapData();
+        private int id = 0;
+        private int namCN = 0;
+        private NopThueRepo _NopThueRepo = new NopThueRepo();
+        private string mst = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             id = Utils.CIntDef(Request.QueryString["id"]);
@@ -171,6 +173,8 @@ namespace ThanhLapDN.Pages
                     chkCoGiuCKS.Checked = true ? i[0].GIU_CKS == 1 : i[0].GIU_CKS == 0;
                     txtNgayLayCKS.Text = i[0].NGAY_GIU_CKS == null ? "" : i[0].NGAY_GIU_CKS.Value.ToString("dd/MM/yyyy");
                     txtGhiChuMain.Text = i[0].GHI_CHU;
+                    int loainop = Utils.CIntDef(i[0].LOAI_NOP, 0);
+                    rdbLoainop.SelectedIndex = loainop == 2 ? 1 : 0;
 
                     txtPhiDV01.Text = i[0].PHI_DV_1 == null ? "" : i[0].PHI_DV_1.Value.ToString("###,##0").Replace(".",",");
                     txtSL01.Text = Utils.CStrDef(i[0].SOLUONG_T1);
@@ -181,6 +185,7 @@ namespace ThanhLapDN.Pages
                     txtDaTT01_4.Text = i[0].DA_TT1_4 == null ? "" : i[0].DA_TT1_4.Value.ToString("###,##0").Replace(".",",");
                     txtNgayTT01.Text = i[0].NGAY_TT_1;
                     txtConNo01.Text = i[0].CON_NO_1 == null ? "" : i[0].CON_NO_1.Value.ToString("###,##0").Replace(".",",");
+                    chkDanopthue1.Checked = getnopthue(mst, year, 1);
 
                     txtPhiDV02.Text = i[0].PHI_DV_2 == null ? "" : i[0].PHI_DV_2.Value.ToString("###,##0").Replace(".",",");
                     txtSL02.Text = Utils.CStrDef(i[0].SOLUONG_T2);
@@ -191,6 +196,7 @@ namespace ThanhLapDN.Pages
                     txtDaTT02_4.Text = i[0].DA_TT2_4 == null ? "" : i[0].DA_TT2_4.Value.ToString("###,##0").Replace(".",",");
                     txtNgayTT02.Text = i[0].NGAY_TT_2;
                     txtConNo02.Text = i[0].CON_NO_2 == null ? "" : i[0].CON_NO_2.Value.ToString("###,##0").Replace(".",",");
+                    chkDanopthue2.Checked = getnopthue(mst, year, 2);
 
                     txtPhiDV03.Text = i[0].PHI_DV_3 == null ? "" : i[0].PHI_DV_3.Value.ToString("###,##0").Replace(".",",");
                     txtSL03.Text = Utils.CStrDef(i[0].SOLUONG_T3);
@@ -201,6 +207,7 @@ namespace ThanhLapDN.Pages
                     txtDaTT03_4.Text = i[0].DA_TT3_4 == null ? "" : i[0].DA_TT3_4.Value.ToString("###,##0").Replace(".",",");
                     txtNgayTT03.Text = i[0].NGAY_TT_3;
                     txtConNo03.Text = i[0].CON_NO_3 == null ? "" : i[0].CON_NO_3.Value.ToString("###,##0").Replace(".",",");
+                    chkDanopthue3.Checked = getnopthue(mst, year, 3);
 
                     txtPhiDV04.Text = i[0].PHI_DV_4 == null ? "" : i[0].PHI_DV_4.Value.ToString("###,##0").Replace(".",",");
                     txtSL04.Text = Utils.CStrDef(i[0].SOLUONG_T4);
@@ -211,6 +218,7 @@ namespace ThanhLapDN.Pages
                     txtDaTT04_4.Text = i[0].DA_TT4_4 == null ? "" : i[0].DA_TT4_4.Value.ToString("###,##0").Replace(".",",");
                     txtNgayTT04.Text = i[0].NGAY_TT_4;
                     txtConNo04.Text = i[0].CON_NO_4 == null ? "" : i[0].CON_NO_4.Value.ToString("###,##0").Replace(".",",");
+                    chkDanopthue4.Checked = getnopthue(mst, year, 4);
 
                     txtPhiDV05.Text = i[0].PHI_DV_5 == null ? "" : i[0].PHI_DV_5.Value.ToString("###,##0").Replace(".",",");
                     txtSL05.Text = Utils.CStrDef(i[0].SOLUONG_T5);
@@ -221,6 +229,7 @@ namespace ThanhLapDN.Pages
                     txtDaTT05_4.Text = i[0].DA_TT5_4 == null ? "" : i[0].DA_TT5_4.Value.ToString("###,##0").Replace(".",",");
                     txtNgayTT05.Text = i[0].NGAY_TT_5;
                     txtConNo05.Text = i[0].CON_NO_5 == null ? "" : i[0].CON_NO_5.Value.ToString("###,##0").Replace(".",",");
+                    chkDanopthue5.Checked = getnopthue(mst, year, 5);
 
                     txtPhiDV06.Text = i[0].PHI_DV_6 == null ? "" : i[0].PHI_DV_6.Value.ToString("###,##0").Replace(".",",");
                     txtSL06.Text = Utils.CStrDef(i[0].SOLUONG_T6);
@@ -231,6 +240,7 @@ namespace ThanhLapDN.Pages
                     txtDaTT06_4.Text = i[0].DA_TT6_4 == null ? "" : i[0].DA_TT6_4.Value.ToString("###,##0").Replace(".",",");
                     txtNgayTT06.Text = i[0].NGAY_TT_6;
                     txtConNo06.Text = i[0].CON_NO_6 == null ? "" : i[0].CON_NO_6.Value.ToString("###,##0").Replace(".",",");
+                    chkDanopthue6.Checked = getnopthue(mst, year, 6);
 
                     txtPhiDV07.Text = i[0].PHI_DV_7 == null ? "" : i[0].PHI_DV_7.Value.ToString("###,##0").Replace(".",",");
                     txtSL07.Text = Utils.CStrDef(i[0].SOLUONG_T7);
@@ -241,6 +251,7 @@ namespace ThanhLapDN.Pages
                     txtDaTT07_4.Text = i[0].DA_TT7_4 == null ? "" : i[0].DA_TT7_4.Value.ToString("###,##0").Replace(".",",");
                     txtNgayTT07.Text = i[0].NGAY_TT_7;
                     txtConNo07.Text = i[0].CON_NO_7 == null ? "" : i[0].CON_NO_7.Value.ToString("###,##0").Replace(".",",");
+                    chkDanopthue7.Checked = getnopthue(mst, year, 7);
 
                     txtPhiDV08.Text = i[0].PHI_DV_8 == null ? "" : i[0].PHI_DV_8.Value.ToString("###,##0").Replace(".",",");
                     txtSL08.Text = Utils.CStrDef(i[0].SOLUONG_T8);
@@ -251,6 +262,7 @@ namespace ThanhLapDN.Pages
                     txtDaTT08_4.Text = i[0].DA_TT8_4 == null ? "" : i[0].DA_TT8_4.Value.ToString("###,##0").Replace(".",",");
                     txtNgayTT08.Text = i[0].NGAY_TT_8;
                     txtConNo08.Text = i[0].CON_NO_8 == null ? "" : i[0].CON_NO_8.Value.ToString("###,##0").Replace(".",",");
+                    chkDanopthue8.Checked = getnopthue(mst, year, 8);
 
                     txtPhiDV09.Text = i[0].PHI_DV_9 == null ? "" : i[0].PHI_DV_9.Value.ToString("###,##0").Replace(".",",");
                     txtSL09.Text = Utils.CStrDef(i[0].SOLUONG_T9);
@@ -261,6 +273,7 @@ namespace ThanhLapDN.Pages
                     txtDaTT09_4.Text = i[0].DA_TT9_4 == null ? "" : i[0].DA_TT9_4.Value.ToString("###,##0").Replace(".",",");
                     txtNgayTT09.Text = i[0].NGAY_TT_9;
                     txtConNo09.Text = i[0].CON_NO_9 == null ? "" : i[0].CON_NO_9.Value.ToString("###,##0").Replace(".",",");
+                    chkDanopthue9.Checked = getnopthue(mst, year, 9);
 
                     txtPhiDV10.Text = i[0].PHI_DV_10 == null ? "" : i[0].PHI_DV_10.Value.ToString("###,##0").Replace(".",",");
                     txtSL10.Text = Utils.CStrDef(i[0].SOLUONG_T10);
@@ -271,6 +284,7 @@ namespace ThanhLapDN.Pages
                     txtDaTT10_4.Text = i[0].DA_TT10_4 == null ? "" : i[0].DA_TT10_4.Value.ToString("###,##0").Replace(".",",");
                     txtNgayTT10.Text = i[0].NGAY_TT_10;
                     txtConNo10.Text = i[0].CON_NO_10 == null ? "" : i[0].CON_NO_10.Value.ToString("###,##0").Replace(".",",");
+                    chkDanopthue10.Checked = getnopthue(mst, year, 10);
 
                     txtPhiDV11.Text = i[0].PHI_DV_11 == null ? "" : i[0].PHI_DV_11.Value.ToString("###,##0").Replace(".",",");
                     txtSL11.Text = Utils.CStrDef(i[0].SOLUONG_T11);
@@ -281,6 +295,7 @@ namespace ThanhLapDN.Pages
                     txtDaTT11_4.Text = i[0].DA_TT11_4 == null ? "" : i[0].DA_TT11_4.Value.ToString("###,##0").Replace(".",",");
                     txtNgayTT11.Text = i[0].NGAY_TT_11;
                     txtConNo11.Text = i[0].CON_NO_11 == null ? "" : i[0].CON_NO_11.Value.ToString("###,##0").Replace(".",",");
+                    chkDanopthue11.Checked = getnopthue(mst, year, 11);
 
                     txtPhiDV12.Text = i[0].PHI_DV_12 == null ? "" : i[0].PHI_DV_12.Value.ToString("###,##0").Replace(".",",");
                     txtSL12.Text = Utils.CStrDef(i[0].SOLUONG_T12);
@@ -291,6 +306,7 @@ namespace ThanhLapDN.Pages
                     txtDaTT12_4.Text = i[0].DA_TT12_4 == null ? "" : i[0].DA_TT12_4.Value.ToString("###,##0").Replace(".",",");
                     txtNgayTT12.Text = i[0].NGAY_TT_12;
                     txtConNo12.Text = i[0].CON_NO_12 == null ? "" : i[0].CON_NO_12.Value.ToString("###,##0").Replace(".",",");
+                    chkDanopthue12.Checked = getnopthue(mst, year, 12);
 
                     txtPhiDV13.Text = i[0].PHI_DV_BCTC == null ? "" : i[0].PHI_DV_BCTC.Value.ToString("###,##0").Replace(".",",");
                     txtSL13.Text = Utils.CStrDef(i[0].SOLUONG_T13);
@@ -355,6 +371,8 @@ namespace ThanhLapDN.Pages
                     chkCoGiuCKS.Checked = true ? obj.GIU_CKS == 1 : obj.GIU_CKS == 0;
                     txtNgayLayCKS.Text = obj.NGAY_GIU_CKS == null ? "" : obj.NGAY_GIU_CKS.Value.ToString("dd/MM/yyyy");
                     txtGhiChuMain.Text = obj.GHI_CHU;
+                    int loainop = Utils.CIntDef(i[0].LOAI_NOP, 0);
+                    rdbLoainop.SelectedIndex = loainop == 2 ? 1 : 0;
 
                     //Tắt chọn năm khi chưa nhập MST
                     ddlNam.Enabled = obj.MST != null && obj.MST != "" ? true : false;
@@ -571,6 +589,7 @@ namespace ThanhLapDN.Pages
                     }
                     else i.NGAY_GIU_CKS = null;
                     i.GHI_CHU = txtGhiChuMain.Text;
+                    i.LOAI_NOP = Utils.CIntDef(rdbLoainop.SelectedItem.Value);
                     i.DATE = DateTime.Now;
 
                     i.BIEUPHI1_SL = txtBP1_SL.Text.Trim();
@@ -637,6 +656,7 @@ namespace ThanhLapDN.Pages
                     }
                     else i.NGAY_GIU_CKS = null;
                     i.GHI_CHU = txtGhiChuMain.Text;
+                    i.LOAI_NOP = Utils.CIntDef(rdbLoainop.SelectedItem.Value);
                     i.DATE = DateTime.Now;
                     i.NAM = Utils.CIntDef(ddlNam.SelectedValue);
 
@@ -711,6 +731,7 @@ namespace ThanhLapDN.Pages
                     }
                     else obj.NGAY_GIU_CKS = null;
                     obj.GHI_CHU = txtGhiChuMain.Text;
+                    obj.LOAI_NOP = Utils.CIntDef(rdbLoainop.SelectedItem.Value);
                     obj.DATE = DateTime.Now;
 
                     obj.BIEUPHI1_SL = txtBP1_SL.Text.Trim();
@@ -777,6 +798,7 @@ namespace ThanhLapDN.Pages
                     }
                     else i.NGAY_GIU_CKS = null;
                     i.GHI_CHU = txtGhiChuMain.Text;
+                    i.LOAI_NOP = Utils.CIntDef(rdbLoainop.SelectedItem.Value);
                     i.DATE = DateTime.Now;
 
                     i.BIEUPHI1_SL = txtBP1_SL.Text.Trim();
@@ -811,6 +833,16 @@ namespace ThanhLapDN.Pages
         #endregion
 
         #region Funtion
+        private bool getnopthue(string mst, int nam, int thang)
+        {
+            bool b = false;
+            var item = _NopThueRepo.GetByMstAndNamAndThang(mst, nam, thang);
+            if (item != null)
+            {
+                b = Utils.CBoolDef(item.DA_NOP_THUE);
+            }
+            return b;
+        }
         public void TestPermission()
         {
             try
@@ -1383,7 +1415,8 @@ namespace ThanhLapDN.Pages
             int tt2 = Utils.CIntDef(txtDaTT01_2.Text.Replace(",", ""));
             int tt3 = Utils.CIntDef(txtDaTT01_3.Text.Replace(",", ""));
             int tt4 = Utils.CIntDef(txtDaTT01_4.Text.Replace(",", ""));
-            var i = proj_data.GetByMSTYear(mst, Utils.CIntDef(ddlNam.SelectedValue));
+            int year = Utils.CIntDef(ddlNam.SelectedValue);
+            var i = proj_data.GetByMSTYear(mst, year);
             if (i != null)
             {
                 if (chkBPCD01.Checked)
@@ -1403,6 +1436,24 @@ namespace ThanhLapDN.Pages
 
                 txtConNo01.Text = String.Format("{0:###,##0}", get_conno(phidv, tt1, tt2, tt3, tt4));
                 load_tongno();
+
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, year, 1);
+                if (item != null)
+                {
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue1.Checked);
+                    _NopThueRepo.Update(item);
+                }
+                else
+                {
+                    item = new NOP_THUE();
+                    item.MST = mst;
+                    item.THANG = 1;
+                    item.NAM = year;
+                    item.LOAI_HS = Cost.LOAIHOSO_DVKT;
+                    item.LOAI_NOP = rdbLoainop.SelectedItem.Value == "1" ? Cost.LOAINOP_THANG : Cost.LOAINOP_QUY;
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue1.Checked);
+                    _NopThueRepo.Create(item);
+                }                     
             }
         }
         protected void btnSaveT2_Click(object sender, EventArgs e)
@@ -1412,7 +1463,8 @@ namespace ThanhLapDN.Pages
             int tt2 = Utils.CIntDef(txtDaTT02_2.Text.Replace(",", ""));
             int tt3 = Utils.CIntDef(txtDaTT02_3.Text.Replace(",", ""));
             int tt4 = Utils.CIntDef(txtDaTT02_4.Text.Replace(",", ""));
-            var i = proj_data.GetByMSTYear(mst, Utils.CIntDef(ddlNam.SelectedValue));
+            int year = Utils.CIntDef(ddlNam.SelectedValue);
+            var i = proj_data.GetByMSTYear(mst, year);
             if (i != null)
             {
                 if (chkBPCD02.Checked)
@@ -1432,6 +1484,24 @@ namespace ThanhLapDN.Pages
 
                 txtConNo02.Text = String.Format("{0:###,##0}", get_conno(phidv, tt1, tt2, tt3, tt4));
                 load_tongno();
+
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, year, 2);
+                if (item != null)
+                {
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue2.Checked);
+                    _NopThueRepo.Update(item);
+                }
+                else
+                {
+                    item = new NOP_THUE();
+                    item.MST = mst;
+                    item.THANG = 2;
+                    item.NAM = year;
+                    item.LOAI_HS = Cost.LOAIHOSO_DVKT;
+                    item.LOAI_NOP = rdbLoainop.SelectedItem.Value == "1" ? Cost.LOAINOP_THANG : Cost.LOAINOP_QUY;
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue2.Checked);
+                    _NopThueRepo.Create(item);
+                }  
             }
         }
         protected void btnSaveT3_Click(object sender, EventArgs e)
@@ -1441,7 +1511,8 @@ namespace ThanhLapDN.Pages
             int tt2 = Utils.CIntDef(txtDaTT03_2.Text.Replace(",", ""));
             int tt3 = Utils.CIntDef(txtDaTT03_3.Text.Replace(",", ""));
             int tt4 = Utils.CIntDef(txtDaTT03_4.Text.Replace(",", ""));
-            var i = proj_data.GetByMSTYear(mst, Utils.CIntDef(ddlNam.SelectedValue));
+            int year = Utils.CIntDef(ddlNam.SelectedValue);
+            var i = proj_data.GetByMSTYear(mst, year);
             if (i != null)
             {
                 if (chkBPCD03.Checked)
@@ -1461,6 +1532,24 @@ namespace ThanhLapDN.Pages
 
                 txtConNo03.Text = String.Format("{0:###,##0}", get_conno(phidv, tt1, tt2, tt3, tt4));
                 load_tongno();
+
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, year, 3);
+                if (item != null)
+                {
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue3.Checked);
+                    _NopThueRepo.Update(item);
+                }
+                else
+                {
+                    item = new NOP_THUE();
+                    item.MST = mst;
+                    item.THANG = 3;
+                    item.NAM = year;
+                    item.LOAI_HS = Cost.LOAIHOSO_DVKT;
+                    item.LOAI_NOP = rdbLoainop.SelectedItem.Value == "1" ? Cost.LOAINOP_THANG : Cost.LOAINOP_QUY;
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue3.Checked);
+                    _NopThueRepo.Create(item);
+                }  
             }
         }
         protected void btnSaveT4_Click(object sender, EventArgs e)
@@ -1470,7 +1559,8 @@ namespace ThanhLapDN.Pages
             int tt2 = Utils.CIntDef(txtDaTT04_2.Text.Replace(",", ""));
             int tt3 = Utils.CIntDef(txtDaTT04_3.Text.Replace(",", ""));
             int tt4 = Utils.CIntDef(txtDaTT04_4.Text.Replace(",", ""));
-            var i = proj_data.GetByMSTYear(mst, Utils.CIntDef(ddlNam.SelectedValue));
+            int year = Utils.CIntDef(ddlNam.SelectedValue);
+            var i = proj_data.GetByMSTYear(mst, year);
             if (i != null)
             {
                 if (chkBPCD04.Checked)
@@ -1490,6 +1580,24 @@ namespace ThanhLapDN.Pages
 
                 txtConNo04.Text = String.Format("{0:###,##0}", get_conno(phidv, tt1, tt2, tt3, tt4));
                 load_tongno();
+
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, year, 4);
+                if (item != null)
+                {
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue4.Checked);
+                    _NopThueRepo.Update(item);
+                }
+                else
+                {
+                    item = new NOP_THUE();
+                    item.MST = mst;
+                    item.THANG = 4;
+                    item.NAM = year;
+                    item.LOAI_HS = Cost.LOAIHOSO_DVKT;
+                    item.LOAI_NOP = rdbLoainop.SelectedItem.Value == "1" ? Cost.LOAINOP_THANG : Cost.LOAINOP_QUY;
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue4.Checked);
+                    _NopThueRepo.Create(item);
+                }  
             }
         }
         protected void btnSaveT5_Click(object sender, EventArgs e)
@@ -1499,7 +1607,8 @@ namespace ThanhLapDN.Pages
             int tt2 = Utils.CIntDef(txtDaTT05_2.Text.Replace(",", ""));
             int tt3 = Utils.CIntDef(txtDaTT05_3.Text.Replace(",", ""));
             int tt4 = Utils.CIntDef(txtDaTT05_4.Text.Replace(",", ""));
-            var i = proj_data.GetByMSTYear(mst, Utils.CIntDef(ddlNam.SelectedValue));
+            int year = Utils.CIntDef(ddlNam.SelectedValue);
+            var i = proj_data.GetByMSTYear(mst, year);
             if (i != null)
             {
                 if (chkBPCD05.Checked)
@@ -1519,6 +1628,24 @@ namespace ThanhLapDN.Pages
 
                 txtConNo05.Text = String.Format("{0:###,##0}", get_conno(phidv, tt1, tt2, tt3, tt4));
                 load_tongno();
+
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, year, 5);
+                if (item != null)
+                {
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue5.Checked);
+                    _NopThueRepo.Update(item);
+                }
+                else
+                {
+                    item = new NOP_THUE();
+                    item.MST = mst;
+                    item.THANG = 5;
+                    item.NAM = year;
+                    item.LOAI_HS = Cost.LOAIHOSO_DVKT;
+                    item.LOAI_NOP = rdbLoainop.SelectedItem.Value == "1" ? Cost.LOAINOP_THANG : Cost.LOAINOP_QUY;
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue5.Checked);
+                    _NopThueRepo.Create(item);
+                }  
             }
         }
         protected void btnSaveT6_Click(object sender, EventArgs e)
@@ -1528,7 +1655,8 @@ namespace ThanhLapDN.Pages
             int tt2 = Utils.CIntDef(txtDaTT06_2.Text.Replace(",", ""));
             int tt3 = Utils.CIntDef(txtDaTT06_3.Text.Replace(",", ""));
             int tt4 = Utils.CIntDef(txtDaTT06_4.Text.Replace(",", ""));
-            var i = proj_data.GetByMSTYear(mst, Utils.CIntDef(ddlNam.SelectedValue));
+            int year = Utils.CIntDef(ddlNam.SelectedValue);
+            var i = proj_data.GetByMSTYear(mst, year);
             if (i != null)
             {
                 if (chkBPCD06.Checked)
@@ -1548,6 +1676,24 @@ namespace ThanhLapDN.Pages
 
                 txtConNo06.Text = String.Format("{0:###,##0}", get_conno(phidv, tt1, tt2, tt3, tt4));
                 load_tongno();
+
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, year, 6);
+                if (item != null)
+                {
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue6.Checked);
+                    _NopThueRepo.Update(item);
+                }
+                else
+                {
+                    item = new NOP_THUE();
+                    item.MST = mst;
+                    item.THANG = 6;
+                    item.NAM = year;
+                    item.LOAI_HS = Cost.LOAIHOSO_DVKT;
+                    item.LOAI_NOP = rdbLoainop.SelectedItem.Value == "1" ? Cost.LOAINOP_THANG : Cost.LOAINOP_QUY;
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue6.Checked);
+                    _NopThueRepo.Create(item);
+                }  
             }
         }
         protected void btnSaveT7_Click(object sender, EventArgs e)
@@ -1557,7 +1703,8 @@ namespace ThanhLapDN.Pages
             int tt2 = Utils.CIntDef(txtDaTT07_2.Text.Replace(",", ""));
             int tt3 = Utils.CIntDef(txtDaTT07_3.Text.Replace(",", ""));
             int tt4 = Utils.CIntDef(txtDaTT07_4.Text.Replace(",", ""));
-            var i = proj_data.GetByMSTYear(mst, Utils.CIntDef(ddlNam.SelectedValue));
+            int year = Utils.CIntDef(ddlNam.SelectedValue);
+            var i = proj_data.GetByMSTYear(mst, year);
             if (i != null)
             {
                 if (chkBPCD07.Checked)
@@ -1577,6 +1724,24 @@ namespace ThanhLapDN.Pages
 
                 txtConNo07.Text = String.Format("{0:###,##0}", get_conno(phidv, tt1, tt2, tt3, tt4));
                 load_tongno();
+
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, year, 7);
+                if (item != null)
+                {
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue7.Checked);
+                    _NopThueRepo.Update(item);
+                }
+                else
+                {
+                    item = new NOP_THUE();
+                    item.MST = mst;
+                    item.THANG = 7;
+                    item.NAM = year;
+                    item.LOAI_HS = Cost.LOAIHOSO_DVKT;
+                    item.LOAI_NOP = rdbLoainop.SelectedItem.Value == "1" ? Cost.LOAINOP_THANG : Cost.LOAINOP_QUY;
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue7.Checked);
+                    _NopThueRepo.Create(item);
+                }  
             }
         }
         protected void btnSaveT8_Click(object sender, EventArgs e)
@@ -1586,7 +1751,8 @@ namespace ThanhLapDN.Pages
             int tt2 = Utils.CIntDef(txtDaTT08_2.Text.Replace(",", ""));
             int tt3 = Utils.CIntDef(txtDaTT08_3.Text.Replace(",", ""));
             int tt4 = Utils.CIntDef(txtDaTT08_4.Text.Replace(",", ""));
-            var i = proj_data.GetByMSTYear(mst, Utils.CIntDef(ddlNam.SelectedValue));
+            int year = Utils.CIntDef(ddlNam.SelectedValue);
+            var i = proj_data.GetByMSTYear(mst, year);
             if (i != null)
             {
                 if (chkBPCD08.Checked)
@@ -1606,6 +1772,24 @@ namespace ThanhLapDN.Pages
 
                 txtConNo08.Text = String.Format("{0:###,##0}", get_conno(phidv, tt1, tt2, tt3, tt4));
                 load_tongno();
+
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, year, 8);
+                if (item != null)
+                {
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue8.Checked);
+                    _NopThueRepo.Update(item);
+                }
+                else
+                {
+                    item = new NOP_THUE();
+                    item.MST = mst;
+                    item.THANG = 8;
+                    item.NAM = year;
+                    item.LOAI_HS = Cost.LOAIHOSO_DVKT;
+                    item.LOAI_NOP = rdbLoainop.SelectedItem.Value == "1" ? Cost.LOAINOP_THANG : Cost.LOAINOP_QUY;
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue8.Checked);
+                    _NopThueRepo.Create(item);
+                }  
             }
         }
         protected void btnSaveT9_Click(object sender, EventArgs e)
@@ -1615,7 +1799,8 @@ namespace ThanhLapDN.Pages
             int tt2 = Utils.CIntDef(txtDaTT09_2.Text.Replace(",", ""));
             int tt3 = Utils.CIntDef(txtDaTT09_3.Text.Replace(",", ""));
             int tt4 = Utils.CIntDef(txtDaTT09_4.Text.Replace(",", ""));
-            var i = proj_data.GetByMSTYear(mst, Utils.CIntDef(ddlNam.SelectedValue));
+            int year = Utils.CIntDef(ddlNam.SelectedValue);
+            var i = proj_data.GetByMSTYear(mst, year);
             if (i != null)
             {
                 if (chkBPCD09.Checked)
@@ -1635,6 +1820,24 @@ namespace ThanhLapDN.Pages
 
                 txtConNo09.Text = String.Format("{0:###,##0}", get_conno(phidv, tt1, tt2, tt3, tt4));
                 load_tongno();
+
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, year, 9);
+                if (item != null)
+                {
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue9.Checked);
+                    _NopThueRepo.Update(item);
+                }
+                else
+                {
+                    item = new NOP_THUE();
+                    item.MST = mst;
+                    item.THANG = 9;
+                    item.NAM = year;
+                    item.LOAI_HS = Cost.LOAIHOSO_DVKT;
+                    item.LOAI_NOP = rdbLoainop.SelectedItem.Value == "1" ? Cost.LOAINOP_THANG : Cost.LOAINOP_QUY;
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue9.Checked);
+                    _NopThueRepo.Create(item);
+                }  
             }
         }
         protected void btnSaveT10_Click(object sender, EventArgs e)
@@ -1644,7 +1847,8 @@ namespace ThanhLapDN.Pages
             int tt2 = Utils.CIntDef(txtDaTT10_2.Text.Replace(",", ""));
             int tt3 = Utils.CIntDef(txtDaTT10_3.Text.Replace(",", ""));
             int tt4 = Utils.CIntDef(txtDaTT10_4.Text.Replace(",", ""));
-            var i = proj_data.GetByMSTYear(mst, Utils.CIntDef(ddlNam.SelectedValue));
+            int year = Utils.CIntDef(ddlNam.SelectedValue);
+            var i = proj_data.GetByMSTYear(mst, year);
             if (i != null)
             {
                 if (chkBPCD10.Checked)
@@ -1664,6 +1868,24 @@ namespace ThanhLapDN.Pages
 
                 txtConNo10.Text = String.Format("{0:###,##0}", get_conno(phidv, tt1, tt2, tt3, tt4));
                 load_tongno();
+
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, year, 10);
+                if (item != null)
+                {
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue10.Checked);
+                    _NopThueRepo.Update(item);
+                }
+                else
+                {
+                    item = new NOP_THUE();
+                    item.MST = mst;
+                    item.THANG = 10;
+                    item.NAM = year;
+                    item.LOAI_HS = Cost.LOAIHOSO_DVKT;
+                    item.LOAI_NOP = rdbLoainop.SelectedItem.Value == "1" ? Cost.LOAINOP_THANG : Cost.LOAINOP_QUY;
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue10.Checked);
+                    _NopThueRepo.Create(item);
+                }  
             }
         }
         protected void btnSaveT11_Click(object sender, EventArgs e)
@@ -1673,7 +1895,8 @@ namespace ThanhLapDN.Pages
             int tt2 = Utils.CIntDef(txtDaTT11_2.Text.Replace(",", ""));
             int tt3 = Utils.CIntDef(txtDaTT11_3.Text.Replace(",", ""));
             int tt4 = Utils.CIntDef(txtDaTT11_4.Text.Replace(",", ""));
-            var i = proj_data.GetByMSTYear(mst, Utils.CIntDef(ddlNam.SelectedValue));
+            int year = Utils.CIntDef(ddlNam.SelectedValue);
+            var i = proj_data.GetByMSTYear(mst, year);
             if (i != null)
             {
                 if (chkBPCD11.Checked)
@@ -1693,6 +1916,24 @@ namespace ThanhLapDN.Pages
 
                 txtConNo11.Text = String.Format("{0:###,##0}", get_conno(phidv, tt1, tt2, tt3, tt4));
                 load_tongno();
+
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, year, 11);
+                if (item != null)
+                {
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue11.Checked);
+                    _NopThueRepo.Update(item);
+                }
+                else
+                {
+                    item = new NOP_THUE();
+                    item.MST = mst;
+                    item.THANG = 11;
+                    item.NAM = year;
+                    item.LOAI_HS = Cost.LOAIHOSO_DVKT;
+                    item.LOAI_NOP = rdbLoainop.SelectedItem.Value == "1" ? Cost.LOAINOP_THANG : Cost.LOAINOP_QUY;
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue11.Checked);
+                    _NopThueRepo.Create(item);
+                }  
             }
         }
         protected void btnSaveT12_Click(object sender, EventArgs e)
@@ -1702,7 +1943,8 @@ namespace ThanhLapDN.Pages
             int tt2 = Utils.CIntDef(txtDaTT12_2.Text.Replace(",", ""));
             int tt3 = Utils.CIntDef(txtDaTT12_3.Text.Replace(",", ""));
             int tt4 = Utils.CIntDef(txtDaTT12_4.Text.Replace(",", ""));
-            var i = proj_data.GetByMSTYear(mst, Utils.CIntDef(ddlNam.SelectedValue));
+            int year = Utils.CIntDef(ddlNam.SelectedValue);
+            var i = proj_data.GetByMSTYear(mst, year);
             if (i != null)
             {
                 if (chkBPCD12.Checked)
@@ -1722,6 +1964,24 @@ namespace ThanhLapDN.Pages
 
                 txtConNo01.Text = String.Format("{0:###,##0}", get_conno(phidv, tt1, tt2, tt3, tt4));
                 load_tongno();
+
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, year, 12);
+                if (item != null)
+                {
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue12.Checked);
+                    _NopThueRepo.Update(item);
+                }
+                else
+                {
+                    item = new NOP_THUE();
+                    item.MST = mst;
+                    item.THANG = 12;
+                    item.NAM = year;
+                    item.LOAI_HS = Cost.LOAIHOSO_DVKT;
+                    item.LOAI_NOP = rdbLoainop.SelectedItem.Value == "1" ? Cost.LOAINOP_THANG : Cost.LOAINOP_QUY;
+                    item.DA_NOP_THUE = Utils.CBoolDef(chkDanopthue12.Checked);
+                    _NopThueRepo.Create(item);
+                } 
             }
         }
         protected void btnSaveT13_Click(object sender, EventArgs e)

@@ -25,6 +25,8 @@
 .tCongNo tr td:nth-child(4){ text-align:left;}
 .tCongNo .tBottom{ text-align:center !important;background:#fff !important;padding:5px 0px 10px 0px;}
 .tCongNo input {width:190px;}
+.tCongNo .danopthue input {width:20px !important;}
+.tCongNo .danopthue td {width:70px !important;}
 .tCongNo input.picker {width:155px;}
 .tCongNo textarea {width:188px;}
 .tCongNo select {width:194px;}
