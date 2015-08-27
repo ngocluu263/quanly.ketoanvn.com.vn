@@ -13,6 +13,11 @@ namespace ThanhLapDN.Data
             decimal _dPrice = Utils.CDecDef(Price);
             return _dPrice != 0 ? String.Format("{0:0,0}", _dPrice).Replace(",", ".") : "0";
         }
+        public string fomartPrice(object Price)
+        {
+            decimal _dPrice = Utils.CDecDef(Price);
+            return _dPrice != 0 ? String.Format("{0:###,###}", _dPrice) : "";
+        }
         public string getDate(object News_PublishDate)
         {
             return string.Format("{0:dd/MM/yyyy}", News_PublishDate);

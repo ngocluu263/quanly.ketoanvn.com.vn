@@ -508,6 +508,15 @@ namespace ThanhLapDN.Pages {
         protected global::System.Web.UI.WebControls.TextBox txtGhiChuMain;
         
         /// <summary>
+        /// rdbLoainop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rdbLoainop;
+        
+        /// <summary>
         /// pMonth1 control.
         /// </summary>
         /// <remarks>
@@ -596,6 +605,15 @@ namespace ThanhLapDN.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtConNo01;
+        
+        /// <summary>
+        /// chkDanopthue1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDanopthue1;
         
         /// <summary>
         /// txtGhiChu01 control.
@@ -706,6 +724,15 @@ namespace ThanhLapDN.Pages {
         protected global::System.Web.UI.WebControls.TextBox txtConNo02;
         
         /// <summary>
+        /// chkDanopthue2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDanopthue2;
+        
+        /// <summary>
         /// txtGhiChu02 control.
         /// </summary>
         /// <remarks>
@@ -812,6 +839,15 @@ namespace ThanhLapDN.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtConNo03;
+        
+        /// <summary>
+        /// chkDanopthue3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDanopthue3;
         
         /// <summary>
         /// txtGhiChu03 control.
@@ -922,6 +958,15 @@ namespace ThanhLapDN.Pages {
         protected global::System.Web.UI.WebControls.TextBox txtConNo04;
         
         /// <summary>
+        /// chkDanopthue4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDanopthue4;
+        
+        /// <summary>
         /// txtGhiChu04 control.
         /// </summary>
         /// <remarks>
@@ -1028,6 +1073,15 @@ namespace ThanhLapDN.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtConNo05;
+        
+        /// <summary>
+        /// chkDanopthue5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDanopthue5;
         
         /// <summary>
         /// txtGhiChu05 control.
@@ -1138,6 +1192,15 @@ namespace ThanhLapDN.Pages {
         protected global::System.Web.UI.WebControls.TextBox txtConNo06;
         
         /// <summary>
+        /// chkDanopthue6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDanopthue6;
+        
+        /// <summary>
         /// txtGhiChu06 control.
         /// </summary>
         /// <remarks>
@@ -1244,6 +1307,15 @@ namespace ThanhLapDN.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtConNo07;
+        
+        /// <summary>
+        /// chkDanopthue7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDanopthue7;
         
         /// <summary>
         /// txtGhiChu07 control.
@@ -1354,6 +1426,15 @@ namespace ThanhLapDN.Pages {
         protected global::System.Web.UI.WebControls.TextBox txtConNo08;
         
         /// <summary>
+        /// chkDanopthue8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDanopthue8;
+        
+        /// <summary>
         /// txtGhiChu08 control.
         /// </summary>
         /// <remarks>
@@ -1460,6 +1541,15 @@ namespace ThanhLapDN.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtConNo09;
+        
+        /// <summary>
+        /// chkDanopthue9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDanopthue9;
         
         /// <summary>
         /// txtGhiChu09 control.
@@ -1570,6 +1660,15 @@ namespace ThanhLapDN.Pages {
         protected global::System.Web.UI.WebControls.TextBox txtConNo10;
         
         /// <summary>
+        /// chkDanopthue10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDanopthue10;
+        
+        /// <summary>
         /// txtGhiChu10 control.
         /// </summary>
         /// <remarks>
@@ -1678,6 +1777,15 @@ namespace ThanhLapDN.Pages {
         protected global::System.Web.UI.WebControls.TextBox txtConNo11;
         
         /// <summary>
+        /// chkDanopthue11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDanopthue11;
+        
+        /// <summary>
         /// txtGhiChu11 control.
         /// </summary>
         /// <remarks>
@@ -1784,6 +1892,15 @@ namespace ThanhLapDN.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtConNo12;
+        
+        /// <summary>
+        /// chkDanopthue12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDanopthue12;
         
         /// <summary>
         /// txtGhiChu12 control.

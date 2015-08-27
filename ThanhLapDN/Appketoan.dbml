@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_thanhlapcty" Class="AppketoanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=db_thanhlapcty;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="db_thanhlapctyConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(local);Initial Catalog=db_thanhlapcty;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="db_thanhlapctyConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.[GROUP]" Member="GROUPs">
     <Type Name="GROUP">
       <Column Name="GROUP_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -324,173 +324,6 @@
       <Column Name="PHONGBAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CONG_NO" Member="CONG_NOs">
-    <Type Name="CONG_NO">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TINH_TRANG" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DATE_TINHTRANG" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="DATE_TINHTRANG1" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="DATE_THANHLAP" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="TEN_KH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="QL_THUE_DIST" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="QL_THUE_CITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MST" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DIA_CHI" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="GIAM_DOC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DIEN_THOAI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="THANG_BD_THU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NV_KT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PHI_DV_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_TT_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CON_NO_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="PHI_DV_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_TT_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CON_NO_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="PHI_DV_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_TT_3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CON_NO_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="PHI_DV_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_TT_4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CON_NO_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="PHI_DV_5" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_TT_5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CON_NO_5" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="PHI_DV_6" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_TT_6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CON_NO_6" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="PHI_DV_7" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_TT_7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CON_NO_7" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="PHI_DV_8" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_TT_8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CON_NO_8" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="PHI_DV_9" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_TT_9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CON_NO_9" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="PHI_DV_10" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_TT_10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CON_NO_10" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="PHI_DV_11" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_TT_11" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CON_NO_11" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="PHI_DV_12" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_TT_12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CON_NO_12" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="PHI_DV_BCTC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_TT_BCTC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CON_NO_BCTC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="TONG_NO" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NV_KD" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NV_GN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GHI_CHU" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
-      <Column Name="FILED1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="FILED2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="PROF_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="BIEUPHI1_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="BIEUPHI1_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="BIEUPHI2_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="BIEUPHI2_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="BIEUPHI3_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="BIEUPHI3_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="BIEUPHI4_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="BIEUPHI4_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="BIEUPHI5_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="BIEUPHI5_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="BIEUPHI6_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="BIEUPHI6_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="BIEUPHI_THEM" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="SOLUONG_T1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOLUONG_T2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOLUONG_T3" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOLUONG_T4" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOLUONG_T5" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOLUONG_T6" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOLUONG_T7" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOLUONG_T8" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOLUONG_T9" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOLUONG_T10" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOLUONG_T11" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOLUONG_T12" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SOLUONG_T13" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DA_TT1_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT1_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT1_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT1_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GHI_CHU1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="DA_TT2_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT2_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT2_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT2_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GHI_CHU2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="DA_TT3_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT3_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT3_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT3_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GHI_CHU3" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="DA_TT4_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT4_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT4_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT4_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GHI_CHU4" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="DA_TT5_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT5_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT5_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT5_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GHI_CHU5" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="DA_TT6_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT6_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT6_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT6_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GHI_CHU6" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="DA_TT7_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT7_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT7_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT7_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GHI_CHU7" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="DA_TT8_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT8_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT8_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT8_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GHI_CHU8" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="DA_TT9_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT9_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT9_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT9_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GHI_CHU9" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="DA_TT10_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT10_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT10_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT10_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GHI_CHU10" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="DA_TT11_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT11_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT11_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT11_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GHI_CHU11" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="DA_TT12_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT12_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT12_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT12_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GHI_CHU12" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="DA_TT13_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT13_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT13_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="DA_TT13_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="GHI_CHU13" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="NO_NAM_TRUOC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="NGAY_KY_HD" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="LOAI_CKS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NGAY_HET_HAN_CKS" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="GIU_CKS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NGAY_GIU_CKS" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.[USER]" Member="USERs">
     <Type Name="USER">
       <Column Name="USER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -696,6 +529,227 @@
       <Column Name="PER_DELE" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.NOP_THUE" Member="NOP_THUEs">
+    <Type Name="NOP_THUE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MST" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="THANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOAI_HS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LOAI_NOP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DA_NOP_THUE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAI_HSO" Member="LOAI_HSOs">
+    <Type Name="LOAI_HSO">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TEN" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="POS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONG_NO_WEB" Member="CONG_NO_WEBs">
+    <Type Name="CONG_NO_WEB">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SO_HOPDONG" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="NGAYKY_HOPDONG" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TEN_KHACHHANG" Type="System.String" DbType="NVarChar(350)" CanBeNull="true" />
+      <Column Name="THONGTINLIENHE_KHACHHANG" Type="System.String" DbType="NVarChar(350)" CanBeNull="true" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TEN_DOMAIN" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NVKD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NVXL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOMAIN_PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CHIPHI_TRIENKHAI_PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="HOSTING_PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="WEB_PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="LOGO_PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ESELL_PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CHUPHINH_PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CATALOGUE_PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="SEOTUKHOA_PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GOOGLEADWORD_PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHANMEM_PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="HOAHONGKH_PRICE" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="VAT" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TONGCONG" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="THANHTOAN" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAYTHANHTOAN" Type="System.String" DbType="NVarChar(550)" CanBeNull="true" />
+      <Column Name="NGAYXUATHOADON" Type="System.String" DbType="NVarChar(550)" CanBeNull="true" />
+      <Column Name="CONGNO" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(550)" CanBeNull="true" />
+      <Column Name="TINHTRANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CONG_NO" Member="CONG_NOs">
+    <Type Name="CONG_NO">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TINH_TRANG" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DATE_TINHTRANG" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DATE_TINHTRANG1" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DATE_THANHLAP" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TEN_KH" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="QL_THUE_DIST" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QL_THUE_CITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MST" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIA_CHI" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DIA_CHI_LAY_HD" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="GIAM_DOC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DIEN_THOAI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="THANG_BD_THU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NV_KT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHI_DV_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_5" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_5" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_6" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_6" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_7" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_7" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_8" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_8" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_9" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_9" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_10" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_10" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_11" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_11" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_11" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_12" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_12" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PHI_DV_BCTC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_TT_BCTC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CON_NO_BCTC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TONG_NO" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NV_KD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NV_GN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GHI_CHU" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="FILED1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="FILED2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PROF_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BIEUPHI1_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BIEUPHI1_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BIEUPHI2_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BIEUPHI2_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BIEUPHI3_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BIEUPHI3_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BIEUPHI4_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BIEUPHI4_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BIEUPHI5_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BIEUPHI5_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BIEUPHI6_SL" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="BIEUPHI6_PHI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="BIEUPHI_THEM" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="SOLUONG_T1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T11" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T12" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOLUONG_T13" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DA_TT1_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT1_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT1_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT1_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT2_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT2_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT2_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT2_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT3_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT3_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT3_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT3_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU3" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT4_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT4_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT4_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT4_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU4" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT5_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT5_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT5_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT5_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU5" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT6_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT6_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT6_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT6_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU6" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT7_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT7_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT7_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT7_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU7" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT8_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT8_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT8_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT8_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU8" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT9_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT9_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT9_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT9_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU9" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT10_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT10_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT10_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT10_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU10" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT11_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT11_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT11_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT11_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU11" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT12_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT12_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT12_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT12_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU12" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DA_TT13_1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT13_2" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT13_3" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DA_TT13_4" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="GHI_CHU13" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NO_NAM_TRUOC" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="NGAY_KY_HD" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LOAI_CKS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NGAY_HET_HAN_CKS" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="GIU_CKS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGAY_GIU_CKS" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LOAI_NOP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.converdate" Method="converdate" IsComposable="true">
     <Parameter Name="datetimeval" Type="System.DateTime" DbType="SmallDateTime" />
     <Parameter Name="datetimenow" Type="System.DateTime" DbType="SmallDateTime" />
@@ -703,5 +757,9 @@
   </Function>
   <Function Name="dbo.TEST1" Method="TEST1">
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.fClearUnicode" Method="fClearUnicode" IsComposable="true">
+    <Parameter Name="strInput" Type="System.String" DbType="NVarChar(4000)" />
+    <Return Type="System.String" />
   </Function>
 </Database>

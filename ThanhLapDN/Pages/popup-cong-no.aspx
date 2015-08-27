@@ -1,9 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="popup-cong-no.aspx.cs" Inherits="ThanhLapDN.Pages.popup_cong_no" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="popup-cong-no.aspx.cs" Inherits="ThanhLapDN.Pages.popup_cong_no"  %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ Register Src="../Calendar/pickerAndCalendar.ascx" TagName="pickerAndCalendar" TagPrefix="uc1" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <title></title>
+    <script src="../Scripts/jquery-1.8.3.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     function FormatNumber(obj) {
         var strvalue;
@@ -24,6 +25,70 @@
         //return (((sign)?'':'-') + num); 
         eval(obj).value = (((sign) ? '' : '-') + num);
     }
+    $(document).ready(function () {
+        if ($('#rdbLoainop_0').is(':checked')) {
+            $('#trdanopthue1').show();
+            $('#trdanopthue2').show();
+            $('#trdanopthue3').show();
+            $('#trdanopthue4').show();
+            $('#trdanopthue5').show();
+            $('#trdanopthue6').show();
+            $('#trdanopthue7').show();
+            $('#trdanopthue8').show();
+            $('#trdanopthue9').show();
+            $('#trdanopthue10').show();
+            $('#trdanopthue11').show();
+            $('#trdanopthue12').show();
+        }
+        else {
+            $('#trdanopthue1').hide();
+            $('#trdanopthue2').hide();
+            $('#trdanopthue3').show();
+            $('#trdanopthue4').hide();
+            $('#trdanopthue5').hide();
+            $('#trdanopthue6').show();
+            $('#trdanopthue7').hide();
+            $('#trdanopthue8').hide();
+            $('#trdanopthue9').show();
+            $('#trdanopthue10').hide();
+            $('#trdanopthue11').hide();
+            $('#trdanopthue12').show();
+        }
+
+        $('#rdbLoainop_0').on('change', function () {
+            if ($(this).is(':checked')) {
+                $('#trdanopthue1').show();
+                $('#trdanopthue2').show();
+                $('#trdanopthue3').show();
+                $('#trdanopthue4').show();
+                $('#trdanopthue5').show();
+                $('#trdanopthue6').show();
+                $('#trdanopthue7').show();
+                $('#trdanopthue8').show();
+                $('#trdanopthue9').show();
+                $('#trdanopthue10').show();
+                $('#trdanopthue11').show();
+                $('#trdanopthue12').show();
+            }
+        });
+        $('#rdbLoainop_1').on('change', function () {
+            if ($(this).is(':checked')) {
+                $('#trdanopthue1').hide();
+                $('#trdanopthue2').hide();
+                $('#trdanopthue3').show();
+                $('#trdanopthue4').hide();
+                $('#trdanopthue5').hide();
+                $('#trdanopthue6').show();
+                $('#trdanopthue7').hide();
+                $('#trdanopthue8').hide();
+                $('#trdanopthue9').show();
+                $('#trdanopthue10').hide();
+                $('#trdanopthue11').hide();
+                $('#trdanopthue12').show();
+            }
+        });
+    });
+    
 </script>
 <link href="/Calendar/calendarStyle.css" rel="stylesheet" type="text/css" />
 <link href="/Styles/siteCongNo.css" rel="stylesheet" type="text/css" />
@@ -238,6 +303,15 @@
           <td class="tt_note">Ghi chú</td>
           <td class="note"><asp:TextBox ID="txtGhiChuMain" runat="server" TextMode="MultiLine" Width="100%" Rows="4"></asp:TextBox></td>
         </tr>
+        <tr>
+          <td class="tt_note">Loại nộp</td>
+          <td class="note">
+            <asp:RadioButtonList ID="rdbLoainop" runat="server" CssClass="danopthue" RepeatDirection="Horizontal">
+                <asp:ListItem Text="Tháng" Value="1" Selected="True"></asp:ListItem>
+                <asp:ListItem Text="Quý" Value="2"></asp:ListItem>
+            </asp:RadioButtonList>
+          </td>
+        </tr>
       </table>
 </asp:PlaceHolder>
   <!--Month 1-->
@@ -287,7 +361,11 @@
       </tr>
     </table>
   </div>
-  <table class="tCongNo t_month">
+  <table class="tCongNo t_month">    
+    <tr id="trdanopthue1">
+      <td class="tt_note">Đã nộp thuế</td>
+      <td class="note"><asp:CheckBox ID="chkDanopthue1" runat="server" CssClass="danopthue" Text="Đã nộp thuế" Font-Size="13px" /></td>
+    </tr>
     <tr>
       <td class="tt_note">Ghi chú</td>
       <td class="note"><asp:TextBox ID="txtGhiChu01" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox></td>
@@ -345,6 +423,10 @@
     </table>
   </div>
   <table class="tCongNo t_month">
+    <tr id="trdanopthue2">
+      <td class="tt_note">Đã nộp thuế</td>
+      <td class="note"><asp:CheckBox ID="chkDanopthue2" runat="server" CssClass="danopthue" Text="Đã nộp thuế" Font-Size="13px" /></td>
+    </tr>
     <tr>
       <td class="tt_note">Ghi chú</td>
       <td class="note"><asp:TextBox ID="txtGhiChu02" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox></td>
@@ -402,6 +484,10 @@
     </table>
   </div>
   <table class="tCongNo t_month">
+    <tr id="trdanopthue3">
+      <td class="tt_note">Đã nộp thuế</td>
+      <td class="note"><asp:CheckBox ID="chkDanopthue3" runat="server" CssClass="danopthue" Text="Đã nộp thuế" Font-Size="13px" /></td>
+    </tr>
     <tr>
       <td class="tt_note">Ghi chú</td>
       <td class="note"><asp:TextBox ID="txtGhiChu03" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox></td>
@@ -459,6 +545,10 @@
     </table>
   </div>
   <table class="tCongNo t_month">
+    <tr id="trdanopthue4">
+      <td class="tt_note">Đã nộp thuế</td>
+      <td class="note"><asp:CheckBox ID="chkDanopthue4" runat="server" CssClass="danopthue" Text="Đã nộp thuế" Font-Size="13px" /></td>
+    </tr>
     <tr>
       <td class="tt_note">Ghi chú</td>
       <td class="note"><asp:TextBox ID="txtGhiChu04" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox></td>
@@ -516,6 +606,10 @@
     </table>
   </div>
   <table class="tCongNo t_month">
+    <tr id="trdanopthue5">
+      <td class="tt_note">Đã nộp thuế</td>
+      <td class="note"><asp:CheckBox ID="chkDanopthue5" runat="server" CssClass="danopthue" Text="Đã nộp thuế" Font-Size="13px" /></td>
+    </tr>
     <tr>
       <td class="tt_note">Ghi chú</td>
       <td class="note"><asp:TextBox ID="txtGhiChu05" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox></td>
@@ -573,6 +667,10 @@
     </table>
   </div>
   <table class="tCongNo t_month">
+    <tr id="trdanopthue6">
+      <td class="tt_note">Đã nộp thuế</td>
+      <td class="note"><asp:CheckBox ID="chkDanopthue6" CssClass="danopthue" runat="server" Text="Đã nộp thuế" Font-Size="13px" /></td>
+    </tr>
     <tr>
       <td class="tt_note">Ghi chú</td>
       <td class="note"><asp:TextBox ID="txtGhiChu06" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox></td>
@@ -630,6 +728,10 @@
     </table>
   </div>
   <table class="tCongNo t_month">
+    <tr id="trdanopthue7">
+      <td class="tt_note">Đã nộp thuế</td>
+      <td class="note"><asp:CheckBox ID="chkDanopthue7" CssClass="danopthue" runat="server" Text="Đã nộp thuế" Font-Size="13px" /></td>
+    </tr>
     <tr>
       <td class="tt_note">Ghi chú</td>
       <td class="note"><asp:TextBox ID="txtGhiChu07" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox></td>
@@ -687,6 +789,10 @@
     </table>
   </div>
   <table class="tCongNo t_month">
+    <tr id="trdanopthue8">
+      <td class="tt_note">Đã nộp thuế</td>
+      <td class="note"><asp:CheckBox ID="chkDanopthue8" CssClass="danopthue" runat="server" Text="Đã nộp thuế" Font-Size="13px" /></td>
+    </tr>
     <tr>
       <td class="tt_note">Ghi chú</td>
       <td class="note"><asp:TextBox ID="txtGhiChu08" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox></td>
@@ -744,6 +850,10 @@
     </table>
   </div>
   <table class="tCongNo t_month">
+    <tr id="trdanopthue9">
+      <td class="tt_note">Đã nộp thuế</td>
+      <td class="note"><asp:CheckBox ID="chkDanopthue9" CssClass="danopthue" runat="server" Text="Đã nộp thuế" Font-Size="13px" /></td>
+    </tr>
     <tr>
       <td class="tt_note">Ghi chú</td>
       <td class="note"><asp:TextBox ID="txtGhiChu09" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox></td>
@@ -801,6 +911,10 @@
     </table>
   </div>
   <table class="tCongNo t_month">
+    <tr id="trdanopthue10">
+      <td class="tt_note">Đã nộp thuế</td>
+      <td class="note"><asp:CheckBox ID="chkDanopthue10" CssClass="danopthue" runat="server" Text="Đã nộp thuế" Font-Size="13px" /></td>
+    </tr>
     <tr>
       <td class="tt_note">Ghi chú</td>
       <td class="note"><asp:TextBox ID="txtGhiChu10" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox></td>
@@ -858,6 +972,10 @@
     </table>
   </div>
   <table class="tCongNo t_month">
+    <tr id="trdanopthue11">
+      <td class="tt_note">Đã nộp thuế</td>
+      <td class="note"><asp:CheckBox ID="chkDanopthue11" CssClass="danopthue" runat="server" Text="Đã nộp thuế" Font-Size="13px" /></td>
+    </tr>
     <tr>
       <td class="tt_note">Ghi chú</td>
       <td class="note"><asp:TextBox ID="txtGhiChu11" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox></td>
@@ -915,6 +1033,10 @@
     </table>
   </div>
   <table class="tCongNo t_month">
+    <tr id="trdanopthue12">
+      <td class="tt_note">Đã nộp thuế</td>
+      <td class="note"><asp:CheckBox ID="chkDanopthue12" CssClass="danopthue" runat="server" Text="Đã nộp thuế" Font-Size="13px" /></td>
+    </tr>
     <tr>
       <td class="tt_note">Ghi chú</td>
       <td class="note"><asp:TextBox ID="txtGhiChu12" runat="server" TextMode="MultiLine" Width="100%"></asp:TextBox></td>

@@ -11,6 +11,7 @@ using System.Data.OleDb;
 using System.Drawing;
 using DevExpress.Web.ASPxGridView;
 using System.Collections;
+using Appketoan.Components;
 
 namespace ThanhLapDN.Pages
 {
@@ -23,6 +24,7 @@ namespace ThanhLapDN.Pages
         UnitData unit_data = new UnitData();
         Pageindex_chage change = new Pageindex_chage();
         Function fun = new Function();
+        private NopThueRepo _NopThueRepo = new NopThueRepo();
         int _page = 0;
         string _Year = "";
         string _Search = "";
@@ -69,6 +71,31 @@ namespace ThanhLapDN.Pages
                 if (_idGroup != 1 && _idGroup != 2 && _idGroup != 10 && _idGroup != 14 && _idGroup != 7)
                 {
                     var list = _ProjectData.GetListByYearNV(Utils.CIntDef(ddlNam.SelectedValue), _idUser, _Field, _Search, _Status);
+                    if (_Field == "13")
+                    {
+                        List<CONG_NO> listRemove = new List<CONG_NO>();
+                        foreach (var item in list)
+                        {
+                            if (item.LOAI_NOP == Cost.LOAINOP_QUY)//loại nộp là quí
+                            {
+                                bool b = CheckNopThueQui(item.MST, Utils.CIntDef(item.NAM));
+                                if (b)
+                                {
+                                    listRemove.Add(item);
+                                }
+                            }
+                            else//loại nộp là tháng
+                            {
+                                bool b = CheckNopThueThang(item.MST, Utils.CIntDef(item.NAM));
+                                if (b)
+                                {
+                                    listRemove.Add(item);
+                                }
+                            }
+                        }
+                        var setToRemove = new HashSet<CONG_NO>(listRemove);
+                        list.RemoveAll(x => setToRemove.Contains(x));
+                    }
                     var listSkip = list.Skip(sotin * _page - sotin).Take(sotin);
                     ASPxGridView1_project.DataSource = listSkip;
                     ASPxGridView1_project.DataBind();
@@ -89,6 +116,31 @@ namespace ThanhLapDN.Pages
                 else
                 {
                     var list = _ProjectData.GetListByYear(Utils.CIntDef(ddlNam.SelectedValue), _Field, _Search, _Status);
+                    if (_Field == "13")
+                    {
+                        List<CONG_NO> listRemove = new List<CONG_NO>();
+                        foreach (var item in list)
+                        {
+                            if (item.LOAI_NOP == Cost.LOAINOP_QUY)//loại nộp là quí
+                            {
+                                bool b = CheckNopThueQui(item.MST, Utils.CIntDef(item.NAM));
+                                if (b)
+                                {
+                                    listRemove.Add(item);
+                                }
+                            }
+                            else//loại nộp là tháng
+                            {
+                                bool b = CheckNopThueThang(item.MST, Utils.CIntDef(item.NAM));
+                                if (b)
+                                {
+                                    listRemove.Add(item);
+                                }
+                            }
+                        }
+                        var setToRemove = new HashSet<CONG_NO>(listRemove);
+                        list.RemoveAll(x => setToRemove.Contains(x));
+                    }
                     var listSkip = list.Skip(sotin * _page - sotin).Take(sotin);
                     ASPxGridView1_project.DataSource = listSkip;
                     ASPxGridView1_project.DataBind();
@@ -112,6 +164,224 @@ namespace ThanhLapDN.Pages
                 Response.Redirect("/Pages/trang-chu.aspx");
                 //throw;
             }
+        }
+        private bool CheckNopThueThang(string mst, int nam)
+        {
+            bool b = true;
+            int currentday = DateTime.Now.Day;
+            int currentmonth = DateTime.Now.Month;
+            if (currentday >= 20)
+            {
+                //for (int i = currentmonth - 1; i > 1; i--)
+                //{
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, nam, currentmonth - 1);
+                    if (item != null)
+                    {
+                        if (item.DA_NOP_THUE == false)
+                        {
+                            b = false;
+                        }
+                        else
+                        {
+                            b = true;
+                        }
+                    }
+                    else
+                    {
+                        b = false;
+                    }
+                //}
+            }
+            else
+            {
+                //for (int i = currentmonth - 2; i > 1; i--)
+                //{
+                var item = _NopThueRepo.GetByMstAndNamAndThang(mst, nam, currentmonth - 2);
+                    if (item != null)
+                    {
+                        if (item.DA_NOP_THUE == false)
+                        {
+                            b = false;
+                        }
+
+                        else
+                        {
+                            b = true;
+                        }
+                    }
+                    else
+                    {
+                        b = false;
+                    }
+                //}
+            }
+            return b;
+        }
+        private bool CheckNopThueQui(string mst, int nam)
+        {
+            int currentday = DateTime.Now.Day;
+            int currentmonth = DateTime.Now.Month;
+            if (currentday >= 20)
+            {
+                if (currentmonth < 4)//kiểm tra tháng 12 của năm trước
+                {
+                    int yearprevious = nam - 1;
+                    var item = _NopThueRepo.GetByMstAndNamAndThang(mst, yearprevious, 12);
+                    if (item != null)
+                    {
+                        if (item.DA_NOP_THUE == false)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                if (currentmonth < 7)//kiểm tra tháng 3
+                {
+                    var item = _NopThueRepo.GetByMstAndNamAndThang(mst, nam, 3);
+                    if (item != null)
+                    {
+                        if (item.DA_NOP_THUE == false)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                if (currentmonth < 10)//kiểm tra tháng 6
+                {
+                    var item = _NopThueRepo.GetByMstAndNamAndThang(mst, nam, 6);
+                    if (item != null)
+                    {
+                        if (item.DA_NOP_THUE == false)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                if (currentmonth < 13)//kiểm tra tháng 9
+                {
+                    var item = _NopThueRepo.GetByMstAndNamAndThang(mst, nam, 9);
+                    if (item != null)
+                    {
+                        if (item.DA_NOP_THUE == false)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            else//currentday < 20
+            {
+                if (currentmonth <= 4)//kiểm tra tháng 12 của năm trước
+                {
+                    int yearprevious = nam - 1;
+                    var item = _NopThueRepo.GetByMstAndNamAndThang(mst, yearprevious, 12);
+                    if (item != null)
+                    {
+                        if (item.DA_NOP_THUE == false)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                if (currentmonth <= 7)//kiểm tra tháng 3
+                {
+                    var item = _NopThueRepo.GetByMstAndNamAndThang(mst, nam, 3);
+                    if (item != null)
+                    {
+                        if (item.DA_NOP_THUE == false)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                if (currentmonth <= 10)//kiểm tra tháng 6
+                {
+                    var item = _NopThueRepo.GetByMstAndNamAndThang(mst, nam, 6);
+                    if (item != null)
+                    {
+                        if (item.DA_NOP_THUE == false)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                if (currentmonth < 13)//kiểm tra tháng 9
+                {
+                    var item = _NopThueRepo.GetByMstAndNamAndThang(mst, nam, 9);
+                    if (item != null)
+                    {
+                        if (item.DA_NOP_THUE == false)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            return false;
         }
         private void Update_Sync()
         {

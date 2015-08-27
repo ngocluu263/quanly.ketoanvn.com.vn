@@ -53,6 +53,7 @@
                             <asp:ListItem Value="10" Text="Nhân viên KT trống"></asp:ListItem>
                             <asp:ListItem Value="11" Text="Nhân viên KD trống"></asp:ListItem>
                             <asp:ListItem Value="12" Text="Nhân viên GN trống"></asp:ListItem>
+                            <asp:ListItem Value="13" Text="Công ty nộp thuế trể"></asp:ListItem>
                         </asp:DropDownList>
                         <input class="k-textbox k-input" id="txtKeyword" placeholder="từ khóa tìm kiếm"
                             name="txtKeyword" type="text" value="" runat="server" clientidmode="Static" style="width:200px;"/>
