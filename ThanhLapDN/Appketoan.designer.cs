@@ -120,6 +120,9 @@ namespace ThanhLapDN
     partial void InsertCONG_NO(CONG_NO instance);
     partial void UpdateCONG_NO(CONG_NO instance);
     partial void DeleteCONG_NO(CONG_NO instance);
+    partial void InsertLOAI_HSO(LOAI_HSO instance);
+    partial void UpdateLOAI_HSO(LOAI_HSO instance);
+    partial void DeleteLOAI_HSO(LOAI_HSO instance);
     #endregion
 		
 		public AppketoanDataContext() : 
@@ -389,6 +392,14 @@ namespace ThanhLapDN
 			get
 			{
 				return this.GetTable<CONG_NO>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LOAI_HSO> LOAI_HSOs
+		{
+			get
+			{
+				return this.GetTable<LOAI_HSO>();
 			}
 		}
 		
@@ -16497,6 +16508,140 @@ namespace ThanhLapDN
 					this._LOAI_NOP = value;
 					this.SendPropertyChanged("LOAI_NOP");
 					this.OnLOAI_NOPChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LOAI_HSO")]
+	public partial class LOAI_HSO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _CODE;
+		
+		private string _TEN;
+		
+		private System.Nullable<int> _POS;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnCODEChanging(string value);
+    partial void OnCODEChanged();
+    partial void OnTENChanging(string value);
+    partial void OnTENChanged();
+    partial void OnPOSChanging(System.Nullable<int> value);
+    partial void OnPOSChanged();
+    #endregion
+		
+		public LOAI_HSO()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODE", DbType="VarChar(50)")]
+		public string CODE
+		{
+			get
+			{
+				return this._CODE;
+			}
+			set
+			{
+				if ((this._CODE != value))
+				{
+					this.OnCODEChanging(value);
+					this.SendPropertyChanging();
+					this._CODE = value;
+					this.SendPropertyChanged("CODE");
+					this.OnCODEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TEN", DbType="NVarChar(250)")]
+		public string TEN
+		{
+			get
+			{
+				return this._TEN;
+			}
+			set
+			{
+				if ((this._TEN != value))
+				{
+					this.OnTENChanging(value);
+					this.SendPropertyChanging();
+					this._TEN = value;
+					this.SendPropertyChanged("TEN");
+					this.OnTENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_POS", DbType="Int")]
+		public System.Nullable<int> POS
+		{
+			get
+			{
+				return this._POS;
+			}
+			set
+			{
+				if ((this._POS != value))
+				{
+					this.OnPOSChanging(value);
+					this.SendPropertyChanging();
+					this._POS = value;
+					this.SendPropertyChanged("POS");
+					this.OnPOSChanged();
 				}
 			}
 		}
