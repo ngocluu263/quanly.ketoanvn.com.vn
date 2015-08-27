@@ -71,5 +71,17 @@ namespace ThanhLapDN.Data
                 throw new Exception(e.Message);
             }
         }
+
+        public virtual List<USER_PERMISSION> GetByType(int _type)
+        {
+            try
+            {
+                return this.db.USER_PERMISSIONs.Where(n => n.PER_TYPE == _type).OrderBy(n => n.PER_GROUP).ToList();
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

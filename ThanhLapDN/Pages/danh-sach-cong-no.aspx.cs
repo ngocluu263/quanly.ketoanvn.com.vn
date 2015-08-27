@@ -700,15 +700,15 @@ namespace ThanhLapDN.Pages
                 _items.Add(new InfoCells { Field = Utils.CStrDef(obj[i].NO_NAM_TRUOC) });
 
                 tongPhiDV1 += Utils.CDblDef(obj[i].PHI_DV_1);
-                tongDaTT1 += Utils.CDblDef(obj[i].DA_TT1_1 + obj[i].DA_TT1_2 + obj[i].DA_TT1_3 + obj[i].DA_TT1_4);
+                tongDaTT1 += Utils.CDblDef(obj[i].DA_TT1_1) + Utils.CDblDef(obj[i].DA_TT1_2) + Utils.CDblDef(obj[i].DA_TT1_3) + Utils.CDblDef(obj[i].DA_TT1_4);
                 tongConNo1 += Utils.CDblDef(obj[i].CON_NO_1);
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].PHI_DV_1) });
-                _items.Add(new InfoCells { Field = fun.Getprice(obj[i].DA_TT1_1 + obj[i].DA_TT1_2 + obj[i].DA_TT1_3 + obj[i].DA_TT1_4) });
+                _items.Add(new InfoCells { Field = fun.Getprice(Utils.CDblDef(obj[i].DA_TT1_1) + Utils.CDblDef(obj[i].DA_TT1_2) + Utils.CDblDef(obj[i].DA_TT1_3) + Utils.CDblDef(obj[i].DA_TT1_4)) });
                 _items.Add(new InfoCells { Field = Utils.CStrDef(obj[i].NGAY_TT_1).Replace("12:00:00 AM", "").Trim() });
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].CON_NO_1) });
 
                 tongPhiDV2 += Utils.CDblDef(obj[i].PHI_DV_2);
-                tongDaTT2 += Utils.CDblDef(obj[i].DA_TT2_1 + obj[i].DA_TT2_2 + obj[i].DA_TT2_3 + obj[i].DA_TT2_4);
+                tongDaTT2 += Utils.CDblDef(obj[i].DA_TT2_1) + Utils.CDblDef(obj[i].DA_TT2_2) + Utils.CDblDef(obj[i].DA_TT2_3) + Utils.CDblDef(obj[i].DA_TT2_4);
                 tongConNo2 += Utils.CDblDef(obj[i].CON_NO_2);
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].PHI_DV_2) });
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].DA_TT2_1 + obj[i].DA_TT2_2 + obj[i].DA_TT2_3 + obj[i].DA_TT2_4) });
@@ -716,90 +716,90 @@ namespace ThanhLapDN.Pages
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].CON_NO_2) });
 
                 tongPhiDV3 += Utils.CDblDef(obj[i].PHI_DV_3);
-                tongDaTT3 += Utils.CDblDef(obj[i].DA_TT3_1 + obj[i].DA_TT3_2 + obj[i].DA_TT3_3 + obj[i].DA_TT3_4);
+                tongDaTT3 += Utils.CDblDef(obj[i].DA_TT3_1) + Utils.CDblDef(obj[i].DA_TT3_2) + Utils.CDblDef(obj[i].DA_TT3_3) + Utils.CDblDef(obj[i].DA_TT3_4);
                 tongConNo3 += Utils.CDblDef(obj[i].CON_NO_3);
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].PHI_DV_3) });
-                _items.Add(new InfoCells { Field = fun.Getprice(obj[i].DA_TT3_1 + obj[i].DA_TT3_2 + obj[i].DA_TT3_3 + obj[i].DA_TT3_4) });
+                _items.Add(new InfoCells { Field = fun.Getprice(Utils.CDblDef(obj[i].DA_TT3_1) + Utils.CDblDef(obj[i].DA_TT3_2) + Utils.CDblDef(obj[i].DA_TT3_3) + Utils.CDblDef(obj[i].DA_TT3_4)) });
                 _items.Add(new InfoCells { Field = Utils.CStrDef(obj[i].NGAY_TT_3).Replace("12:00:00 AM", "").Trim() });
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].CON_NO_3) });
 
                 tongPhiDV4 += Utils.CDblDef(obj[i].PHI_DV_4);
-                tongDaTT4 += Utils.CDblDef(obj[i].DA_TT4_1 + obj[i].DA_TT4_2 + obj[i].DA_TT4_3 + obj[i].DA_TT4_4);
+                tongDaTT4 += Utils.CDblDef(obj[i].DA_TT4_1) + Utils.CDblDef(obj[i].DA_TT4_2) + Utils.CDblDef(obj[i].DA_TT4_3) + Utils.CDblDef(obj[i].DA_TT4_4);
                 tongConNo4 += Utils.CDblDef(obj[i].CON_NO_4);
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].PHI_DV_4) });
-                _items.Add(new InfoCells { Field = fun.Getprice(obj[i].DA_TT4_1 + obj[i].DA_TT4_2 + obj[i].DA_TT4_3 + obj[i].DA_TT4_4) });
+                _items.Add(new InfoCells { Field = fun.Getprice(Utils.CDblDef(obj[i].DA_TT4_1) + Utils.CDblDef(obj[i].DA_TT4_2) + Utils.CDblDef(obj[i].DA_TT4_3) + Utils.CDblDef(obj[i].DA_TT4_4)) });
                 _items.Add(new InfoCells { Field = Utils.CStrDef(obj[i].NGAY_TT_4).Replace("12:00:00 AM", "").Trim() });
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].CON_NO_4) });
 
                 tongPhiDV5 += Utils.CDblDef(obj[i].PHI_DV_5);
-                tongDaTT5 += Utils.CDblDef(obj[i].DA_TT5_1 + obj[i].DA_TT5_2 + obj[i].DA_TT5_3 + obj[i].DA_TT5_4);
+                tongDaTT5 += Utils.CDblDef(obj[i].DA_TT5_1) + Utils.CDblDef(obj[i].DA_TT5_2) + Utils.CDblDef(obj[i].DA_TT5_3) + Utils.CDblDef(obj[i].DA_TT5_4);
                 tongConNo5 += Utils.CDblDef(obj[i].CON_NO_5);
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].PHI_DV_5) });
-                _items.Add(new InfoCells { Field = fun.Getprice(obj[i].DA_TT5_1 + obj[i].DA_TT5_2 + obj[i].DA_TT5_3 + obj[i].DA_TT5_4) });
+                _items.Add(new InfoCells { Field = fun.Getprice(Utils.CDblDef(obj[i].DA_TT5_1) + Utils.CDblDef(obj[i].DA_TT5_2) + Utils.CDblDef(obj[i].DA_TT5_3) + Utils.CDblDef(obj[i].DA_TT5_4)) });
                 _items.Add(new InfoCells { Field = Utils.CStrDef(obj[i].NGAY_TT_5).Replace("12:00:00 AM", "").Trim() });
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].CON_NO_5) });
 
                 tongPhiDV6 += Utils.CDblDef(obj[i].PHI_DV_6);
-                tongDaTT6 += Utils.CDblDef(obj[i].DA_TT6_1 + obj[i].DA_TT6_2 + obj[i].DA_TT6_3 + obj[i].DA_TT6_4);
+                tongDaTT6 += Utils.CDblDef(obj[i].DA_TT6_1) + Utils.CDblDef(obj[i].DA_TT6_2) + Utils.CDblDef(obj[i].DA_TT6_3) + Utils.CDblDef(obj[i].DA_TT6_4);
                 tongConNo6 += Utils.CDblDef(obj[i].CON_NO_6);
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].PHI_DV_6) });
-                _items.Add(new InfoCells { Field = fun.Getprice(obj[i].DA_TT6_1 + obj[i].DA_TT6_2 + obj[i].DA_TT6_3 + obj[i].DA_TT6_4) });
+                _items.Add(new InfoCells { Field = fun.Getprice(Utils.CDblDef(obj[i].DA_TT6_1) + Utils.CDblDef(obj[i].DA_TT6_2) + Utils.CDblDef(obj[i].DA_TT6_3) + Utils.CDblDef(obj[i].DA_TT6_4)) });
                 _items.Add(new InfoCells { Field = Utils.CStrDef(obj[i].NGAY_TT_6).Replace("12:00:00 AM", "").Trim() });
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].CON_NO_6) });
 
                 tongPhiDV7 += Utils.CDblDef(obj[i].PHI_DV_7);
-                tongDaTT7 += Utils.CDblDef(obj[i].DA_TT7_1 + obj[i].DA_TT7_2 + obj[i].DA_TT7_3 + obj[i].DA_TT7_4);
+                tongDaTT7 += Utils.CDblDef(obj[i].DA_TT7_1) + Utils.CDblDef(obj[i].DA_TT7_2) + Utils.CDblDef(obj[i].DA_TT7_3) + Utils.CDblDef(obj[i].DA_TT7_4);
                 tongConNo7 += Utils.CDblDef(obj[i].CON_NO_7);
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].PHI_DV_7) });
-                _items.Add(new InfoCells { Field = fun.Getprice(obj[i].DA_TT7_1 + obj[i].DA_TT7_2 + obj[i].DA_TT7_3 + obj[i].DA_TT7_4) });
+                _items.Add(new InfoCells { Field = fun.Getprice(Utils.CDblDef(obj[i].DA_TT7_1) + Utils.CDblDef(obj[i].DA_TT7_2) + Utils.CDblDef(obj[i].DA_TT7_3) + Utils.CDblDef(obj[i].DA_TT7_4)) });
                 _items.Add(new InfoCells { Field = Utils.CStrDef(obj[i].NGAY_TT_7).Replace("12:00:00 AM", "").Trim() });
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].CON_NO_7) });
 
                 tongPhiDV8 += Utils.CDblDef(obj[i].PHI_DV_8);
-                tongDaTT8 += Utils.CDblDef(obj[i].DA_TT8_1 + obj[i].DA_TT8_2 + obj[i].DA_TT8_3 + obj[i].DA_TT8_4);
+                tongDaTT8 += Utils.CDblDef(obj[i].DA_TT8_1) + Utils.CDblDef(obj[i].DA_TT8_2) + Utils.CDblDef(obj[i].DA_TT8_3) + Utils.CDblDef(obj[i].DA_TT8_4);
                 tongConNo8 += Utils.CDblDef(obj[i].CON_NO_8);
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].PHI_DV_8) });
-                _items.Add(new InfoCells { Field = fun.Getprice(obj[i].DA_TT8_1 + obj[i].DA_TT8_2 + obj[i].DA_TT8_3 + obj[i].DA_TT8_4) });
+                _items.Add(new InfoCells { Field = fun.Getprice(Utils.CDblDef(obj[i].DA_TT8_1) + Utils.CDblDef(obj[i].DA_TT8_2) + Utils.CDblDef(obj[i].DA_TT8_3) + Utils.CDblDef(obj[i].DA_TT8_4)) });
                 _items.Add(new InfoCells { Field = Utils.CStrDef(obj[i].NGAY_TT_8).Replace("12:00:00 AM", "").Trim() });
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].CON_NO_8) });
 
                 tongPhiDV9 += Utils.CDblDef(obj[i].PHI_DV_9);
-                tongDaTT9 += Utils.CDblDef(obj[i].DA_TT9_1 + obj[i].DA_TT9_2 + obj[i].DA_TT9_3 + obj[i].DA_TT9_4);
+                tongDaTT9 += Utils.CDblDef(obj[i].DA_TT9_1) + Utils.CDblDef(obj[i].DA_TT9_2) + Utils.CDblDef(obj[i].DA_TT9_3) + Utils.CDblDef(obj[i].DA_TT9_4);
                 tongConNo9 += Utils.CDblDef(obj[i].CON_NO_9);
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].PHI_DV_9) });
-                _items.Add(new InfoCells { Field = fun.Getprice(obj[i].DA_TT9_1 + obj[i].DA_TT9_2 + obj[i].DA_TT9_3 + obj[i].DA_TT9_4) });
+                _items.Add(new InfoCells { Field = fun.Getprice(Utils.CDblDef(obj[i].DA_TT9_1) + Utils.CDblDef(obj[i].DA_TT9_2) + Utils.CDblDef(obj[i].DA_TT9_3) + Utils.CDblDef(obj[i].DA_TT9_4)) });
                 _items.Add(new InfoCells { Field = Utils.CStrDef(obj[i].NGAY_TT_9).Replace("12:00:00 AM", "").Trim() });
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].CON_NO_9) });
 
                 tongPhiDV10 += Utils.CDblDef(obj[i].PHI_DV_10);
-                tongDaTT10 += Utils.CDblDef(obj[i].DA_TT10_1 + obj[i].DA_TT10_2 + obj[i].DA_TT10_3 + obj[i].DA_TT10_4);
+                tongDaTT10 += Utils.CDblDef(obj[i].DA_TT10_1) + Utils.CDblDef(obj[i].DA_TT10_2) + Utils.CDblDef(obj[i].DA_TT10_3) + Utils.CDblDef(obj[i].DA_TT10_4);
                 tongConNo10 += Utils.CDblDef(obj[i].CON_NO_10);
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].PHI_DV_10) });
-                _items.Add(new InfoCells { Field = fun.Getprice(obj[i].DA_TT10_1 + obj[i].DA_TT10_2 + obj[i].DA_TT10_3 + obj[i].DA_TT10_4) });
+                _items.Add(new InfoCells { Field = fun.Getprice(Utils.CDblDef(obj[i].DA_TT10_1) + Utils.CDblDef(obj[i].DA_TT10_2) + Utils.CDblDef(obj[i].DA_TT10_3) + Utils.CDblDef(obj[i].DA_TT10_4)) });
                 _items.Add(new InfoCells { Field = Utils.CStrDef(obj[i].NGAY_TT_10).Replace("12:00:00 AM", "").Trim() });
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].CON_NO_10) });
 
                 tongPhiDV11 += Utils.CDblDef(obj[i].PHI_DV_11);
-                tongDaTT11 += Utils.CDblDef(obj[i].DA_TT11_1 + obj[i].DA_TT11_2 + obj[i].DA_TT11_3 + obj[i].DA_TT11_4);
+                tongDaTT11 += Utils.CDblDef(obj[i].DA_TT11_1) + Utils.CDblDef(obj[i].DA_TT11_2) + Utils.CDblDef(obj[i].DA_TT11_3) + Utils.CDblDef(obj[i].DA_TT11_4);
                 tongConNo11 += Utils.CDblDef(obj[i].CON_NO_11);
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].PHI_DV_11) });
-                _items.Add(new InfoCells { Field = fun.Getprice(obj[i].DA_TT11_1 + obj[i].DA_TT11_2 + obj[i].DA_TT11_3 + obj[i].DA_TT11_4) });
+                _items.Add(new InfoCells { Field = fun.Getprice(Utils.CDblDef(obj[i].DA_TT11_1) + Utils.CDblDef(obj[i].DA_TT11_2) + Utils.CDblDef(obj[i].DA_TT11_3) + Utils.CDblDef(obj[i].DA_TT11_4)) });
                 _items.Add(new InfoCells { Field = Utils.CStrDef(obj[i].NGAY_TT_11).Replace("12:00:00 AM", "").Trim() });
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].CON_NO_11) });
 
                 tongPhiDV12 += Utils.CDblDef(obj[i].PHI_DV_12);
-                tongDaTT12 += Utils.CDblDef(obj[i].DA_TT12_1 + obj[i].DA_TT12_2 + obj[i].DA_TT12_3 + obj[i].DA_TT12_4);
+                tongDaTT12 += Utils.CDblDef(obj[i].DA_TT12_1) + Utils.CDblDef(obj[i].DA_TT12_2) + Utils.CDblDef(obj[i].DA_TT12_3) + Utils.CDblDef(obj[i].DA_TT12_4);
                 tongConNo12 += Utils.CDblDef(obj[i].CON_NO_12);
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].PHI_DV_12) });
-                _items.Add(new InfoCells { Field = fun.Getprice(obj[i].DA_TT12_1 + obj[i].DA_TT12_2 + obj[i].DA_TT12_3 + obj[i].DA_TT12_4) });
+                _items.Add(new InfoCells { Field = fun.Getprice(Utils.CDblDef(obj[i].DA_TT12_1) + Utils.CDblDef(obj[i].DA_TT12_2) + Utils.CDblDef(obj[i].DA_TT12_3) + Utils.CDblDef(obj[i].DA_TT12_4)) });
                 _items.Add(new InfoCells { Field = Utils.CStrDef(obj[i].NGAY_TT_12).Replace("12:00:00 AM", "").Trim() });
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].CON_NO_12) });
 
                 tongPhiDV13 += Utils.CDblDef(obj[i].PHI_DV_BCTC);
-                tongDaTT13 += Utils.CDblDef(obj[i].DA_TT13_1 + obj[i].DA_TT13_2 + obj[i].DA_TT13_3 + obj[i].DA_TT13_4);
+                tongDaTT13 += Utils.CDblDef(obj[i].DA_TT13_1) + Utils.CDblDef(obj[i].DA_TT13_2) + Utils.CDblDef(obj[i].DA_TT13_3) + Utils.CDblDef(obj[i].DA_TT13_4);
                 tongConNo13 += Utils.CDblDef(obj[i].CON_NO_BCTC);
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].PHI_DV_BCTC) });
-                _items.Add(new InfoCells { Field = fun.Getprice(obj[i].DA_TT13_1 + obj[i].DA_TT13_2 + obj[i].DA_TT13_3 + obj[i].DA_TT13_4) });
+                _items.Add(new InfoCells { Field = fun.Getprice(Utils.CDblDef(obj[i].DA_TT13_1) + Utils.CDblDef(obj[i].DA_TT13_2) + Utils.CDblDef(obj[i].DA_TT13_3) + Utils.CDblDef(obj[i].DA_TT13_4)) });
                 _items.Add(new InfoCells { Field = Utils.CStrDef(obj[i].NGAY_TT_BCTC).Replace("12:00:00 AM", "").Trim() });
                 _items.Add(new InfoCells { Field = fun.Getprice(obj[i].CON_NO_BCTC) });
 

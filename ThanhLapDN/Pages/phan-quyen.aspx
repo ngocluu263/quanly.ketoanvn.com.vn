@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Master.Master" AutoEventWireup="true" CodeBehind="phan-quyen.aspx.cs" Inherits="ThanhLapDN.Pages.phan_quyen" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/Master.Master" AutoEventWireup="true" CodeBehind="phan-quyen.aspx.cs" Inherits="ThanhLapDN.Pages.phan_quyen" EnableEventValidation="false"%>
 <%@ Register Assembly="DevExpress.Web.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web.ASPxTabControl" TagPrefix="dx" %>
 <%@ Register Assembly="DevExpress.Web.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
@@ -102,8 +102,7 @@
                 OnClick="lbtnClose_Click"><img alt="Đóng" src="../Images/icon-32-cancel.png" /></asp:LinkButton>
         </div>
     </div>
-    <table width="100%" cellpadding="3" cellspacing="3" style="background-color: #f4f4f4;
-        border: 1px solid #aecaf0">
+    <table width="100%" cellpadding="3" cellspacing="3" style="background-color: #f4f4f4;border: 1px solid #aecaf0">
         <tr>
             <td>
                 <dx:ASPxPageControl ID="ASPxPageControl2" runat="server" ActiveTabIndex="0" CssFilePath="~/App_Themes/Aqua/{0}/styles.css"
@@ -113,39 +112,89 @@
                         <dx:TabPage Text="Cấu hình chung">
                             <ContentCollection>
                                 <dx:ContentControl ID="ContentControl1" runat="server" SupportsDisabledAttribute="True">
+                                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
                                 <div class="divMain">
                                     <div style="margin-bottom:10px;">
                                         <asp:DropDownList ID="ddlMenu" runat="server" CssClass="k-textbox textbox" 
-                                            Width="190" AutoPostBack="True" 
+                                            Width="210" Font-Size="16px" AutoPostBack="True" 
                                             OnSelectedIndexChanged="ddlMenu_SelectedIndexChanged">
-                                            <asp:ListItem Value="0" Text="---Chọn mục phân quyền---"></asp:ListItem>
+                                            <asp:ListItem Value="0" Text="--Chọn mục phân quyền--"></asp:ListItem>
                                             <asp:ListItem Value="1" Text="Thêm/sửa hồ sơ sở"></asp:ListItem>
                                             <asp:ListItem Value="2" Text="Danh sách hồ sơ sở"></asp:ListItem>
                                             <asp:ListItem Value="3" Text="Danh sách công nợ"></asp:ListItem>
                                         </asp:DropDownList>
+                                        <asp:LinkButton CssClass="k-button" ID="lbtnReload" ToolTip="Cập nhật" 
+                                            runat="server" onclick="lbtnReload_Click"><img alt="Cập nhật" src="../Images/reload.png" width="24"/></asp:LinkButton>
                                     </div>
                                     <div style="width:41%; float:left;height:200px;">
-                                        <asp:DropDownList ID="multiselect" runat="server" class="form-control" size="8" multiple="multiple">
-                                        </asp:DropDownList>
+                                        <select id="multiselect" runat="server" class="form-control"></select>
                                     </div>
                                     <div style="width:16%; float:left;text-align: center;height:200px;">
-                                        <button type="button" id="CPHMain_ASPxPageControl2_multiselect_rightAll" class="btn btn-block"><img src="../Images/playback_next_icon.png"/></button>
-		                                <button type="button" id="CPHMain_ASPxPageControl2_multiselect_rightSelected" class="btn btn-block"><img src="../Images/playback_play1.png" width="24"/></button>
-		                                <button type="button" id="CPHMain_ASPxPageControl2_multiselect_leftSelected" class="btn btn-block"><img src="../Images/playback_play2.png"/ width="24"></button>
-		                                <button type="button" id="CPHMain_ASPxPageControl2_multiselect_leftAll" class="btn btn-block"><img src="../Images/playback_prev_icon.png"/></button>
+                                        <asp:LinkButton ID="lbtnRightAll" runat="server" OnClick="lbtnRightAll_Click" class="btn btn-block"><img src="../Images/playback_play1.png" width="24"/></asp:LinkButton>
+                                        <asp:LinkButton ID="lbtnLeftAll" runat="server" OnClick="lbtnLeftAll_Click" class="btn btn-block"><img src="../Images/playback_play2.png"/ width="24"></asp:LinkButton>
                                     </div>
                                     <div style="width:41%; float:left;height:200px;">
-                                        <asp:DropDownList ID="multiselect_to" runat="server" class="form-control" size="8" multiple="multiple">
-                                        </asp:DropDownList>
+                                        <select id="multiselect_to" runat="server" class="form-control"></select>
                                     </div>
                                     <div style="text-align:center;">
                                         <asp:CheckBoxList ID="chkFuntion" runat="server" RepeatColumns="5" style="margin:auto;border-bottom: 1px dotted gray;margin-bottom: 5px;"></asp:CheckBoxList>
                                         <asp:LinkButton ID="btnDown" runat="server" OnClick="btnDown_Click"><img src="../Images/down.png"/></asp:LinkButton>
                                     </div>
                                     <div>
-                                        
+                                        <dx:ASPxGridView ID="grvData" runat="server" Width="60%" KeyFieldName="ID" Theme="Aqua" 
+                                            style="margin:auto;" OnRowDeleting="grvData_RowDeleting" OnRowUpdating="grvData_RowUpdating">
+                                            <Columns>
+                                                <dx:GridViewDataTextColumn VisibleIndex="0" Caption="STT" Width="40px">
+                                                    <DataItemTemplate>
+                                                        <%# Container.ItemIndex + 1 %>
+                                                    </DataItemTemplate>
+                                                    <EditItemTemplate>
+                                                        <asp:Label ID="Label1" runat="server" Text='<%# Container.ItemIndex + 1 %>'></asp:Label>
+                                                    </EditItemTemplate>
+                                                </dx:GridViewDataTextColumn>
+                                                <dx:GridViewDataTextColumn VisibleIndex="0" Caption="Chức vụ" FieldName="PER_GROUP" Width="120px">
+                                                    <DataItemTemplate>
+                                                        <%# GetNameGroup(Eval("PER_GROUP"))%>
+                                                    </DataItemTemplate>
+                                                    <EditItemTemplate>
+                                                        <asp:Label ID="Label1" runat="server" Text='<%# GetUser(Eval("PER_USER")) %>'></asp:Label>
+                                                    </EditItemTemplate>
+                                                </dx:GridViewDataTextColumn>
+                                                <dx:GridViewDataTextColumn VisibleIndex="0" Caption="Tên nhân viên" FieldName="PER_USER">
+                                                    <DataItemTemplate>
+                                                        <%# GetUser(Eval("PER_USER"))%>
+                                                    </DataItemTemplate>
+                                                    <EditItemTemplate>
+                                                        <asp:Label ID="Label1" runat="server" Text='<%# GetUser(Eval("PER_USER")) %>'></asp:Label>
+                                                    </EditItemTemplate>
+                                                </dx:GridViewDataTextColumn>
+                                                <dx:GridViewDataCheckColumn Caption="Xem" FieldName="PER_VIEW" ShowInCustomizationForm="True" Width="45px" VisibleIndex="2">
+                                                </dx:GridViewDataCheckColumn>
+                                                <dx:GridViewDataCheckColumn Caption="Thêm" FieldName="PER_ADD" ShowInCustomizationForm="True" Width="45px" VisibleIndex="2">
+                                                </dx:GridViewDataCheckColumn>
+                                                <dx:GridViewDataCheckColumn Caption="Sửa" FieldName="PER_EDIT" ShowInCustomizationForm="True" Width="45px" VisibleIndex="2">
+                                                </dx:GridViewDataCheckColumn>
+                                                <dx:GridViewDataCheckColumn Caption="Xóa" FieldName="PER_DELE" ShowInCustomizationForm="True" Width="45px" VisibleIndex="2">
+                                                </dx:GridViewDataCheckColumn>
+                                                <dx:GridViewCommandColumn VisibleIndex="2" Width="20px">
+                                                    <EditButton Text="Sửa" Visible="true"></EditButton>
+                                                    <DeleteButton Text="Xóa" Visible="true"></DeleteButton>
+                                                    <UpdateButton Text="Lưu"></UpdateButton>
+                                                    <CancelButton Text="Hủy"></CancelButton>
+                                                </dx:GridViewCommandColumn>
+                                            </Columns>
+                                            <SettingsPager PageSize="30">
+                                            </SettingsPager>
+                                            <Styles>
+                                                <Header HorizontalAlign="Center"></Header>
+                                            </Styles>
+                                            <SettingsEditing Mode="Inline" />
+                                        </dx:ASPxGridView>
                                     </div>
                                 </div>
+                                </ContentTemplate>
+                                </asp:UpdatePanel>
                                 </dx:ContentControl>
                             </ContentCollection>
                         </dx:TabPage>

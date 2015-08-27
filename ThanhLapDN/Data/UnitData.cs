@@ -280,5 +280,25 @@ namespace ThanhLapDN.Data
             }
             catch (Exception) { throw; }
         }
+        public int GetIdGroupByUser(int _idUser)
+        {
+            int i = 0;
+            var obj = db.USERs.Where(n => n.USER_ID == _idUser).Single();
+            if (obj != null)
+            {
+                i = Utils.CIntDef(obj.GROUP_ID);
+            }
+            return i;
+        }
+        public string GetNameGroupByUser(int _idGroup)
+        {
+            string str = "";
+            var obj = db.GROUPs.Where(n => n.GROUP_ID == _idGroup).Single();
+            if (obj != null)
+            {
+                str = Utils.CStrDef(obj.GROUP_NAME);
+            }
+            return str;
+        }
     }
 }

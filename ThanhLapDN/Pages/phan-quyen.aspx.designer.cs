@@ -49,6 +49,15 @@ namespace ThanhLapDN.Pages {
         protected global::DevExpress.Web.ASPxClasses.ContentControl ContentControl1;
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// ddlMenu control.
         /// </summary>
         /// <remarks>
@@ -58,13 +67,40 @@ namespace ThanhLapDN.Pages {
         protected global::System.Web.UI.WebControls.DropDownList ddlMenu;
         
         /// <summary>
+        /// lbtnReload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnReload;
+        
+        /// <summary>
         /// multiselect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList multiselect;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect multiselect;
+        
+        /// <summary>
+        /// lbtnRightAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnRightAll;
+        
+        /// <summary>
+        /// lbtnLeftAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnLeftAll;
         
         /// <summary>
         /// multiselect_to control.
@@ -73,7 +109,7 @@ namespace ThanhLapDN.Pages {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList multiselect_to;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect multiselect_to;
         
         /// <summary>
         /// chkFuntion control.
@@ -92,5 +128,14 @@ namespace ThanhLapDN.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnDown;
+        
+        /// <summary>
+        /// grvData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView.ASPxGridView grvData;
     }
 }
