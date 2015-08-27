@@ -32,7 +32,7 @@
         <elementListCompartment Id="6d793fbd-0157-4437-a63f-a941ca7b86cb" absoluteBounds="11.515, 11.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.8125 : 3.625); (1.8125 : 3.07859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.8125 : 3.625); (1.8125 : 3.07859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AppketoanDataContext/GROUP/GROUP_GROUP_MENU" />
       <nodes>
         <classShapeMoniker Id="085e4512-3964-40af-8d64-a1379032324f" />
@@ -141,7 +141,7 @@
         <elementListCompartment Id="bee49923-800b-440c-aaeb-50b9ca7e9b7b" absoluteBounds="3.265, 4.46, 1.9700000000000002, 8.5183512369791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 4.50564697265625); (3.25 : 4.50564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.50564697265625); (3.25 : 4.50564697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AppketoanDataContext/GROUP/GROUP_USER" />
       <nodes>
         <classShapeMoniker Id="085e4512-3964-40af-8d64-a1379032324f" />

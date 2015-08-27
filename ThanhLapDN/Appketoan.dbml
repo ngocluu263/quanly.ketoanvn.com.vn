@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_thanhlapcty" Class="AppketoanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=(local);Initial Catalog=db_thanhlapcty;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="db_thanhlapctyConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(local);Initial Catalog=db_thanhlapcty;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="db_thanhlapctyConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.[GROUP]" Member="GROUPs">
     <Type Name="GROUP">
       <Column Name="GROUP_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -757,5 +757,9 @@
   </Function>
   <Function Name="dbo.TEST1" Method="TEST1">
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.fClearUnicode" Method="fClearUnicode" IsComposable="true">
+    <Parameter Name="strInput" Type="System.String" DbType="NVarChar(4000)" />
+    <Return Type="System.String" />
   </Function>
 </Database>

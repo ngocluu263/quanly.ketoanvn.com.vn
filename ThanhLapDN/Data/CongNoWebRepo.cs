@@ -10,12 +10,15 @@ namespace ThanhLapDN.Data
         private AppketoanDataContext db = new AppketoanDataContext();
 
 
-        public virtual List<CONG_NO_WEB> GetListByYear(int _year, int _month, int _idUser, string _txt)
+        public virtual List<CONG_NO_WEB> GetListByYear(int _year, int _month, int _idUser, string _txt, int _tinhtrang, int _congno)
         {
-            return this.db.CONG_NO_WEBs.Where(n => 
+            return this.db.CONG_NO_WEBs.Where(n =>
                             (n.NVKD == _idUser || n.NVXL == _idUser || _idUser == -1)
                             && n.NGAYKY_HOPDONG != null
-                            && n.NGAYKY_HOPDONG.Value.Year == _year && n.NGAYKY_HOPDONG.Value.Month == _month
+                            && n.NGAYKY_HOPDONG.Value.Year == _year
+                            && n.NGAYKY_HOPDONG.Value.Month == _month
+                            && (n.TINHTRANG == _tinhtrang || _tinhtrang == 0)
+                            && ((_congno == 1) ? n.CONGNO > 0 : n.CONGNO <= 0 || _congno == 0)
                             && (n.TEN_KHACHHANG.Contains(_txt) || n.THONGTINLIENHE_KHACHHANG.Contains(_txt) || "" == _txt)).OrderByDescending(n => n.ID).ToList();
         }
         public virtual CONG_NO_WEB GetById(int id)

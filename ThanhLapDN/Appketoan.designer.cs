@@ -126,7 +126,7 @@ namespace ThanhLapDN
     #endregion
 		
 		public AppketoanDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["db_thanhlapctyConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["db_thanhlapctyConnectionString2"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -414,6 +414,12 @@ namespace ThanhLapDN
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.fClearUnicode", IsComposable=true)]
+		public string fClearUnicode([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(4000)")] string strInput)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), strInput).ReturnValue));
 		}
 	}
 	

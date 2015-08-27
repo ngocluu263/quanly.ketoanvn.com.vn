@@ -58,6 +58,24 @@ namespace ThanhLapDN.Pages {
         protected global::System.Web.UI.WebControls.LinkButton lbtnDeleteKeyword;
         
         /// <summary>
+        /// ddlTinhtrang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTinhtrang;
+        
+        /// <summary>
+        /// ddlCongnno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCongnno;
+        
+        /// <summary>
         /// ddlThang control.
         /// </summary>
         /// <remarks>
@@ -110,6 +128,15 @@ namespace ThanhLapDN.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fileUpload;
+        
+        /// <summary>
+        /// UpdatePanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
         
         /// <summary>
         /// ASPxGridView1_project control.
