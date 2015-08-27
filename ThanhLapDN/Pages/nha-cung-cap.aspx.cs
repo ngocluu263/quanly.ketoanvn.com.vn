@@ -175,7 +175,7 @@ namespace ThanhLapDN.Pages
             string s = "";
             if (Utils.CStrDef(type) == "0")
                 s = "Chữ ký số";
-            else s = "Nhà cung cấp";
+            else s = "Phần mềm";
             return s;
         }
         #endregion

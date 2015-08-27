@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using vpro.functions;
 using System.Data;
+using Appketoan.Components;
 
 namespace ThanhLapDN.Data
 {
@@ -15,14 +16,16 @@ namespace ThanhLapDN.Data
         {
             return this.db.CONG_NOs.Where(n => (n.TEN_KH.Contains(name) || name == "")).OrderBy(n => n.TEN_KH).ToList();
         }
-        public virtual List<CONG_NO> GetListByYear(int _year, string _field, string _txt, string _status)
+        public virtual List<CONG_NO> GetListByYear(int _year, string _field, string keyword, string _status)
         {
+            string _txt = clsFormat.ClearUnicode(keyword);
+
             return this.db.CONG_NOs.Where(n => (n.NAM == _year)
                 && (n.TINH_TRANG == getTinhTrang(_status) || "" == _status)
-                && (_field == "1" ? (n.TEN_KH.Contains(_txt) || "" == _txt) :
+                && (_field == "1" ? (db.fClearUnicode(n.TEN_KH).Contains(_txt) || "" == _txt) :
                             _field == "2" ? (n.MST.Contains(_txt) || "" == _txt) :
                             _field == "3" ? ((iListArea(_txt).Contains(n.QL_THUE_DIST ?? 0)) || (iListArea(_txt).Contains(n.QL_THUE_CITY ?? 0))) :
-                            _field == "4" ? (n.DIA_CHI.Contains(_txt) || "" == _txt) :
+                            _field == "4" ? (db.fClearUnicode(n.DIA_CHI).Contains(_txt) || "" == _txt) :
                             _field == "5" ? (n.DIEN_THOAI.Contains(_txt) || "" == _txt) :
                             _field == "6" ? (iListUser(_txt).Contains(n.NV_KT ?? 0)) :
                             _field == "7" ? (iListUserKD(_txt).Contains(n.NV_KD ?? 0)) :
@@ -36,7 +39,8 @@ namespace ThanhLapDN.Data
         }
         private List<int> iListUser(string _txt)
         {
-            List<int> list = (from a in db.USERs where a.USER_NAME.Contains(_txt) select a.USER_ID).ToList();
+            
+            List<int> list = (from a in db.USERs where db.fClearUnicode(a.USER_NAME).Contains(_txt) select a.USER_ID).ToList();
             return list;
         }
         private List<int> iListUserKD(string _txt)
@@ -50,13 +54,13 @@ namespace ThanhLapDN.Data
             }
             else
             {
-                List<int> list = (from a in db.USERs where a.USER_NAME.Contains(_txt) select a.USER_ID).ToList();
+                List<int> list = (from a in db.USERs where db.fClearUnicode(a.USER_NAME).Contains(_txt) select a.USER_ID).ToList();
                 return list;
             }
         }
         private List<decimal> iListArea(string _txt)
         {
-            List<decimal> list = (from a in db.AREA_PROPERTies where a.PROP_NAME.Contains(_txt) select a.PROP_ID).ToList();
+            List<decimal> list = (from a in db.AREA_PROPERTies where db.fClearUnicode(a.PROP_NAME).Contains(_txt) select a.PROP_ID).ToList();
             return list;
         }
         public virtual List<CONG_NO> GetListByYearOrder(int _year,string _field, string _txt)
