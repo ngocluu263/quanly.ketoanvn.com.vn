@@ -108,9 +108,6 @@ namespace ThanhLapDN
     partial void InsertMER_PHULUC_GIAHAN(MER_PHULUC_GIAHAN instance);
     partial void UpdateMER_PHULUC_GIAHAN(MER_PHULUC_GIAHAN instance);
     partial void DeleteMER_PHULUC_GIAHAN(MER_PHULUC_GIAHAN instance);
-    partial void InsertUSER_PERMISSION(USER_PERMISSION instance);
-    partial void UpdateUSER_PERMISSION(USER_PERMISSION instance);
-    partial void DeleteUSER_PERMISSION(USER_PERMISSION instance);
     partial void InsertNOP_THUE(NOP_THUE instance);
     partial void UpdateNOP_THUE(NOP_THUE instance);
     partial void DeleteNOP_THUE(NOP_THUE instance);
@@ -123,10 +120,13 @@ namespace ThanhLapDN
     partial void InsertLOAI_HSO(LOAI_HSO instance);
     partial void UpdateLOAI_HSO(LOAI_HSO instance);
     partial void DeleteLOAI_HSO(LOAI_HSO instance);
+    partial void InsertUSER_PERMISSION(USER_PERMISSION instance);
+    partial void UpdateUSER_PERMISSION(USER_PERMISSION instance);
+    partial void DeleteUSER_PERMISSION(USER_PERMISSION instance);
     #endregion
 		
 		public AppketoanDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["db_thanhlapctyConnectionString2"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["db_thanhlapctyConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -363,14 +363,6 @@ namespace ThanhLapDN
 			}
 		}
 		
-		public System.Data.Linq.Table<USER_PERMISSION> USER_PERMISSIONs
-		{
-			get
-			{
-				return this.GetTable<USER_PERMISSION>();
-			}
-		}
-		
 		public System.Data.Linq.Table<NOP_THUE> NOP_THUEs
 		{
 			get
@@ -400,6 +392,14 @@ namespace ThanhLapDN
 			get
 			{
 				return this.GetTable<LOAI_HSO>();
+			}
+		}
+		
+		public System.Data.Linq.Table<USER_PERMISSION> USER_PERMISSIONs
+		{
+			get
+			{
+				return this.GetTable<USER_PERMISSION>();
 			}
 		}
 		
@@ -11365,236 +11365,6 @@ namespace ThanhLapDN
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.USER_PERMISSION")]
-	public partial class USER_PERMISSION : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<int> _PER_TYPE;
-		
-		private System.Nullable<int> _PER_GROUP;
-		
-		private System.Nullable<int> _PER_USER;
-		
-		private System.Nullable<int> _PER_VIEW;
-		
-		private System.Nullable<int> _PER_ADD;
-		
-		private System.Nullable<int> _PER_EDIT;
-		
-		private System.Nullable<int> _PER_DELE;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnPER_TYPEChanging(System.Nullable<int> value);
-    partial void OnPER_TYPEChanged();
-    partial void OnPER_GROUPChanging(System.Nullable<int> value);
-    partial void OnPER_GROUPChanged();
-    partial void OnPER_USERChanging(System.Nullable<int> value);
-    partial void OnPER_USERChanged();
-    partial void OnPER_VIEWChanging(System.Nullable<int> value);
-    partial void OnPER_VIEWChanged();
-    partial void OnPER_ADDChanging(System.Nullable<int> value);
-    partial void OnPER_ADDChanged();
-    partial void OnPER_EDITChanging(System.Nullable<int> value);
-    partial void OnPER_EDITChanged();
-    partial void OnPER_DELEChanging(System.Nullable<int> value);
-    partial void OnPER_DELEChanged();
-    #endregion
-		
-		public USER_PERMISSION()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_TYPE", DbType="Int")]
-		public System.Nullable<int> PER_TYPE
-		{
-			get
-			{
-				return this._PER_TYPE;
-			}
-			set
-			{
-				if ((this._PER_TYPE != value))
-				{
-					this.OnPER_TYPEChanging(value);
-					this.SendPropertyChanging();
-					this._PER_TYPE = value;
-					this.SendPropertyChanged("PER_TYPE");
-					this.OnPER_TYPEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_GROUP", DbType="Int")]
-		public System.Nullable<int> PER_GROUP
-		{
-			get
-			{
-				return this._PER_GROUP;
-			}
-			set
-			{
-				if ((this._PER_GROUP != value))
-				{
-					this.OnPER_GROUPChanging(value);
-					this.SendPropertyChanging();
-					this._PER_GROUP = value;
-					this.SendPropertyChanged("PER_GROUP");
-					this.OnPER_GROUPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_USER", DbType="Int")]
-		public System.Nullable<int> PER_USER
-		{
-			get
-			{
-				return this._PER_USER;
-			}
-			set
-			{
-				if ((this._PER_USER != value))
-				{
-					this.OnPER_USERChanging(value);
-					this.SendPropertyChanging();
-					this._PER_USER = value;
-					this.SendPropertyChanged("PER_USER");
-					this.OnPER_USERChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_VIEW", DbType="Int")]
-		public System.Nullable<int> PER_VIEW
-		{
-			get
-			{
-				return this._PER_VIEW;
-			}
-			set
-			{
-				if ((this._PER_VIEW != value))
-				{
-					this.OnPER_VIEWChanging(value);
-					this.SendPropertyChanging();
-					this._PER_VIEW = value;
-					this.SendPropertyChanged("PER_VIEW");
-					this.OnPER_VIEWChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_ADD", DbType="Int")]
-		public System.Nullable<int> PER_ADD
-		{
-			get
-			{
-				return this._PER_ADD;
-			}
-			set
-			{
-				if ((this._PER_ADD != value))
-				{
-					this.OnPER_ADDChanging(value);
-					this.SendPropertyChanging();
-					this._PER_ADD = value;
-					this.SendPropertyChanged("PER_ADD");
-					this.OnPER_ADDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_EDIT", DbType="Int")]
-		public System.Nullable<int> PER_EDIT
-		{
-			get
-			{
-				return this._PER_EDIT;
-			}
-			set
-			{
-				if ((this._PER_EDIT != value))
-				{
-					this.OnPER_EDITChanging(value);
-					this.SendPropertyChanging();
-					this._PER_EDIT = value;
-					this.SendPropertyChanged("PER_EDIT");
-					this.OnPER_EDITChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_DELE", DbType="Int")]
-		public System.Nullable<int> PER_DELE
-		{
-			get
-			{
-				return this._PER_DELE;
-			}
-			set
-			{
-				if ((this._PER_DELE != value))
-				{
-					this.OnPER_DELEChanging(value);
-					this.SendPropertyChanging();
-					this._PER_DELE = value;
-					this.SendPropertyChanged("PER_DELE");
-					this.OnPER_DELEChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NOP_THUE")]
 	public partial class NOP_THUE : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -16642,6 +16412,236 @@ namespace ThanhLapDN
 					this._POS = value;
 					this.SendPropertyChanged("POS");
 					this.OnPOSChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.USER_PERMISSION")]
+	public partial class USER_PERMISSION : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _PER_TYPE;
+		
+		private System.Nullable<int> _PER_GROUP;
+		
+		private System.Nullable<int> _PER_USER;
+		
+		private System.Nullable<bool> _PER_VIEW;
+		
+		private System.Nullable<bool> _PER_ADD;
+		
+		private System.Nullable<bool> _PER_EDIT;
+		
+		private System.Nullable<bool> _PER_DELE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnPER_TYPEChanging(System.Nullable<int> value);
+    partial void OnPER_TYPEChanged();
+    partial void OnPER_GROUPChanging(System.Nullable<int> value);
+    partial void OnPER_GROUPChanged();
+    partial void OnPER_USERChanging(System.Nullable<int> value);
+    partial void OnPER_USERChanged();
+    partial void OnPER_VIEWChanging(System.Nullable<bool> value);
+    partial void OnPER_VIEWChanged();
+    partial void OnPER_ADDChanging(System.Nullable<bool> value);
+    partial void OnPER_ADDChanged();
+    partial void OnPER_EDITChanging(System.Nullable<bool> value);
+    partial void OnPER_EDITChanged();
+    partial void OnPER_DELEChanging(System.Nullable<bool> value);
+    partial void OnPER_DELEChanged();
+    #endregion
+		
+		public USER_PERMISSION()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_TYPE", DbType="Int")]
+		public System.Nullable<int> PER_TYPE
+		{
+			get
+			{
+				return this._PER_TYPE;
+			}
+			set
+			{
+				if ((this._PER_TYPE != value))
+				{
+					this.OnPER_TYPEChanging(value);
+					this.SendPropertyChanging();
+					this._PER_TYPE = value;
+					this.SendPropertyChanged("PER_TYPE");
+					this.OnPER_TYPEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_GROUP", DbType="Int")]
+		public System.Nullable<int> PER_GROUP
+		{
+			get
+			{
+				return this._PER_GROUP;
+			}
+			set
+			{
+				if ((this._PER_GROUP != value))
+				{
+					this.OnPER_GROUPChanging(value);
+					this.SendPropertyChanging();
+					this._PER_GROUP = value;
+					this.SendPropertyChanged("PER_GROUP");
+					this.OnPER_GROUPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_USER", DbType="Int")]
+		public System.Nullable<int> PER_USER
+		{
+			get
+			{
+				return this._PER_USER;
+			}
+			set
+			{
+				if ((this._PER_USER != value))
+				{
+					this.OnPER_USERChanging(value);
+					this.SendPropertyChanging();
+					this._PER_USER = value;
+					this.SendPropertyChanged("PER_USER");
+					this.OnPER_USERChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_VIEW", DbType="Bit")]
+		public System.Nullable<bool> PER_VIEW
+		{
+			get
+			{
+				return this._PER_VIEW;
+			}
+			set
+			{
+				if ((this._PER_VIEW != value))
+				{
+					this.OnPER_VIEWChanging(value);
+					this.SendPropertyChanging();
+					this._PER_VIEW = value;
+					this.SendPropertyChanged("PER_VIEW");
+					this.OnPER_VIEWChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_ADD", DbType="Bit")]
+		public System.Nullable<bool> PER_ADD
+		{
+			get
+			{
+				return this._PER_ADD;
+			}
+			set
+			{
+				if ((this._PER_ADD != value))
+				{
+					this.OnPER_ADDChanging(value);
+					this.SendPropertyChanging();
+					this._PER_ADD = value;
+					this.SendPropertyChanged("PER_ADD");
+					this.OnPER_ADDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_EDIT", DbType="Bit")]
+		public System.Nullable<bool> PER_EDIT
+		{
+			get
+			{
+				return this._PER_EDIT;
+			}
+			set
+			{
+				if ((this._PER_EDIT != value))
+				{
+					this.OnPER_EDITChanging(value);
+					this.SendPropertyChanging();
+					this._PER_EDIT = value;
+					this.SendPropertyChanged("PER_EDIT");
+					this.OnPER_EDITChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PER_DELE", DbType="Bit")]
+		public System.Nullable<bool> PER_DELE
+		{
+			get
+			{
+				return this._PER_DELE;
+			}
+			set
+			{
+				if ((this._PER_DELE != value))
+				{
+					this.OnPER_DELEChanging(value);
+					this.SendPropertyChanging();
+					this._PER_DELE = value;
+					this.SendPropertyChanged("PER_DELE");
+					this.OnPER_DELEChanged();
 				}
 			}
 		}

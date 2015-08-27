@@ -32,7 +32,7 @@
         <elementListCompartment Id="6d793fbd-0157-4437-a63f-a941ca7b86cb" absoluteBounds="11.515, 11.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.8125 : 3.625); (1.8125 : 3.07859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.8125 : 3.625); (1.8125 : 3.07859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AppketoanDataContext/GROUP/GROUP_GROUP_MENU" />
       <nodes>
         <classShapeMoniker Id="085e4512-3964-40af-8d64-a1379032324f" />
@@ -172,12 +172,6 @@
         <elementListCompartment Id="46a10b7a-e61d-4db5-9dbc-c053f397434d" absoluteBounds="5.64, 23.835, 1.9700000000000002, 8.5183512369791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7b3e5a49-683c-4afa-bf85-85565b7fb0c1" absoluteBounds="0.75, 26.25, 2, 2.3478011067708335">
-      <DataClassMoniker Name="/AppketoanDataContext/USER_PERMISSION" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ea2acc9c-6988-4a23-99af-597893d01e71" absoluteBounds="0.76500000000000012, 26.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="03fc84d0-740a-4674-a732-b4349427c47b" absoluteBounds="0.75, 28.75, 2, 2.1554996744791666">
       <DataClassMoniker Name="/AppketoanDataContext/NOP_THUE" />
       <nestedChildShapes>
@@ -200,6 +194,12 @@
       <DataClassMoniker Name="/AppketoanDataContext/LOAI_HSO" />
       <nestedChildShapes>
         <elementListCompartment Id="650b6f9b-4277-4805-9632-baf4f3a5af11" absoluteBounds="0.76500000000000012, 31.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c5da653b-e77a-44d6-b000-b2d78a2b5d68" absoluteBounds="0.875, 26.25, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/AppketoanDataContext/USER_PERMISSION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d4159a5d-e1f7-42fa-ab7c-357fab14a1ee" absoluteBounds="0.89000000000000012, 26.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
