@@ -540,14 +540,6 @@
       <Column Name="DA_NOP_THUE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.LOAI_HSO" Member="LOAI_HSOs">
-    <Type Name="LOAI_HSO">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="TEN" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="POS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CONG_NO_WEB" Member="CONG_NO_WEBs">
     <Type Name="CONG_NO_WEB">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
