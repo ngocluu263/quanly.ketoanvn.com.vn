@@ -305,7 +305,7 @@ namespace ThanhLapDN.Pages
             row.Font.Bold = true;
             row.Font.Size = 11;
             row.HorizontalAlign = HorizontalAlign.Center;
-            row.VerticalAlign = VerticalAlign.Middle;
+            row.Style.Value = "vertical-align: middle";
 
             List<InfoCells> _iHeader = new List<InfoCells>();
             _iHeader.Add(new InfoCells { Header = "SỐ HỢP ĐỒNG", Width = 150 });
@@ -333,7 +333,7 @@ namespace ThanhLapDN.Pages
                 {
                     cell = new TableCell();
                     cell.BackColor = Color.Yellow;
-                    cell.VerticalAlign = VerticalAlign.Middle;
+                    cell.Style.Value = "vertical-align: middle";
                     cell.Width = _iHeader[k].Width;
                     cell.Text = _iHeader[k].Header;
                     cell.ColumnSpan = 11;
@@ -343,7 +343,7 @@ namespace ThanhLapDN.Pages
                 {
                     cell = new TableCell();
                     cell.BackColor = Color.Yellow;
-                    cell.VerticalAlign = VerticalAlign.Middle;
+                    cell.Style.Value = "vertical-align: middle";
                     cell.Width = _iHeader[k].Width;
                     cell.Text = _iHeader[k].Header;
                     cell.RowSpan = 2;
@@ -356,7 +356,7 @@ namespace ThanhLapDN.Pages
             row.Font.Bold = true;
             row.Font.Size = 11;
             row.HorizontalAlign = HorizontalAlign.Center;
-            row.VerticalAlign = VerticalAlign.Middle;
+            row.Style.Value = "vertical-align: middle";
 
             List<InfoCells> _iHeader1 = new List<InfoCells>();
             _iHeader1.Add(new InfoCells { Header = "DOMAIN", Width = 100 });
@@ -375,7 +375,7 @@ namespace ThanhLapDN.Pages
             {
                 cell = new TableCell();
                 cell.BackColor = Color.Yellow;
-                cell.VerticalAlign = VerticalAlign.Middle;
+                cell.Style.Value = "vertical-align: middle";
                 cell.Width = _iHeader1[k].Width;
                 cell.Text = _iHeader1[k].Header;
                 row.Cells.Add(cell);
@@ -430,7 +430,7 @@ namespace ThanhLapDN.Pages
                 for (int j = 0; j < _items.Count; j++)
                 {
                     cell = new TableCell();
-                    cell.VerticalAlign = VerticalAlign.Middle;
+                    cell.Style.Value = "vertical-align: middle";
                     if (j <= 6 || j == 22 || j == 23 || j == 26)
                     {
                         cell.HorizontalAlign = HorizontalAlign.Center;
@@ -452,7 +452,7 @@ namespace ThanhLapDN.Pages
             {
                 cell = new TableCell();
                 cell.BackColor = System.Drawing.Color.FromName("#C79393");
-                cell.VerticalAlign = VerticalAlign.Middle;
+                cell.Style.Value = "vertical-align: middle";
                 switch (k)
                 {
                     case 21: cell.Text = fun.fomartPrice(tongcong); break;

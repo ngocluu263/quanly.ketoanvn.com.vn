@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Appketoan.Components;
 
 namespace ThanhLapDN.Data
 {
@@ -10,8 +11,9 @@ namespace ThanhLapDN.Data
         private AppketoanDataContext db = new AppketoanDataContext();
 
 
-        public virtual List<CONG_NO_WEB> GetListByYear(int _year, int _month, int _idUser, string _txt, int _tinhtrang, int _congno)
+        public virtual List<CONG_NO_WEB> GetListByYear(int _year, int _month, int _idUser, string keyword, int _tinhtrang, int _congno)
         {
+            string _txt = clsFormat.ClearUnicode(keyword);
             return this.db.CONG_NO_WEBs.Where(n =>
                             (n.NVKD == _idUser || n.NVXL == _idUser || _idUser == -1)
                             && n.NGAYKY_HOPDONG != null
@@ -19,7 +21,7 @@ namespace ThanhLapDN.Data
                             && n.NGAYKY_HOPDONG.Value.Month == _month
                             && (n.TINHTRANG == _tinhtrang || _tinhtrang == 0)
                             && ((_congno == 1) ? n.CONGNO > 0 : n.CONGNO <= 0 || _congno == 0)
-                            && (n.TEN_KHACHHANG.Contains(_txt) || n.THONGTINLIENHE_KHACHHANG.Contains(_txt) || "" == _txt)).OrderByDescending(n => n.ID).ToList();
+                            && (db.fClearUnicode(n.SO_HOPDONG).Contains(_txt) || db.fClearUnicode(n.TEN_KHACHHANG).Contains(_txt) || db.fClearUnicode(n.THONGTINLIENHE_KHACHHANG).Contains(_txt) || db.fClearUnicode(n.TEN_DOMAIN).Contains(_txt) || "" == _txt)).OrderByDescending(n => n.ID).ToList();
         }
         public virtual CONG_NO_WEB GetById(int id)
         {
